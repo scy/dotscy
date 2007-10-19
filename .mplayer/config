@@ -1,0 +1,14 @@
+# Fix broken Xv default values, whereever they come from.
+brightness=-10
+contrast=-40
+
+# Output using Xv (fast), fallback to software (X11) or anything else (comma).
+# Note that "x11" ignores the brightness and contrast set above, which is great,
+# because it actually _should_ _not_ be set for X11.
+vo=xv,x11,
+
+# ALSA, nothing else. Can mix multiple sound sources.
+ao=alsa
+
+# Allow software zoom (for x11 fallback).
+zoom=yes
