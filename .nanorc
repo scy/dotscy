@@ -1,0 +1,35 @@
+# No "filename~" backups.
+unset backup
+
+# Case insensitive searches.
+unset casesensitive
+
+# No search/replace history.
+unset historylog
+
+# Mouse support.
+set mouse
+
+# Automatic conversion.
+unset noconvert
+
+# Follow symlinks when writing.
+unset nofollow
+
+# Add newlines at file end.
+unset nonewlines
+
+# Oh yeah, please wrap my config files.  NOT!
+set nowrap
+
+# Use regex searches.
+set regexp
+
+# Smart home key.
+set smarthome
+
+# Less tab space.
+set tabsize 4
+
+# What?  Never!
+unset tabstospaces
