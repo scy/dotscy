@@ -12,3 +12,7 @@ ao=alsa
 
 # Allow software zoom (for x11 fallback).
 zoom=yes
+
+# I need a large buffer.
+cache=1024
+cache-min=80
