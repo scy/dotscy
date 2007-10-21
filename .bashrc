@@ -12,6 +12,8 @@ USERCOLOR=32                             # green by default
 case "$HOSTNAME" in
 	bijaz)
 		HOSTCOLOR=32;;   # green for the default, bijaz.
+	chani)
+		HOSTCOLOR=33;;   # yellow for chani
 	*)
 		HOSTCOLOR=37;;   # white by default
 esac
