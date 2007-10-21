@@ -3,7 +3,7 @@
 TPLDIR="$HOME/.$USER"
 LNBASE=".$USER"
 OUTDIR="$HOME"
-SEDCMD="s/^(\.git|dotfiles.sh)$//"
+SEDCMD="s/^(\.git|dotfiles.sh|bin)$//"
 
 die() {
 	echo dotfiles.sh: "$1" >&2
