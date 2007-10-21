@@ -13,3 +13,8 @@ alias .scy='cd "$HOME/.scy" && git status'
 # Screen.  "SS" stands for "Screen Session", just in case you wonder.
 alias S='screen'
 alias SS='S -D -R -c .screen-$HOSTNAME'
+
+# Bash configuration stuff.
+alias Brh='. ~/.bashrc'
+alias Bal='E ~/.bash_aliases && Brh'
+alias Brc='E ~/.bashrc && Brh'
