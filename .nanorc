@@ -19,8 +19,12 @@ unset nofollow
 # Add newlines at file end.
 unset nonewlines
 
-# Oh yeah, please wrap my config files.  NOT!
-set nowrap
+# Since there's nothing like a "+w" option, I'm forced to use the crappy
+# wrapping as a default, because I use nano as mail editor.
+unset nowrap
+
+# Break after 70 characters.
+set fill 70
 
 # Use regex searches.
 set regexp

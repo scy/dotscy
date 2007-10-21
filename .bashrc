@@ -38,7 +38,15 @@ done
 
 
 # More into the PATH.
-PATH="$HOME/bin:$HOME/doc/trackdb:$PATH:/usr/sbin"
+export PATH="$HOME/bin:$HOME/.scy/bin:$HOME/doc/trackdb:$PATH:/usr/sbin"
+
+
+
+# Set locale.
+export LC_ALL='en_US.UTF-8'
+
+# On bijaz, use German instead.
+[[ "$HOSTNAME" == 'bijaz' ]] && export LC_ALL='de_DE.UTF-8'
 
 
 
