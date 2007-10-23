@@ -23,7 +23,7 @@ PS1="\[\e]0;\u@\h:\w\a\e[1;${USERCOLOR}m\]\u\[\e[0;32m\]@\[\e[1;${HOSTCOLOR}m\]\
 
 
 # Quick hack for symlink ugliness.
-[[ "$(pwd)" == '/mnt/crypt/home/scy' ]] && cd
+[[ "$PWD" == '/mnt/crypt/home/scy' ]] && cd
 
 
 
@@ -41,6 +41,11 @@ done
 
 # More into the PATH.
 export PATH="$HOME/bin:$HOME/.scy/bin:$HOME/doc/trackdb:$PATH:/usr/sbin"
+
+
+
+# Disable the preprocessor for less, it's confusing for HTML etc.
+unset LESSOPEN
 
 
 
