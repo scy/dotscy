@@ -18,3 +18,7 @@ alias SS='S -D -R -c .screen-$HOSTNAME'
 alias Brh='. ~/.bashrc'
 alias Bal='E ~/.bash_aliases && Brh'
 alias Brc='E ~/.bashrc && Brh'
+
+# ls shortcuts.
+alias ll='ls -lh'
+alias la='ls -a'
