@@ -25,6 +25,10 @@ alias Brc='E ~/.bashrc && Brh'
 alias ll='ls -lh'
 alias la='ls -a'
 
+# Making Remind behave more german. ;)
+alias rem='rem -m'
+alias remind='remind -m'
+
 # Music stuff.
 alias Mcollect='mpc clear; mpc listall | grep "^Archiv/Music" | while read track; do mpc add "$track"; done; mpc save LIBRARY'
 alias Mrandom='mpc clear; mpc load LIBRARY; mpc shuffle; mpc play'
