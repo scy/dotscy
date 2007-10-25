@@ -1,0 +1,23 @@
+# Include default configuration.
+include "/etc/wyrdrc"
+
+# We're german over here.
+set week_starts_monday = "true"
+set schedule_12_hour = "false"
+set selection_12_hour = "false"
+set status_12_hour = "false"
+set description_12_hour = "false"
+set quick_date_US = "false"
+
+# Count busy hours instead of number of reminders.
+set busy_algorithm = "2"
+
+# Center cursor and follow time if "home" is pressed.
+set center_cursor = "true"
+set home_sticky = "true"
+
+# Number weeks.
+set number_weeks = "true"
+
+# Don't issue warnings in advance.
+set advance_warning = "false"
