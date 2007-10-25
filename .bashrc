@@ -21,12 +21,12 @@ esac
 # Use window titles only in known X terminals.
 case "$TERM" in
 	xterm*|rxvt*|Eterm|aterm|kterm|gnome|screen)
-		TITLE="\[\e]0;\u@\h:\w\a\]";;
+		TITLE='\[\e]0;\u@\h:\w\a\]';;
 	*)
 		unset TITLE;;
 esac
 
-PS1="$TITLE\e[1;${USERCOLOR}m\]\u\[\e[0;32m\]@\[\e[1;${HOSTCOLOR}m\]\h\[\e[1;34m\] \w \[\e[1;30m\]\$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)\[\e[0;37m\] \A \[\e[1;${USERCOLOR}m\]\\\$\[\e[0m\] "
+PS1="$TITLE\[\e[1;${USERCOLOR}m\]\u\[\e[0;32m\]@\[\e[1;${HOSTCOLOR}m\]\h\[\e[1;34m\] \w \[\e[1;30m\]\$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)\[\e[0;37m\] \A \[\e[1;${USERCOLOR}m\]\\\$\[\e[0m\] "
 unset TITLE
 unset HOSTCOLOR
 unset USERCOLOR
