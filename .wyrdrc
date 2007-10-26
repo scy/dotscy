@@ -10,7 +10,7 @@ set description_12_hour = "false"
 set quick_date_US = "false"
 
 # And I like my reminders in that format:
-set timed_template = "REM %year% %monname% %mday% AT %hour%:%minute% DURATION 1:00 MSG "
+set timed_template = "REM %year% %monname% %mday% AT %hour%:%min% DURATION 1:00 MSG "
 set untimed_template = "REM %year% %monname% %mday% MSG "
 
 # Count busy hours instead of number of reminders.
