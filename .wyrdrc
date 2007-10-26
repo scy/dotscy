@@ -28,3 +28,8 @@ set advance_warning = "false"
 
 # Mark even if there's only one tiny entry.
 set busy_level1 = "0"
+
+# Set colors.
+color calendar_level1	white	black
+color calendar_level2	green	black
+color calendar_level3	red		black
