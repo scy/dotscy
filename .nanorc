@@ -37,3 +37,6 @@ set tabsize 4
 
 # What?  Never!
 unset tabstospaces
+
+# Use auto indent.
+set autoindent
