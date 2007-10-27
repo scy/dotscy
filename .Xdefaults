@@ -34,6 +34,9 @@ Rxvt.cursorBlink: true
 ! rxvt-unicode terminfo exists on too few systems.
 Rxvt.termName: rxvt
 
+! Open login shells.
+Rxvt.loginShell: true
+
 ! Colors! 
 ! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white
 Rxvt.background: #000000
