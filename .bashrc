@@ -52,7 +52,7 @@ done
 
 # More into the PATH, but don't recursively bloat when reloading .bashrc.
 [[ -z "$MASTERPATH" ]] && export MASTERPATH="$PATH"
-export PATH="$HOME/bin:$HOME/.scy/bin:$HOME/doc/trackdb:$MASTERPATH:/usr/sbin"
+export PATH="$HOME/bin:$HOME/.scy/bin:$HOME/doc/trackdb:$HOME/proj/bashnag:$MASTERPATH:/usr/sbin:/sbin"
 
 
 
