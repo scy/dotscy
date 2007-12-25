@@ -4,6 +4,9 @@ export EDITOR=nanow
 export VISUAL="$EDITOR"
 alias E="$EDITOR"
 
+# Browser.  Currently I'm still using firefox.
+export BROWSER="firefox '%s' &"
+
 # German man pages suck, they're outdated and crappy.
 alias man='LC_ALL=C man'
 # Default settings for cal.
@@ -31,8 +34,8 @@ alias remind='remind -m -b1'
 alias bday='E ~/doc/pim/cal/birthdays && ~/doc/pim/cal/generate.sh'
 
 # Music stuff.
-alias Mcollect='mpc clear; mpc listall | grep "^Archiv/Music" | while read track; do mpc add "$track"; done; mpc save LIBRARY'
-alias Mrandom='mpc clear; mpc load LIBRARY; mpc shuffle; mpc play'
+alias M='mpc'
+alias Mrandom='mpc clear; mpc add / >/dev/null; mpc shuffle; mpc play'
 alias Mn='mpc next'
 
 
