@@ -1,3 +1,9 @@
+# My favorite time formats.
+TIME_LONG='%a %d %b %y %H:%M:%S'
+TIME_DEFAULT="$TIME_LONG"
+
+
+
 # Not needed, but sometimes pre-defined.
 unset PROMPT_COMMAND
 
@@ -71,3 +77,11 @@ export LC_ALL='en_US.UTF-8'
 
 # Disable "!"-style history expansion, sucks for literal "!"s.
 set +H
+
+
+
+# History groovyness.
+HISTCONTROL='ignorespace'
+HISTSIZE=10000
+HISTFILESIZE=$HISTSIZE
+HISTTIMEFORMAT="$TIME_DEFAULT  "
