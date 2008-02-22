@@ -1,0 +1,5 @@
+*.FileListAbsolute.txt
+*.suo
+bin
+obj
+Debug
