@@ -1,7 +1,7 @@
 color torte
 set guifont=ter-112n:h9
 set nobackup
-set viminfo='20,<50,s10,h,rA:,rB:,n~/.viminfo
+set viminfo='20,<50,s10,h,rA:,rB:,n~/.vim/.viminfo
 set tabstop=4
 set noexpandtab
 
