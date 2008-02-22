@@ -1,0 +1,2 @@
+# On Windows, the dotscy repository is where I let $HOME point to, which means that all kinds of crap end up there.
+.viminfo
