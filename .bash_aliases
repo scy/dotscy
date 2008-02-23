@@ -1,6 +1,6 @@
-# Editor.  Currently I'm still using nano.
-# ("nanow" lives in .scy/bin)
-export EDITOR=nanow
+# Editor.  Choose the best one available on this machine.
+# ("scy-editor" lives in .scy/bin)
+export EDITOR=scy-editor
 export VISUAL="$EDITOR"
 alias E="$EDITOR"
 

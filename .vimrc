@@ -1,9 +1,13 @@
 color torte
 set guifont=ter-112n:h9
 set nobackup
-set viminfo='20,<50,s10,h,rA:,rB:,n~/.vim/.viminfo
+set viminfo+=n~/.vim/.viminfo
 set tabstop=4
 set noexpandtab
+
+" ^K will cut the current line, ^U paste it (nano-like behaviour)
+inoremap <C-K> <C-O>dd
+inoremap <C-U> <C-O>P
 
 if has("gui_running")
 	set lines=50 columns=150

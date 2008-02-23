@@ -1,4 +1,1 @@
-#!/bin/sh
-
-# Run nano without wrapping.
-exec nano -w "$@"
+scy-editor
