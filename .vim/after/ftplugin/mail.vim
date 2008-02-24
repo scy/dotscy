@@ -1,6 +1,9 @@
-" Automatic wrapping for mails.
-set formatoptions+=w
+" Wrap earlier to help people who can't quote.
 set textwidth=70
+
+" Auto-format will be used (except in the header), so remove "c" flag to 
+" format everything and not only comments.
+set formatoptions-=c
 
 function! ScyAutoAutoFormatToggle()
 	" If the filetype is wrong, unbind.
@@ -19,12 +22,17 @@ function! ScyAutoAutoFormatToggle()
 	if search("^$", "bnW") == 0
 		" ... we're in the header, don't use auto-format.
 		set formatoptions-=a
+		set formatoptions-=t
 	else
 		" ... we're past the header, use auto-format.
 		set formatoptions+=a
+		set formatoptions+=t
 	endif
 endfunction
 
 augroup ScyFTMail
 	autocmd CursorMoved,CursorMovedI <buffer> call ScyAutoAutoFormatToggle()
 augroup end
+
+" Initialize the options.
+call ScyAutoAutoFormatToggle()

@@ -4,7 +4,11 @@ set nobackup
 set viminfo+=n~/.vim/.viminfo
 set tabstop=4
 set noexpandtab
-set formatoptions+=a
+set nowrap
+set formatoptions+=wc
+
+set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
+set list
 
 " ^K will cut the current line, ^U paste it (nano-like behaviour)
 inoremap <C-K> <C-O>dd
@@ -13,6 +17,10 @@ inoremap <C-U> <C-O>P
 if has("gui_running")
 	set lines=50 columns=150
 endif
+
+augroup ScyFixes
+	autocmd BufRead .git?COMMIT_EDITMSG goto 1
+augroup end
 
 augroup ScyFTDetect
 	au BufNewFile,BufRead .wimrc setf vim
