@@ -4,6 +4,7 @@ set nobackup
 set viminfo+=n~/.vim/.viminfo
 set tabstop=4
 set noexpandtab
+set formatoptions+=a
 
 " ^K will cut the current line, ^U paste it (nano-like behaviour)
 inoremap <C-K> <C-O>dd
