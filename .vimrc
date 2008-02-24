@@ -14,6 +14,6 @@ if has("gui_running")
 	set lines=50 columns=150
 endif
 
-augroup filetypedetect
+augroup ScyFTDetect
 	au BufNewFile,BufRead .wimrc setf vim
-augroup END
+augroup end
