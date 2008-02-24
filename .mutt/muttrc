@@ -1,0 +1,112 @@
+set postponed==Drafts
+set record==Sent
+
+mailboxes !
+
+subscribe ^(debate|chaostreffs|aliens)@(lists\.)?ccc\.de$ ^.+@lists\.c3ma\.de$
+
+set from=scy@scytale.name
+set realname="Tim Weber"
+alternates ^.+@(|.+\.)(scytale\.(d|nam)e|tim-?weber\.name)$ ^((tiweber|mathadm)@rumms|tim\.weber@students)\.uni-mannheim\.de$ ^scytale\.de@gmx\.net$
+set reverse_name=yes
+set reverse_realname=no
+set use_envelope_from=yes
+set mime_forward=yes
+set reply_to=yes
+set text_flowed=no
+set use_domain=no
+set editor="nano"
+
+set ssl_starttls=yes
+set charset=UTF-8
+set assumed_charset=ISO-8859-15
+set mail_check=60
+set timeout=15
+
+set edit_headers=yes
+set autoedit=yes
+set beep_new=yes
+set delete=yes
+set include=yes
+
+ignore *
+unignore from: to: date: cc: bcc: subject: message-id:
+unignore x-mailer: user-agent:
+
+###
+#    VISUAL STUFF
+###
+
+set help=no
+
+set index_format="%5C %Z %{%b %d} %-20.20F (%4c) %s"
+set status_format="-%r- %L @%B%?M? **FILTERED**?: [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?F? Flag:%F?%?d? Del:%d?]%?t? [Tag:%t]?%?p? [Draft:%p]?%?b? [more:%b]? --<%s/%S>-%>-(%P)--"
+set pager_format="[%Z] (%C/%m, %4c) %-20.20F  ||  %s"
+set date_format="!%a, %Y-%b-%d at %H:%M:%S %Z"
+
+set pager_context=2
+set pager_index_lines=6
+set pager_stop
+
+# set sidebar_visible
+set sidebar_width=25
+
+color sidebar_new brightwhite default
+color normal white default
+color bold brightwhite default
+color signature brightblack default
+color quoted cyan default
+color quoted1 green default
+color quoted2 brightcyan default
+color quoted3 brightgreen default
+color header brightblue default .
+color header brightyellow default ^(from|to):
+color header cyan default ^(b?cc|date):
+color header brightgreen default ^subject:
+color attachment magenta default
+color tree brightblack default
+color status brightyellow blue
+color indicator brightwhite green
+
+color body brightblue default '(https?|ftp|irc|mailto):/*[^ ]+|(^|[ <(])www\.[^ ]+'
+color body brightyellow default '((^|[ @])[Tt]im(( ([^ ]+ )?[Ww]eber)|([ ,.;!?]|$))|[Ss]cy(tale)?)'
+
+# Encrypted
+color index brightcyan default ~G
+# Signed
+color index cyan default ~g
+# by myself
+color index blue default ~P
+# Reply to me -- DEACTIVATED for remote box
+# color index brightblue default "~x scytale\.de | ~h \"[Ii]n-[Rr]eply-[Tt]o: .*scytale\.de\""
+# Flagged
+color index brightred default ~F
+# New or unread
+mono  index underline "~N | ~U"
+# Unread
+color index red default "~U"
+# New
+color index brightwhite default ~N
+# New and reply to me -- DEACTIVATED for remote box
+# color index brightyellow default "~N (~x scytale\.de | ~h \"[Ii]n-[Rr]eply-[Tt]o: .*scytale\.de\")"
+# Spam -- DEACTIVATED for remote box
+# color index yellow default "~h \"X-Spam-Score: .*\+{5,}\""
+# "By a contact" rules
+# source $MUTT/contact-expressions
+# Deleted
+color index brightblack default ~D
+# Tagged
+color index black cyan ~T
+
+# Please please unset write_bcc if you're an Exim user!
+unset write_bcc
+
+unhdr_order *
+hdr_order from: to: cc: bcc: subject: date:
+
+set sort=threads
+set strict_threads
+
+set quit=ask-no
+
+source ~/.mutt/gpg.rc
