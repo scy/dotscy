@@ -15,7 +15,7 @@ set mime_forward=yes
 set reply_to=yes
 set text_flowed=no
 set use_domain=no
-set editor="nano"
+set editor="scy-editor"
 
 set ssl_starttls=yes
 set charset=UTF-8
