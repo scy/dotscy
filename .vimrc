@@ -5,6 +5,7 @@ set viminfo+=n~/.vim/.viminfo
 set tabstop=4
 set noexpandtab
 set nowrap
+set scrolloff=10
 set formatoptions+=wc
 
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
