@@ -3,6 +3,7 @@ set guifont=ter-112n:h9
 set nobackup
 set viminfo+=n~/.vim/.viminfo
 set tabstop=4
+set shiftwidth=4
 set noexpandtab
 set nowrap
 set scrolloff=10
