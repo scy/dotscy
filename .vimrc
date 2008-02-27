@@ -7,6 +7,7 @@ set noexpandtab
 set nowrap
 set scrolloff=10
 set formatoptions+=wc
+set mouse=a
 
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list

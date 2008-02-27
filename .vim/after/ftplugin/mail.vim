@@ -1,6 +1,10 @@
 " Wrap earlier to help people who can't quote.
 set textwidth=70
 
+" Better tab width, and don't use tabs in the mail!
+set tabstop=5
+set expandtab
+
 " Auto-format will be used (except in the header), so remove "c" flag to 
 " format everything and not only comments.
 set formatoptions-=c
