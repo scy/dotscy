@@ -41,6 +41,12 @@ alias Mn='mpc next'
 # scp should preserve modification times and display a progress bar.
 alias scp='scp -qp'
 
+# Oh, and the same is true for "normal" cp.
+alias cp='cp -av'
+
+# exiftool defaults: Overwrite, use float GPS output
+alias exif='exiftool -overwrite_original -c %.6f'
+
 # Locations.
 alias GPSF3='exiftool -overwrite_original -GPSLatitude=49.489682 -GPSLatitudeRef=North -GPSLongitude=8.464796 -GPSLongitudeRef=East'
 
