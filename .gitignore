@@ -1,6 +1,9 @@
 # Things that may get placed here on Windows machines where this directory is $HOME.
 .gitk
 .bash_history
+.gimp-*
+.recently-used.xbel
+.thumbnails
 
 # Standard name of e-mail-formatted patches when using this somewhere else.
 patch.txt
