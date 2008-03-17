@@ -24,7 +24,7 @@
 function s:External(title)
   let windowTitle = a:title
 
-  if windowTitle =~? 'mail\|new memo\|compose'
+  if windowTitle =~? 'mail\|new memo\|compose\|nachricht (nur-text)'
     setfiletype mail
   elseif windowTitle =~? 'sql\|microsoft access'
     setfiletype sql
