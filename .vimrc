@@ -13,6 +13,8 @@ set mouse=a
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list
 
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+
 " ^K will cut the current line, ^U paste it (nano-like behaviour)
 inoremap <C-K> <C-O>dd
 inoremap <C-U> <C-O>P
@@ -22,7 +24,7 @@ if has("gui_running")
 endif
 
 augroup ScyFixes
-	autocmd BufRead .git?COMMIT_EDITMSG goto 1
+	autocmd BufRead */.git/COMMIT_EDITMSG goto 1
 augroup end
 
 augroup ScyFTDetect
