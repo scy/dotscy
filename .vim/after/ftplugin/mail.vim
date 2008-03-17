@@ -1,13 +1,13 @@
 " Wrap earlier to help people who can't quote.
-set textwidth=70
+setlocal textwidth=70
 
 " Better tab width, and don't use tabs in the mail!
-set tabstop=5
-set expandtab
+setlocal tabstop=5
+setlocal expandtab
 
 " Auto-format will be used (except in the header), so remove "c" flag to 
 " format everything and not only comments.
-set formatoptions-=c
+setlocal formatoptions-=c
 
 function! ScyAutoAutoFormatToggle()
 	" If the filetype is wrong, unbind.
@@ -17,20 +17,22 @@ function! ScyAutoAutoFormatToggle()
 	endif
 	" If the line number has not changed, do nothing.
 	" TODO: Maybe this is not perfect, do performance checks.
+	" TODO: Will misbehave if you start writing a header in line 1 yourself.
 	if exists("s:line") && line(".") == s:line
 		return
 	endif
 	" Store the current line.
 	let s:line = line(".")
-	" If there's no empty line before the current cursor position...
-	if search("^$", "bnW") == 0
+	" If there's no empty line before the current cursor position
+	" and if the first line looks like an e-mail header...
+	if search("^$", "bnW") == 0 && getline("1") =~ "^[a-zA-Z0-9-]\\+:\\s"
 		" ... we're in the header, don't use auto-format.
-		set formatoptions-=a
-		set formatoptions-=t
+		setlocal formatoptions-=a
+		setlocal formatoptions-=t
 	else
 		" ... we're past the header, use auto-format.
-		set formatoptions+=a
-		set formatoptions+=t
+		setlocal formatoptions+=a
+		setlocal formatoptions+=t
 	endif
 endfunction
 
