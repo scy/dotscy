@@ -5,9 +5,18 @@ setlocal textwidth=70
 setlocal tabstop=5
 setlocal expandtab
 
+" Activate spell checking.
+setlocal spell
+
 " Auto-format will be used (except in the header), so remove "c" flag to 
 " format everything and not only comments.
 setlocal formatoptions-=c
+
+" Change window width.
+" TODO: only if this is the only buffer.
+if has("gui_running")
+	set columns=72
+endif
 
 function! ScyAutoAutoFormatToggle()
 	" If the filetype is wrong, unbind.
