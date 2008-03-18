@@ -28,5 +28,6 @@ augroup ScyFixes
 augroup end
 
 augroup ScyFTDetect
-	au BufNewFile,BufRead .wimrc setf vim
+	au BufNewFile,BufRead .wimrc set filetype=vim
+	au BufNewFile,BufRead *.mediawiki set filetype=mediawiki
 augroup end
