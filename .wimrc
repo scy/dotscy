@@ -3,6 +3,7 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 source $HOME/.vimrc
+set encoding=utf-8
 behave mswin
 
 set diffexpr=MyDiff()
