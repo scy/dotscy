@@ -9,9 +9,11 @@ set nowrap
 set scrolloff=10
 set formatoptions+=wc
 set mouse=a
-
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list
+
+set fileencodings=ucs-bom,utf-8,default,latin1
+set spelllang=de_20,en
 
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
