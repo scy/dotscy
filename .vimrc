@@ -23,6 +23,10 @@ source ~/.vim/abbrev.vim
 inoremap <C-K> <C-O>dd
 inoremap <C-U> <C-O>P
 
+" ^A will select the whole file.
+inoremap <C-A> <C-O>gg<C-O>VG
+noremap <C-A> ggVG
+
 if has("gui_running")
 	set lines=50 columns=150
 endif
