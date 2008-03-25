@@ -17,6 +17,8 @@ set spelllang=de_20,en
 
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
+source ~/.vim/abbrev.vim
+
 " ^K will cut the current line, ^U paste it (nano-like behaviour)
 inoremap <C-K> <C-O>dd
 inoremap <C-U> <C-O>P
