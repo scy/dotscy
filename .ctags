@@ -1,0 +1,4 @@
+-n
+--format=2
+--sort=foldcase
+--totals=yes
