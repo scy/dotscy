@@ -13,6 +13,7 @@ set mouse=a
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list
 set nojoinspaces
+set keymodel=startsel
 
 set fileencodings=ucs-bom,utf-8,default,latin1
 set fileencoding=utf-8
@@ -71,6 +72,7 @@ endfunction
 
 augroup ScyFixes
 	autocmd BufRead */.git/COMMIT_EDITMSG goto 1 | startinsert
+	autocmd BufRead */.git/TAG_EDITMSG goto 1 | startinsert
 augroup end
 
 augroup ScyFTDetect
