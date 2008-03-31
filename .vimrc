@@ -27,21 +27,25 @@ source ~/.vim/abbrev.vim
 inoremap <C-K> <C-O>dd
 inoremap <C-U> <C-O>P
 
-" <A-a> will select the whole file.
-imap <A-a> <C-O><A-a>
-map <A-a> :call ScySelectAll()<CR>
+" <M-a> will select the whole file.
+imap <M-a> <C-O><M-a>
+map <M-a> :call ScySelectAll()<CR>
 
-" <A-f> will change case of the first letter of the preceding word.
-imap <A-f> <C-O><A-f>
-map <A-f> :call ScyChangeCase()<CR>
+" <M-f> will change case of the first letter of the preceding word.
+imap <M-f> <C-O><M-f>
+map <M-f> :call ScyChangeCase()<CR>
 
-" <A-m> will toggle the menu.
-imap <A-m> <C-O><A-m>
-map <A-m> :call ScyToggleMenu()<CR>
+" <M-m> will toggle the menu.
+imap <M-m> <C-O><M-m>
+map <M-m> :call ScyToggleMenu()<CR>
 
-" <A-s> will start the current sentence from scratch.
-imap <A-s> <C-O><A-s>
-map <A-s> :call ScyScrapSentence()<CR>
+" <M-s> will start the current sentence from scratch.
+imap <M-s> <C-O><M-s>
+map <M-s> :call ScyScrapSentence()<CR>
+
+" <M-w> will write the file contents.
+imap <M-w> <C-O><M-w>
+map <M-w> :w<CR>
 
 if has("gui_running")
 	set lines=50 columns=150
