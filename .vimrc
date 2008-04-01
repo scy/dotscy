@@ -42,6 +42,14 @@ exec "map \eOD <Left>"
 exec "map \eOC <Right>"
 exec "map \eOA <Up>"
 exec "map \eOB <Down>"
+exec "imap \eOd <C-Left>"
+exec "imap \eOc <C-Right>"
+exec "imap \eOa <C-Up>"
+exec "imap \eOb <C-Down>"
+exec "map \eOd <C-Left>"
+exec "map \eOc <C-Right>"
+exec "map \eOa <C-Up>"
+exec "map \eOb <C-Down>"
 let c='a'
 while c != 'z'
 	let C=toupper(c)
