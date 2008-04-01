@@ -49,14 +49,6 @@ function! ScySelectAll()
 	normal ggVG
 endfunction
 
-function! ScyToggleMenu()
-	if &guioptions=~'m'
-		set guioptions-=m
-	else
-		set guioptions+=m
-	endif
-endfunction
-
 function! ScyToggleNumbers()
 	if &number
 		set nonumber

@@ -14,10 +14,6 @@ map <M-f> :call ScyChangeCase()<CR>
 imap <M-h> <C-O><M-h>
 map <M-h> :set invhlsearch
 
-" <M-m> will toggle the menu.
-imap <M-m> <C-O><M-m>
-map <M-m> :call ScyToggleMenu()<CR>
-
 " <M-n> will toggle number-and-wrap mode.
 imap <M-n> <C-O><M-n>
 map <M-n> :call ScyToggleNumbers()<CR>
