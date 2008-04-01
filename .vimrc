@@ -39,6 +39,10 @@ map <M-f> :call ScyChangeCase()<CR>
 imap <M-m> <C-O><M-m>
 map <M-m> :call ScyToggleMenu()<CR>
 
+" <M-n> will toggle number-and-wrap mode.
+imap <M-n> <C-O><M-n>
+map <M-n> :call ScyToggleNumbers()<CR>
+
 " <M-s> will start the current sentence from scratch.
 imap <M-s> <C-O><M-s>
 map <M-s> :call ScyScrapSentence()<CR>
@@ -71,6 +75,16 @@ function! ScyToggleMenu()
 		set guioptions-=m
 	else
 		set guioptions+=m
+	endif
+endfunction
+
+function! ScyToggleNumbers()
+	if &number
+		set nonumber
+		set nowrap
+	else
+		set number
+		set wrap
 	endif
 endfunction
 
