@@ -2,7 +2,7 @@ XTerm*background: black
 XTerm*foreground: grey
 XTerm*pointerColor: SpringGreen
 XTerm*font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
-! Seems to be default behavior, fixes for example irssi [Alt]+[1].
+! No really, this should be the standard.
 XTerm*metaSendsEscape: true
 
 
@@ -36,6 +36,9 @@ Rxvt.termName: rxvt
 
 ! Open login shells.
 Rxvt.loginShell: true
+
+! Sorry Vim, 8th bit meta is just broken.
+Rxvt.meta8: false
 
 ! Colors! 
 ! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white

@@ -80,6 +80,11 @@ set +H
 
 
 
+# Meta-keys should produce escape sequences, 8th bit is crap for UTF-8.
+setmetamode esc &>/dev/null
+
+
+
 # History groovyness.
 HISTCONTROL='ignorespace'
 HISTSIZE=10000

@@ -30,6 +30,30 @@ set spelllang=de_20,en
 
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
+" meta-keys generate <esc>a .. <esc>z for me
+set timeout
+set nottimeout
+set timeoutlen=100
+exec "imap \eOD <Left>"
+exec "imap \eOC <Right>"
+exec "imap \eOA <Up>"
+exec "imap \eOB <Down>"
+exec "map \eOD <Left>"
+exec "map \eOC <Right>"
+exec "map \eOA <Up>"
+exec "map \eOB <Down>"
+let c='a'
+while c != 'z'
+	let C=toupper(c)
+	exec "map \e".c." <M-".c.">"
+	exec "map \e".C." <M-".C.">"
+	exec "imap \e".c." <M-".c.">"
+	exec "imap \e".C." <M-".C.">"
+	exec "set <M-".c.">=\e".c
+	exec "set <M-".C.">=\e".C
+	let c = nr2char(1+char2nr(c))
+endwhile
+
 source ~/.vim/abbrev.vim
 source ~/.vim/mappings.vim
 source ~/.vim/gui.vim
