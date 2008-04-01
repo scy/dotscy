@@ -1,6 +1,4 @@
 color torte
-set guifont=ter-112n:h9
-set guioptions-=m
 set nobackup
 set viminfo+=n~/.vim/.viminfo
 set tabstop=4
@@ -33,38 +31,8 @@ set spelllang=de_20,en
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
 source ~/.vim/abbrev.vim
-
-" ^K will cut the current line, ^U paste it (nano-like behaviour)
-inoremap <C-K> <C-O>dd
-inoremap <C-U> <C-O>P
-
-" <M-a> will select the whole file.
-imap <M-a> <C-O><M-a>
-map <M-a> :call ScySelectAll()<CR>
-
-" <M-f> will change case of the first letter of the preceding word.
-imap <M-f> <C-O><M-f>
-map <M-f> :call ScyChangeCase()<CR>
-
-" <M-m> will toggle the menu.
-imap <M-m> <C-O><M-m>
-map <M-m> :call ScyToggleMenu()<CR>
-
-" <M-n> will toggle number-and-wrap mode.
-imap <M-n> <C-O><M-n>
-map <M-n> :call ScyToggleNumbers()<CR>
-
-" <M-s> will start the current sentence from scratch.
-imap <M-s> <C-O><M-s>
-map <M-s> :call ScyScrapSentence()<CR>
-
-" <M-w> will write the file contents.
-imap <M-w> <C-O><M-w>
-map <M-w> :w<CR>
-
-if has("gui_running")
-	set lines=50 columns=150
-endif
+source ~/.vim/mappings.vim
+source ~/.vim/gui.vim
 
 function! ScyChangeCase()
 	" Mark F, move to beginning of _current_ word, change case, move to F.
