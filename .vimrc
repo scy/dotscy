@@ -14,6 +14,7 @@ set list
 set nojoinspaces
 set keymodel=startsel
 set autoindent
+set modeline
 
 if has("multi_byte")
 	" A must-have for being able to convert everything into everything
