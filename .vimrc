@@ -1,5 +1,6 @@
 color torte
 set nobackup
+set nocompatible
 set viminfo+=n~/.vim/.viminfo
 set tabstop=4
 set shiftwidth=4
@@ -12,6 +13,7 @@ set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list
 set nojoinspaces
 set keymodel=startsel
+set autoindent
 
 if has("multi_byte")
 	" A must-have for being able to convert everything into everything
