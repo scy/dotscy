@@ -28,7 +28,7 @@ map <M-s> :call ScyScrapSentence()<CR>
 " <M-v> will paste the clipboard's contents.
 " TODO: This is temporarily disabled on Windows because "ö" happens to be
 " the same as "v" with 8th bit set... -.-
-if os != "windows"
+if exists("os") && os != "windows"
 	imap <M-v> <C-O><M-v>
 	map <M-v> "+gP
 endif
