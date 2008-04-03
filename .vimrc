@@ -15,6 +15,8 @@ set nojoinspaces
 set keymodel=startsel
 set autoindent
 set modeline
+set statusline=%!ScyStatus()
+set laststatus=2
 
 if has("multi_byte")
 	" A must-have for being able to convert everything into everything
@@ -85,6 +87,22 @@ function! ScySelectAll()
 	normal ggVG
 endfunction
 
+function! ScyStatus()
+	let r  = ""
+	let r .= "%<"                           | " truncate at the start
+	let r .= "%f "                          | " file name
+	let r .= "%y "                          | " file type
+	let r .= "%r"                           | " readonly flag
+	let r .= "%{&bomb?\"[BOM]\":\"\"}"      | " byte-order mark flag
+	let r .= "%="                           | " right-justify after here
+	let r .= "%m "                          | " modified flag
+	let r .= "%02.2B "                      | " hex value of current byte
+	let r .= "%4.7l/%4.7L"                  | " current line, number of lines
+	let r .= " %3.5c@%3.5v"                 | " column number, virtual column
+	let r .= " %P"                          | " percentage
+	return r
+endfunction
+
 function! ScyToggleNumbers()
 	if &number
 		set nonumber
@@ -98,7 +116,6 @@ endfunction
 augroup ScyFixes
 	autocmd BufRead */.git/COMMIT_EDITMSG goto 1 | startinsert
 	autocmd BufRead */.git/TAG_EDITMSG goto 1 | startinsert
-	autocmd BufRead * if &bomb | echo "This file contains a BOMB! ;P" | endif
 augroup end
 
 augroup ScyFTDetect
