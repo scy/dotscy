@@ -1,4 +1,4 @@
-color torte
+colorscheme dunkel
 set nobackup
 set nocompatible
 set viminfo+=n~/.vim/.viminfo
