@@ -18,19 +18,19 @@ set modeline
 set statusline=%!ScyStatus()
 
 let s  = ""
-let s .= "%<"                           | " truncate at the start
-let s .= "%f "                          | " file name
-let s .= "%y"                           | " file type
-let s .= "[%{&ff}]"                     | " file format (line endings)
+let s .= "%<"                                 | " truncate at the start
+let s .= "%f "                                | " file name
+let s .= "%y"                                 | " file type
+let s .= "[%{&ff}]"                           | " file format (line endings)
 let s .= "[%{&fenc!=\"\"?&fenc:&enc.\"?\"}]"  | " file encoding (charset)
-let s .= "%r"                           | " readonly flag
-let s .= "%{&bomb?\"[BOM]\":\"\"}"      | " byte-order mark flag
-let s .= "%="                           | " right-justify after here
-let s .= "%m "                          | " modified flag
-let s .= "%02.2B "                      | " hex value of current byte
-let s .= "%4.7l/%4.7L"                  | " current line, number of lines
-let s .= " %3.5c@%3.5v"                 | " column number, virtual column
-let s .= " %P"                          | " percentage
+let s .= "%r"                                 | " readonly flag
+let s .= "%{&bomb?\"[BOM]\":\"\"}"            | " byte-order mark flag
+let s .= "%="                                 | " right-justify after here
+let s .= "%m "                                | " modified flag
+let s .= "%02.2B "                            | " hex value of current byte
+let s .= "%4.7l/%4.7L"                        | " current line, number of lines
+let s .= " %3.5c@%3.5v"                       | " column number, virtual column
+let s .= " %P"                                | " percentage
 set statusline=%!s
 set laststatus=2
 
