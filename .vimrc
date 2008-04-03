@@ -16,6 +16,22 @@ set keymodel=startsel
 set autoindent
 set modeline
 set statusline=%!ScyStatus()
+
+let s  = ""
+let s .= "%<"                           | " truncate at the start
+let s .= "%f "                          | " file name
+let s .= "%y"                           | " file type
+let s .= "[%{&ff}]"                     | " file format (line endings)
+let s .= "[%{&fenc}]"                   | " file encoding (charset)
+let s .= "%r"                           | " readonly flag
+let s .= "%{&bomb?\"[BOM]\":\"\"}"      | " byte-order mark flag
+let s .= "%="                           | " right-justify after here
+let s .= "%m "                          | " modified flag
+let s .= "%02.2B "                      | " hex value of current byte
+let s .= "%4.7l/%4.7L"                  | " current line, number of lines
+let s .= " %3.5c@%3.5v"                 | " column number, virtual column
+let s .= " %P"                          | " percentage
+set statusline=%!s
 set laststatus=2
 
 if has("multi_byte")
@@ -85,22 +101,6 @@ endfunction
 function! ScySelectAll()
 	" Move to first line, start linewise visual mode, move to last line.
 	normal ggVG
-endfunction
-
-function! ScyStatus()
-	let r  = ""
-	let r .= "%<"                           | " truncate at the start
-	let r .= "%f "                          | " file name
-	let r .= "%y "                          | " file type
-	let r .= "%r"                           | " readonly flag
-	let r .= "%{&bomb?\"[BOM]\":\"\"}"      | " byte-order mark flag
-	let r .= "%="                           | " right-justify after here
-	let r .= "%m "                          | " modified flag
-	let r .= "%02.2B "                      | " hex value of current byte
-	let r .= "%4.7l/%4.7L"                  | " current line, number of lines
-	let r .= " %3.5c@%3.5v"                 | " column number, virtual column
-	let r .= " %P"                          | " percentage
-	return r
 endfunction
 
 function! ScyToggleNumbers()
