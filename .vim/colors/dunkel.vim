@@ -15,25 +15,25 @@ function s:HB(group, back)
 endfunction
 
 " Normal text is gray on black.
-call s:H("Normal",	"LightGray",	"Black")
+call s:H(	"Normal",	"LightGray",	"Black")
 
 " Diff formatting.
-call s:H("DiffDelete",	"DarkGray",	"DarkRed")
-call s:HB("DiffAdd",	"DarkGreen")
-call s:HB("DiffChange",	"DarkGray")
-call s:HB("DiffText",	"Red")
+call s:H(	"DiffDelete",	"DarkGray",	"DarkRed")
+call s:HB(	"DiffAdd",	"DarkGreen")
+call s:HB(	"DiffChange",	"DarkGray")
+call s:HB(	"DiffText",	"Red")
 
 " Folded lines.
-call s:H("Folded",	"DarkBlue",	"DarkYellow")
+call s:H(	"Folded",	"DarkBlue",	"DarkYellow")
 
 " Application items.
-call s:HF("LineNr",	"DarkGray")
-call s:HF("SpecialKey",	"DarkGray")
-" Note that the StatusLine is reversed by default...
-call s:H("StatusLine",	"Blue",	"LightGray")
+call s:HF(	"LineNr",	"DarkGray")
+call s:HF(	"SpecialKey",	"DarkGray")
+highlight StatusLine term=bold cterm=bold
+call s:H(	"StatusLine",	"LightYellow",	"DarkBlue")
 
 delfunction s:H
 delfunction s:HF
 delfunction s:HB
 
-" vim: set ts=25 :
+" vim: set ts=25 tw=0:
