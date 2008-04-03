@@ -22,7 +22,7 @@ let s .= "%<"                           | " truncate at the start
 let s .= "%f "                          | " file name
 let s .= "%y"                           | " file type
 let s .= "[%{&ff}]"                     | " file format (line endings)
-let s .= "[%{&fenc}]"                   | " file encoding (charset)
+let s .= "[%{&fenc!=\"\"?&fenc:&enc.\"?\"}]"  | " file encoding (charset)
 let s .= "%r"                           | " readonly flag
 let s .= "%{&bomb?\"[BOM]\":\"\"}"      | " byte-order mark flag
 let s .= "%="                           | " right-justify after here
@@ -116,6 +116,8 @@ endfunction
 augroup ScyFixes
 	autocmd BufRead */.git/COMMIT_EDITMSG goto 1 | startinsert
 	autocmd BufRead */.git/TAG_EDITMSG goto 1 | startinsert
+	" When diffing, use a maximized window for maximized uberblick.
+	autocmd GUIEnter * if &diff | simalt ~x | endif
 augroup end
 
 augroup ScyFTDetect
