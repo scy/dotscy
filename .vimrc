@@ -71,6 +71,7 @@ source ~/.vim/gui.vim
 
 function! ScyChangeCase()
 	" Mark F, move to beginning of _current_ word, change case, move to F.
+	" TODO: This does not work on the last word in the file.
 	normal mFwb~`F
 endfunction
 
