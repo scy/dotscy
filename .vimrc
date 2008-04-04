@@ -49,6 +49,11 @@ else
 endif
 
 set spelllang=de_20,en
+" TODO: This is hackish.
+if glob("$HOME/.vim/spell/de.utf-8.add.spl") == "" || getftime("$HOME/.vim/spell/de.utf-8.add") > getftime("$HOME/.vim/spell/de.utf-8.spl")
+	silent mkspell! $HOME/.vim/spell/de.utf-8.add
+	echomsg "Updated local dictionary."
+endif
 
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
