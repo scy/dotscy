@@ -27,10 +27,11 @@ let s .= "%r"                                 | " readonly flag
 let s .= "%{&bomb?\"[BOM]\":\"\"}"            | " byte-order mark flag
 let s .= "%="                                 | " right-justify after here
 let s .= "%m "                                | " modified flag
-let s .= "%02.2B "                            | " hex value of current byte
-let s .= "%4.7l/%4.7L"                        | " current line, number of lines
-let s .= " %3.5c@%3.5v"                       | " column number, virtual column
+let s .= "0x%02.2B "                          | " hex value of current byte
+let s .= "%l"                                 | " current line
+let s .= ":%c%V"                              | " column number, virtual column (if different)
 let s .= " %P"                                | " percentage
+let s .= "/%LL"                               | " number of lines
 set statusline=%!s
 set laststatus=2
 
