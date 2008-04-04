@@ -29,7 +29,8 @@ call s:H(	"Folded",	"DarkBlue",	"DarkYellow")
 " Application items.
 call s:HF(	"LineNr",	"DarkGray")
 call s:HF(	"SpecialKey",	"DarkGray")
-highlight StatusLine term=bold cterm=bold
+" Don't invert the status line, except on a monochrome display.
+highlight StatusLine term=reverse,bold cterm=bold gui=bold
 call s:H(	"StatusLine",	"LightYellow",	"DarkBlue")
 
 delfunction s:H
