@@ -17,6 +17,7 @@ set autoindent
 set modeline
 set statusline=%!ScyStatus()
 
+highlight User1 term=bold,inverse cterm=bold ctermfg=Red ctermbg=DarkBlue gui=bold guifg=Red guibg=DarkBlue
 let s  = ""
 let s .= "%<"                                 | " truncate at the start
 let s .= "%f "                                | " file name
@@ -26,7 +27,7 @@ let s .= "[%{&fenc!=\"\"?&fenc:&enc.\"?\"}]"  | " file encoding (charset)
 let s .= "%r"                                 | " readonly flag
 let s .= "%{&bomb?\"[BOM]\":\"\"}"            | " byte-order mark flag
 let s .= "%="                                 | " right-justify after here
-let s .= "%m "                                | " modified flag
+let s .= "%1*%m%* "                           | " modified flag
 let s .= "0x%02.2B "                          | " hex value of current byte
 let s .= "%l"                                 | " current line
 let s .= ":%c%V"                              | " column number, virtual column (if different)
