@@ -2,6 +2,12 @@ let os="windows"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 source $VIMRUNTIME/vimrc_example.vim
 source $HOME/.vimrc
+
+" The default encoding is most likely not Latin1 but (on German systems) 
+" Windows-1252. Change that, and the collation as well.
+set fileencodings-=latin1
+set fileencodings-=default
+set fileencodings+=cp1252
 language ctype German_Germany.1252
 
 set diffexpr=MyDiff()
