@@ -36,3 +36,7 @@ endif
 " <M-w> will write the file contents.
 imap <M-w> <C-O><M-w>
 map <M-w> :w<CR>
+
+" <M-x> will maximize a Windows GUI window.
+imap <M-x> <C-O><M-x>
+map <M-x> :simalt ~x<CR>
