@@ -28,7 +28,7 @@ let s .= "%r"                                 | " readonly flag
 let s .= "%{&bomb?\"[BOM]\":\"\"}"            | " byte-order mark flag
 let s .= "%="                                 | " right-justify after here
 let s .= "%1*%m%* "                           | " modified flag
-let s .= "0x%02.2B "                          | " hex value of current byte
+let s .= "0x%B "                              | " hex value of current byte
 let s .= "%l"                                 | " current line
 let s .= ":%c%V"                              | " column number, virtual column (if different)
 let s .= " %P"                                | " percentage
