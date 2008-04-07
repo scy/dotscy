@@ -23,6 +23,7 @@ let s .= "%<"                                 | " truncate at the start
 let s .= "%f "                                | " file name
 let s .= "%y"                                 | " file type
 let s .= "[%{&ff}]"                           | " file format (line endings)
+" TODO: Doesn't change to "without question mark" after saving a new file.
 let s .= "[%{&fenc!=\"\"?&fenc:&enc.\"?\"}]"  | " file encoding (charset)
 let s .= "%r"                                 | " readonly flag
 let s .= "%{&bomb?\"[BOM]\":\"\"}"            | " byte-order mark flag
