@@ -12,11 +12,16 @@ set mouse=a
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list
 set nojoinspaces
+" Search caseless only if the query contains only lowercase characters.
+set ignorecase smartcase
 set keymodel=startsel
 set autoindent
 set visualbell
 set modeline
 set statusline=%!ScyStatus()
+
+" German messages suck partly, so please speak English to me.
+language messages en
 
 highlight User1 term=bold,inverse cterm=bold ctermfg=Red ctermbg=DarkBlue gui=bold guifg=Red guibg=DarkBlue
 let s  = ""
