@@ -15,7 +15,11 @@ map <M-f> :call ScyChangeCase()<CR>
 
 " <M-h> will toggle hlsearch.
 imap <M-h> <C-O><M-h>
-map <M-h> :set invhlsearch
+map <M-h> :set invhlsearch<CR>
+
+" <M-j> will join this quoted line (in mails) with the previous one.
+imap <M-j> <C-O><M-j>
+map <M-j> :call ScyJoinQuoteLines()<CR>
 
 " <M-n> will toggle number-and-wrap mode.
 imap <M-n> <C-O><M-n>

@@ -123,6 +123,11 @@ function! ScyChangeCase()
 	execute "set t_vb=" . t_vb
 endfunction
 
+function! ScyJoinQuoteLines()
+	s/\v^[|> ]+//
+	normal kJ0gq$j
+endfunction
+
 function! ScyScrapSentence()
 	" Delete inner sentence.
 	normal dis
