@@ -124,8 +124,10 @@ function! ScyChangeCase()
 endfunction
 
 function! ScyJoinQuoteLines()
+	" Remove all quote characters and spaces from the beginning of this line.
 	s/\v^[|> ]+//
-	normal kJ0gq$j
+	" One line up, join with next, format the line, one line down.
+	normal kJgqqj
 endfunction
 
 function! ScyScrapSentence()
