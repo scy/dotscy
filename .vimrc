@@ -96,9 +96,21 @@ source ~/.vim/mappings.vim
 source ~/.vim/gui.vim
 
 function! ScyChangeCase()
+	" Split into two commands because "w" will fail at the end of file, 
+	" causing the command to abort, which is not what we want.
+	" See: http://groups.google.com/group/vim_use/msg/edffa70bd1e17054
+	" Disable error beeps while doing this.
+	let vb = &vb
+	let t_vb = &t_vb
+	set vb t_vb=
 	" Mark F, move to beginning of _current_ word, change case, move to F.
-	" TODO: This does not work on the last word in the file.
-	normal mFwb~`F
+	normal mFw
+	normal b~`F
+	" Re-enable previous settings.
+	if !vb
+		set novb
+	endif
+	execute "set t_vb=" . t_vb
 endfunction
 
 function! ScyScrapSentence()
