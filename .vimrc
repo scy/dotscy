@@ -14,6 +14,7 @@ set list
 set nojoinspaces
 set keymodel=startsel
 set autoindent
+set visualbell
 set modeline
 set statusline=%!ScyStatus()
 
@@ -96,16 +97,20 @@ source ~/.vim/mappings.vim
 source ~/.vim/gui.vim
 
 function! ScyChangeCase()
-	" Split into two commands because "w" will fail at the end of file, 
-	" causing the command to abort, which is not what we want.
-	" See: http://groups.google.com/group/vim_use/msg/edffa70bd1e17054
 	" Disable error beeps while doing this.
 	let vb = &vb
 	let t_vb = &t_vb
 	set vb t_vb=
-	" Mark F, move to beginning of _current_ word, change case, move to F.
-	normal mFw
-	normal b~`F
+	" Store the cursor position.
+	let cursor = getpos(".")
+	" Move to beginning of _current_ word, change case.
+	" Split into two commands because "w" will fail at the end of file, 
+	" causing the command to abort, which is not what we want.
+	" See: http://groups.google.com/group/vim_use/msg/edffa70bd1e17054
+	normal w
+	normal b~
+	" Restore the cursor position.
+	call setpos('.', cursor)
 	" Re-enable previous settings.
 	if !vb
 		set novb
