@@ -31,7 +31,9 @@ call s:HF(	"LineNr",	"DarkGray")
 call s:HF(	"SpecialKey",	"DarkGray")
 " Don't invert the status line, except on a monochrome display.
 highlight StatusLine term=reverse,bold cterm=bold gui=bold
-call s:H(	"StatusLine",	"Blue",	"LightGray")
+highlight StatusLineNC term=reverse cterm=none gui=none
+call s:H(	"StatusLine",	"Yellow",	"Blue")
+call s:H(	"StatusLineNC",	"LightGray",	"Blue")
 
 delfunction s:H
 delfunction s:HF
