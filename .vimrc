@@ -20,8 +20,10 @@ set visualbell
 set modeline
 set statusline=%!ScyStatus()
 
-" German messages suck partly, so please speak English to me.
-language messages en
+source ~/.vim/language.vim
+source ~/.vim/abbrev.vim
+source ~/.vim/mappings.vim
+source ~/.vim/gui.vim
 
 highlight User1 term=bold,inverse cterm=bold ctermfg=Red ctermbg=DarkBlue gui=bold guifg=Red guibg=DarkBlue
 let s  = ""
@@ -42,26 +44,6 @@ let s .= " %P"                                | " percentage
 let s .= "/%LL"                               | " number of lines
 set statusline=%!s
 set laststatus=2
-
-if has("multi_byte")
-	" A must-have for being able to convert everything into everything
-	" To be able to use this under Windows, see "newer intl library" at
-	" http://vim.sourceforge.net/download.php#pc
-	set encoding=utf-8
-	" Try to recognize the file encoding in a sophisticated way.
-	set fileencodings=ucs-bom,utf-8,default,latin1
-	" Default to writing utf-8 files.
-	setglobal fileencoding=utf-8
-else
-	echoerr "Dear God, we don't have multi_byte support!"
-endif
-
-set spelllang=de_20,en
-" TODO: This is hackish.
-if glob("$HOME/.vim/spell/de.utf-8.add") != "" && ( glob("$HOME/.vim/spell/de.utf-8.add.spl") == "" || getftime("$HOME/.vim/spell/de.utf-8.add") > getftime("$HOME/.vim/spell/de.utf-8.spl") )
-	silent mkspell! $HOME/.vim/spell/de.utf-8.add
-	echomsg "Updated local dictionary."
-endif
 
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
@@ -96,10 +78,6 @@ while c != 'z'
 	exec "set <M-".C.">=\e".C
 	let c = nr2char(1+char2nr(c))
 endwhile
-
-source ~/.vim/abbrev.vim
-source ~/.vim/mappings.vim
-source ~/.vim/gui.vim
 
 function! ScyChangeCase()
 	" Disable error beeps while doing this.
