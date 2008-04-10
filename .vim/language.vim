@@ -12,7 +12,6 @@ else
 endif
 
 " Set messages language to English (German translations are a bit crappy).
-" TODO: Check whether this works on Windows.
 language messages C
 
 " Spell checking in German Neusprech and English.
