@@ -134,9 +134,3 @@ augroup ScyFixes
 	" When diffing, use a maximized window for maximized uberblick.
 	autocmd GUIEnter * if &diff | simalt ~x | endif
 augroup end
-
-augroup ScyFTDetect
-	au BufNewFile,BufRead .wimrc set filetype=vim
-	au BufNewFile,BufRead *.mediawiki set filetype=mediawiki
-	au BufRead *.exe.log if getline("1") =~ ' \[DEBUG\] Die Anwendung wurde gestartet\.$' | set filetype=acrawl | endif
-augroup end
