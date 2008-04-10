@@ -29,11 +29,14 @@ call s:H(	"Folded",	"DarkBlue",	"DarkYellow")
 " Application items.
 call s:HF(	"LineNr",	"DarkGray")
 call s:HF(	"SpecialKey",	"DarkGray")
+
 " Don't invert the status line, except on a monochrome display.
 highlight StatusLine term=reverse,bold cterm=bold gui=bold
 highlight StatusLineNC term=reverse cterm=none gui=none
 call s:H(	"StatusLine",	"Yellow",	"Blue")
 call s:H(	"StatusLineNC",	"LightGray",	"Blue")
+" Take User9 for red status bar items, if it's not already set to something different.
+highlight default User9 term=bold cterm=bold ctermfg=Red ctermbg=Blue gui=bold guifg=Red guibg=Blue
 
 delfunction s:H
 delfunction s:HF
