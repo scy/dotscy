@@ -11,7 +11,8 @@ syntax match Special "^[^ ]\+Exception: .\+"
 syntax match Special "^ \+.\+"
 
 " Status changes.
-syntax match Special "\[DEBUG\] >\{9\} .\+" containedin=StampedLine
+syntax match Special "\[DEBUG\] >\{9\} .\+"hs=s+8 containedin=StampedLine
+syntax match Special "Anzahl momentan verf.\{1,2\}gbarer Suchmaschinen: .\+" containedin=StampedLine
 
 " URLs.
 syntax match Underlined "^\tURL:.\+"hs=s+5
