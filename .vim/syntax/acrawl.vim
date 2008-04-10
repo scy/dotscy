@@ -29,6 +29,7 @@ syntax match CompanyName "Die Website der Firma '.\+' konnte nicht gefunden werd
 syntax match CompanyName "Aus dem Impressum der Firma '.\+'"hs=s+28 containedin=StampedLine
 syntax match CompanyName "Die Suche nach dem Impressum der Firma '.\+'"hs=s+39 containedin=StampedLine
 syntax match CompanyName "Das Impressum der Firma '.\+'"hs=s+24 containedin=StampedLine
+syntax match CompanyName "Das Ergebnis f.\{1,2\}r die Firma '.\+' wurde"hs=s+28,he=e-6 containedin=StampedLine
 
 " Results.
 syntax match Result "\[DEBUG\] \(.*;\)\{5,\}.*"hs=s+8 containedin=StampedLine
