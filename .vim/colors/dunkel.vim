@@ -37,6 +37,8 @@ call s:H(	"StatusLine",	"Yellow",	"Blue")
 call s:H(	"StatusLineNC",	"LightGray",	"Blue")
 " Take User9 for red status bar items, if it's not already set to something different.
 highlight default User9 term=bold cterm=bold ctermfg=Red ctermbg=Blue gui=bold guifg=Red guibg=Blue
+" Take User8 for gray status bar items, if it's not already set to something different.
+highlight default User8 term=bold cterm=bold ctermfg=Gray ctermbg=Blue gui=bold guifg=Gray guibg=Blue
 
 delfunction s:H
 delfunction s:HF

@@ -25,17 +25,16 @@ source ~/.vim/abbrev.vim
 source ~/.vim/mappings.vim
 source ~/.vim/gui.vim
 
-highlight User1 term=bold,inverse cterm=bold ctermfg=Red ctermbg=DarkBlue gui=bold guifg=Red guibg=DarkBlue
 let s  = ""
 let s .= "%<"                                 | " truncate at the start
-let s .= "%f "                                | " file name
-let s .= "%y "                                | " file type
+let s .= "%f%8* | "                           | " file name
+let s .= '%{&ft==""?"?":&ft} '                | " file type
 let s .= "%{toupper(&ff[0:0])} "              | " file format (line endings)
 " TODO: Doesn't change to "without question mark" after saving a new file.
-let s .= "%{ScyShortFEnc()} "                 | " file encoding (charset)
+let s .= "%{ScyShortFEnc()}"                  | " file encoding (charset)
+let s .= '%{&bomb?"!":""} '                   | " byte-order mark flag
 let s .= "%r"                                 | " readonly flag
-let s .= "%{&bomb?\"[BOM]\":\"\"}"            | " byte-order mark flag
-let s .= "%="                                 | " right-justify after here
+let s .= "%*%="                               | " right-justify after here
 let s .= "%9*%m%* "                           | " modified flag
 let s .= "0x%02B "                            | " hex value of current byte
 let s .= "%l"                                 | " current line
