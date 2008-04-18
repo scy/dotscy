@@ -15,6 +15,8 @@ set nojoinspaces
 " Search caseless only if the query contains only lowercase characters.
 set ignorecase smartcase
 set keymodel=startsel
+" When right-clicking, set the cursor position to where you clicked.
+set mousemodel=popup_setpos
 set autoindent
 set visualbell
 set modeline
