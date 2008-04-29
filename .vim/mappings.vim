@@ -19,15 +19,19 @@ map <M-h> :set invhlsearch<CR>
 
 " <M-j> will join this quoted line (in mails) with the previous one.
 imap <M-j> <C-O><M-j>
-map <M-j> :call ScyJoinQuoteLines()<CR>
+map <M-j> :call ScyQuoteJoin()<CR>
 
 " <M-n> will toggle number-and-wrap mode.
 imap <M-n> <C-O><M-n>
 map <M-n> :call ScyToggleNumbers()<CR>
 
-" <M-s> will start the current sentence from scratch.
+" <M-s> will split this quoted line here to reply to it.
 imap <M-s> <C-O><M-s>
-map <M-s> :call ScyScrapSentence()<CR>
+map <M-s> :call ScyQuoteSplit()<CR>i
+
+" <M-S> will start the current sentence from scratch.
+imap <M-S> <C-O><M-S>
+map <M-S> :call ScyScrapSentence()<CR>
 
 " <M-v> will paste the clipboard's contents.
 " TODO: This is temporarily disabled on Windows because "ö" happens to be

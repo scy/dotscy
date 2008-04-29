@@ -102,11 +102,29 @@ function! ScyChangeCase()
 	execute "set t_vb=" . t_vb
 endfunction
 
-function! ScyJoinQuoteLines()
+function! ScyQuoteJoin()
 	" Remove all quote characters and spaces from the beginning of this line.
 	s/\v^[|> ]+//
 	" One line up, join with next, format the line, one line down.
 	normal kJgqqj
+endfunction
+
+function! ScyQuoteSplit()
+	" If we are in column 1, just insert three lines and move to the middle.
+	if col(".") == 1
+		execute "normal O\n\n\e"
+		normal k
+		return
+	endif
+	" Save formatoptions.
+	let oldfo = &formatoptions
+	" Temporarily enable comment leader inserting, insert a break, restore fo.
+	set formatoptions+=r
+	execute "normal i\n\e"
+	execute "set formatoptions=" . oldfo
+	" Insert three empty lines and move to the middle one.
+	execute "normal O\n\n\e"
+	normal k
 endfunction
 
 function! ScyScrapSentence()
