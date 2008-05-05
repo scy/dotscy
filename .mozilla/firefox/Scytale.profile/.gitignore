@@ -1,0 +1,30 @@
+# Frequently changing things.
+bookmarks.bak
+bookmarkbackups
+compatibility.ini
+components.ini
+compreg.dat
+extensions.cache
+extensions.ini
+extensions.rdf
+localstore.rdf
+prefs.js
+xpti.dat
+
+# Privacy protection.
+cookies.txt
+downloads.rdf
+formhistory.dat
+history.dat
+hostperm.1
+key3.db
+search.sqlite
+sessionstore.js
+
+# "Rather not touch it" stuff.
+secmod.db
+urlclassifier2.sqlite
+
+# "Profile in use" flag.
+lock
+parent.lock
