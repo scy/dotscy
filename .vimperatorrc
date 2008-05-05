@@ -3,5 +3,7 @@ set visualbell
 map <C-h> :set invhlsearch<CR>
 map <F1> :tab help<CR>
 map <C-t> :tabopen<CR>
+map <BS> H
+map <S-BS> gu
 
 source! ~/.vimperator-local
