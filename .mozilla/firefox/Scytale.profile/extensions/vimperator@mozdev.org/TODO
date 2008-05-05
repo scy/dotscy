@@ -1,0 +1,54 @@
+<pre>
+Priority list:
+1-9 as in vim (9=required for next release, 5=would be nice, 1=probably not)
+
+BUGS:
+- http://en.wikipedia.org/wiki/Portal:Current_events - 'f' shows more hints than 'F' (on left side of nav bar)
+- dpb| 09:09:56  dpb :: when I save a page with vimperator, it adds <hints
+     id="hah_hints"></hints> near the end of it.. kinda annoying
+  dpb| 09:11:50  dpb :: and this happens only when saving the complete
+     webpage, saving  only the html works just fine..
+- add window resize support to hints
+- can't reverse tab through the vimperator toolbar
+- gu and gU don't work on local files properly
+- :noremap does not work fully
+- pvh option not working
+- searching backwards incrementally does not work i.e. with 'incsearch' set
+
+FEATURES:
+9 :command for new commands
+9 make hints smarter, not only with characters from from hintchars, but use "NE" or "NP" for 'new posts' e.g. (might be too slow)
+8 add an interface for navigating document relationships
+8 middleclick in content == p, and if command line is open, paste there the clipboard buffer
+7 use ctrl-n/p in insert mode for word completion
+7 [ctrl-o/i] to Go back to a Previous Position (done partly, however currenty does not use a per tab jumplist)
+7 whereever possible: get rid of dialogs and ask console-like dialog questions or write error prompts directly on the webpage or with :echo()
+7 :set! should also set about:config options (with autocomplete)
+7 edit textareas with an external editor (https://addons.mozilla.org/en-US/firefox/addon/4125)
+6 use '' to jump between marks like vim
+6 downloading of links to filesystem (:save <filename>)
+6 autocommands (BrowserStart, BrowserQuit, TabClose, TabOpen, TabChanged, PageLoaded, any more?)
+6 vim like mappings for caret mode and textboxes (i to start caret mode?)
+  http://nigel.mcnie.name/gnawt/ has a somewhat working implementation
+6 pipe selected text/link/website to an external command
+6 macros (qq)
+6 gf = view source?
+6 page info support (ctrl-g, g<C-g>)
+5 Use arrow keys in preview window, and ctrl-w+j/k to switch to from preview window
+5 Favicons in completion windows and some other places?
+5 make use of the ] and [ keys to e.g. jump to the next heading ]], next image ]i, previous textbox [t and so on
+5 add tag and keyword support to adding/deleting bookmarks
+3 Splitting Windows with [:sp :vsp ctrl-w,s ctrl-w,v] and closing with [ctrl-w,q], moving with [ctrl-w,w or tab]
+  have a look into the split browser extension
+- many other ideas are listed in the wiki
+
+RANDOM IDEAS:
+* numbered tabs
+* Would it be possible to add a setting "maxcompletionsshown" and 
+  "maxpreviewwindowheight" or something like this?
+* 16:06:04       bartman| maxauthority: feature idea: what if :n and :N searched the 
+                        page and if they found a unique href=*next.* or 
+                        href=.*prev.* they would follow that link?
+* hide scrollbars: http://rafb.net/p/YHRhEe47.html (window.content.document.body.style.overflow = "hidden")
+
+</pre>
