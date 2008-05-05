@@ -42,5 +42,10 @@ user_pref("network.cookie.lifetimePolicy", 1);
 // We've migrated from Firefox 0.9... ;)
 user_pref("network.cookie.prefsMigrated", true);
 
+// Don't prefetch, I've got privacy concerns.
+user_pref("network.prefetch-next", false);
+
 // Don't warn when entering an SSL site.
 user_pref("security.warn_entering_secure", false);
+// And don't warn when submitting data unencrypted.
+user_pref("security.warn_submit_insecure", false);
