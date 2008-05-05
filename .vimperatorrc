@@ -5,5 +5,7 @@ map <F1> :tab help<CR>
 map <C-t> :tabopen<CR>
 map <BS> H
 map <S-BS> gu
+map wd :tabopen wde<Space>
+map we :tabopen wen<Space>
 
 source! ~/.vimperator-local
