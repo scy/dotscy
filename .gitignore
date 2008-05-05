@@ -8,3 +8,6 @@
 
 # Standard name of e-mail-formatted patches when using this somewhere else.
 patch.txt
+
+# Local stuff when using on Windows.
+.vimperator-local

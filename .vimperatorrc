@@ -1,0 +1,7 @@
+set visualbell
+
+map <C-h> :set invhlsearch<CR>
+map <F1> :tab help<CR>
+map <C-t> :tabopen<CR>
+
+source! ~/.vimperator-local
