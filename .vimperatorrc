@@ -5,7 +5,11 @@ map <F1> :tab help<CR>
 map <C-t> :tabopen<CR>
 map <BS> H
 map <S-BS> gu
-map wd :tabopen wde<Space>
-map we :tabopen wen<Space>
+map , <C-t>
+map q d
+map wd :open wde<Space>
+map we :open wen<Space>
+
+map !i :open http://www.google.de/ig<CR>
 
 source! ~/.vimperator-local
