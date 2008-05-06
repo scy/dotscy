@@ -21,6 +21,7 @@ hostperm.1
 key3.db
 search.sqlite
 sessionstore.js
+signons2.txt
 
 # "Rather not touch it" stuff.
 secmod.db
