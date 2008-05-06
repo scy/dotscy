@@ -40,6 +40,10 @@ Rxvt.loginShell: true
 ! Sorry Vim, 8th bit meta is just broken.
 Rxvt.meta8: false
 
+! Disable Perl extensions for now, I don't actively use them
+Rxvt.perl-ext:
+Rxvt.perl-ext-common:
+
 ! Colors! 
 ! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white
 Rxvt.background: #000000
