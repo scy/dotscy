@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead .wimrc setfiletype vim
+autocmd BufNewFile,BufRead .wimrc,.viemurc setfiletype vim

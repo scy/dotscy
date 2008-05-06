@@ -1,0 +1,5 @@
+" <M-h> will disable hlsearch.
+" Unfortunately, ViEmu is buggy and won't redraw highlightings when hlsearch
+" is re-enabled by :set invhlsearch, so this can't be a toggle binding. :(
+imap <M-h> <C-O><M-h>
+map <M-h> :noh<CR>
