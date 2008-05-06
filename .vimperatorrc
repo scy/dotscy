@@ -10,6 +10,7 @@ map q d
 map wd :open wde<Space>
 map we :open wen<Space>
 
+map !c :tabopen http://www.questionablecontent.net/, http://www.userfriendly.org/, http://www.xkcd.com/, http://www.cad-comic.com/comic.php, http://www.penny-arcade.com/comic/<CR>
 map !i :open http://www.google.de/ig<CR>
 
 source! ~/.vimperator-local
