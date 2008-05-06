@@ -11,3 +11,6 @@ patch.txt
 
 # Local stuff when using on Windows.
 .vimperator-local
+
+# Secrets.
+.cvspass
