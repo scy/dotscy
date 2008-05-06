@@ -10,6 +10,7 @@ extensions.rdf
 localstore.rdf
 prefs.js
 xpti.dat
+Cache
 
 # Privacy protection.
 cookies.txt
@@ -24,7 +25,9 @@ sessionstore.js
 # "Rather not touch it" stuff.
 secmod.db
 urlclassifier2.sqlite
+*.mfasl
 
 # "Profile in use" flag.
 lock
 parent.lock
+.parentlock
