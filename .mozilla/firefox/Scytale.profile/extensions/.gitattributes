@@ -1,1 +1,3 @@
 * -crlf
+.gitattributes !crlf
+*/install.rdf !crlf
