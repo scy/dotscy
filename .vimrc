@@ -102,6 +102,25 @@ function! ScyChangeCase()
 	execute "set t_vb=" . t_vb
 endfunction
 
+function! ScyMailEnd(greeting, name)
+	" If we're not in an empty line, assume that this is the last content line 
+	" and that we should insert the greeting below.
+	if getline('.') !~ "^ *$"
+		let start = "o\n"
+	" Else, if the line above the current one is non-empty, insert an empty 
+	" line before the greeting.
+	elseif getline(line('.') - 1) !~ "^ *$"
+		let start = "o"
+	" Else insert the greeting right here.
+	else
+		let start = "i"
+	endif
+	" Insert the greeting.
+	execute "normal " . start . a:greeting . "\n\n\t" . a:name . "\n\e"
+	" Remove everything below.
+	normal dG
+endfunction
+
 function! ScyQuoteJoin()
 	" Remove all quote characters and spaces from the beginning of this line.
 	s/\v^[|> ]+//

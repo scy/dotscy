@@ -13,6 +13,14 @@ vmap <M-c> "+y
 imap <M-f> <C-O><M-f>
 map <M-f> :call ScyChangeCase()<CR>
 
+" <M-g> will insert an informal greeting.
+imap <M-g> <Esc><M-g>
+map <M-g> :call ScyMailEnd("Gruß,", "Tim.")<CR>
+
+" <M-G> will insert an informal greeting in English.
+imap <M-G> <Esc><M-G>
+map <M-G> :call ScyMailEnd("Regards,", "Tim.")<CR>
+
 " <M-h> will toggle hlsearch.
 imap <M-h> <C-O><M-h>
 map <M-h> :set invhlsearch<CR>
@@ -20,6 +28,14 @@ map <M-h> :set invhlsearch<CR>
 " <M-j> will join this quoted line (in mails) with the previous one.
 imap <M-j> <C-O><M-j>
 map <M-j> :call ScyQuoteJoin()<CR>
+
+" <M-m> will insert a formal greeting ("MfG").
+imap <M-m> <Esc><M-m>
+map <M-m> :call ScyMailEnd("Beste Grüße,", "Tim Weber.")<CR>
+
+" <M-M> will insert a formal greeting in English.
+imap <M-M> <Esc><M-M>
+map <M-M> :call ScyMailEnd("Kind regards,", "Tim Weber.")<CR>
 
 " <M-n> will toggle number-and-wrap mode.
 imap <M-n> <C-O><M-n>
