@@ -61,6 +61,14 @@ endif
 imap <M-w> <C-O><M-w>
 map <M-w> :w<CR>
 
+" <M-W> will write all files and run ctags.
+" TODO: :!start looks like it's Windows-only...
+imap <M-W> <C-O><M-W>
+map <M-W> :wa<CR>:!start ctags -R<CR>
+
 " <M-x> will maximize a Windows GUI window.
 imap <M-x> <C-O><M-x>
 map <M-x> :simalt ~x<CR>
+
+" <C-Space> will do completion just as <C-N> does.
+imap <C-Space> <C-N>
