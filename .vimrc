@@ -21,6 +21,8 @@ set autoindent
 set visualbell
 set modeline
 set statusline=%!ScyStatus()
+" Complete shell-like.
+set wildmode=longest,list
 
 source ~/.vim/language.vim
 source ~/.vim/abbrev.vim
