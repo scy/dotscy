@@ -18,6 +18,12 @@ if has("gui_running")
 	set columns=72
 endif
 
+" Replace Outlook's crappy message headers.
+let cursor = getpos('.')
+/\v^[> ]*-{5}%(Original Message|Ursprüngliche Nachricht)-{5}\n[> ]*%(From|Von): (.+)\n[> ]*%(Sent|Gesendet): (.+)\n%([> ]*.*\n){-}[> ]*$
+s//\2, \1:/
+call setpos('.', cursor)
+
 function! ScyAutoAutoFormatToggle()
 	" If the filetype is wrong, unbind.
 	if &filetype != "mail"
