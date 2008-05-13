@@ -20,8 +20,16 @@ endif
 
 " Replace Outlook's crappy message headers.
 let cursor = getpos('.')
-/\v^[> ]*-{5}%(Original Message|Ursprüngliche Nachricht)-{5}\n[> ]*%(From|Von): (.+)\n[> ]*%(Sent|Gesendet): (.+)\n%([> ]*.*\n){-}[> ]*$
-s//\2, \1:/
+let wasmodified = &modified
+silent! /\v^[> ]*-{5}%(Original Message|Ursprüngliche Nachricht)-{5}\n[> ]*%(From|Von): (.+)\n[> ]*%(Sent|Gesendet): (.+)\n%([> ]*.*\n){-}[> ]*$
+if v:errmsg == ""
+	s//\2, \1:/
+endif
+if wasmodified
+	set modified
+else
+	set nomodified
+endif
 call setpos('.', cursor)
 
 function! ScyAutoAutoFormatToggle()

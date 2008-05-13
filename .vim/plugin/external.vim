@@ -24,9 +24,11 @@
 function s:External(title)
   let windowTitle = a:title
 
+  " Store modification status.
+  let wasmodified = &modified
   if windowTitle =~? 'mail\|new memo\|compose\|nachricht (nur-text)'
     setfiletype mail
-    set fileencoding=cp1252
+    set fileencoding=cp1252 nomodified
   elseif windowTitle =~? '^Bearbeiten von .\+ - Mozilla Firefox$'
     setfiletype mediawiki
   elseif windowTitle =~? 'sql\|microsoft access'
@@ -37,6 +39,12 @@ function s:External(title)
     setfiletype html
   else
     setfiletype text
+  endif
+  " Restore modification status.
+  if wasmodified
+    set modified
+  else
+    set nomodified
   endif
 
   " reset EnhancedCommentify.vim
