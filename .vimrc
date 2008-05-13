@@ -23,6 +23,13 @@ set modeline
 set statusline=%!ScyStatus()
 " Complete shell-like.
 set wildmode=longest,list
+" Set session options.
+for o in ['curdir', 'globals', 'options']
+	execute 'set sessionoptions-=' . o
+endfor
+for o in ['blank', 'buffers', 'help', 'resize', 'sesdir', 'winpos', 'winsize', 'tabpages']
+	execute 'set sessionoptions+=' . o
+endfor
 
 source ~/.vim/language.vim
 source ~/.vim/abbrev.vim
