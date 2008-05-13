@@ -26,6 +26,7 @@ function s:External(title)
 
   if windowTitle =~? 'mail\|new memo\|compose\|nachricht (nur-text)'
     setfiletype mail
+    set fileencoding=cp1252
   elseif windowTitle =~? '^Bearbeiten von .\+ - Mozilla Firefox$'
     setfiletype mediawiki
   elseif windowTitle =~? 'sql\|microsoft access'
