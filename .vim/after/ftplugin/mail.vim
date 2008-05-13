@@ -21,10 +21,8 @@ endif
 " Replace Outlook's crappy message headers.
 let cursor = getpos('.')
 let wasmodified = &modified
-silent! /\v^[> ]*-{5}%(Original Message|Ursprüngliche Nachricht)-{5}\n[> ]*%(From|Von): (.+)\n[> ]*%(Sent|Gesendet): (.+)\n%([> ]*.*\n){-}[> ]*$
-if v:errmsg == ""
-	s//\2, \1:/
-endif
+normal gg
+silent! s/\v%^(\n*)[> ]*-{5}%(Original Message|Ursprüngliche Nachricht)-{5}\n[> ]*%(From|Von): (.+)\n[> ]*%(Sent|Gesendet): (.+)\n%([> ]*.*\n){-}[> ]*$/\1\3, \2:/
 if wasmodified
 	set modified
 else
