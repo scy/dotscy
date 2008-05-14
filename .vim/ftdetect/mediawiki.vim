@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.mediawiki setfiletype mediawiki
+autocmd BufNewFile,BufRead *.mediawiki,*/itsalltext/ekb.*.de.*.txt setfiletype mediawiki
