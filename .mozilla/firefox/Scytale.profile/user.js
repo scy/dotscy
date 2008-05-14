@@ -48,7 +48,22 @@ user_pref("network.cookie.prefsMigrated", true);
 // Don't prefetch, I've got privacy concerns.
 user_pref("network.prefetch-next", false);
 
-// Don't warn when entering an SSL site.
+// Don't warn when entering or leaving an SSL site.
 user_pref("security.warn_entering_secure", false);
+user_pref("security.warn_leaving_secure", false);
 // And don't warn when submitting data unencrypted.
 user_pref("security.warn_submit_insecure", false);
+// But warn if it's mixed between crypted and uncrypted.
+user_pref("security.warn_viewing_mixed", true);
+user_pref("security.warn_viewing_mixed.show_once", false);
+
+// OpenBook preferences.
+user_pref("openbook.autoAddFolder", "NC:BookmarksRoot");
+user_pref("openbook.autoDo", 1);
+user_pref("openbook.autoSelect", 1);
+user_pref("openbook.showBookmarksToolbar", false);
+user_pref("openbook.showDescription", true);
+user_pref("openbook.showExpander", true);
+user_pref("openbook.showKeyword", true);
+user_pref("openbook.showMenulist", true);
+user_pref("openbook.showURL", true);
