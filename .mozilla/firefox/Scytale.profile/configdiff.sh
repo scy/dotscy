@@ -5,9 +5,12 @@
 
 # Settings we don't care about, one per line.
 # These are actually regexes, so dots should be escaped.
-DONTCARE='
-app\.update\.lastUpdateTime\..+
-'
+DONTCARE="
+|app\.update\.lastUpdateTime\..+
+|extensions\.vimperator\.quickmarks
+|extensions\.vimperator\.commandline_(search|cmd)_history
+|urlclassifier\.tableversion\..+
+"
 
 # You should not need to modify anything below here.
 ####################################################
@@ -27,5 +30,7 @@ diff -U 0 - prefs.js |
 # Cut off the "generated file!!1!1" header comment.
 tail -n +15 |
 
-# Filter out $DONTCARE values.
-grep -vE "^[+-]user_pref\(\"$(echo -n "$DONTCARE" | tr '\n' '|')\""
+# Filter out $DONTCARE values and position information.
+grep -vE "^(@@ |[+-]user_pref\(\"($(tr -d '\n' <<< "$DONTCARE"))\")"
+
+echo '[-] is in user config, [+] in generated prefs'
