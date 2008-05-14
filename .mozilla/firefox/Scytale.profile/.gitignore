@@ -1,9 +1,11 @@
 # Frequently changing things.
 bookmarks.bak
+bookmarks.html
 bookmarkbackups
 compatibility.ini
 components.ini
 compreg.dat
+delicious.rdf
 extensions.cache
 extensions.ini
 extensions.rdf
@@ -11,6 +13,7 @@ itsalltext
 localstore.rdf
 prefs.js
 xpti.dat
+ybookmarks@yahoo.log
 Cache
 
 # Privacy protection.
