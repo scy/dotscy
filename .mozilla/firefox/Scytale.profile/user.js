@@ -18,12 +18,15 @@ user_pref("extensions.update.notifyUser", false);
 // Open in tabs instead of new windows, except for popup windows.
 user_pref("browser.link.open_newwindow.restriction", 2);
 
-// Empty start page.
-user_pref("browser.startup.homepage", "");
+// Empty start page, but going "home" leads to scytale.name.
+user_pref("browser.startup.homepage", "https://scytale.name/");
 user_pref("browser.startup.page", 0);
 
 // No "you've been updated" message.
 user_pref("browser.startup.homepage_override.mstone", "ignore");
+
+// No "whoops, I crashed" message that appears too often after normal system shutdowns.
+user_pref("browser.sessionstore.resume_from_crash", false);
 
 // Always display tabs bar.
 user_pref("browser.tabs.autoHide", false);
