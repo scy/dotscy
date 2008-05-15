@@ -1,0 +1,10 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:scy="http://scytale.name/-/2008/opensearchalias/1.0/">
+	<ShortName>Scroogle</ShortName>
+	<Description>Scroogle Web Search</Description>
+	<Image width="16" height="16" type="image/x-icon">https://ssl.scroogle.org/favicon.ico</Image>
+	<Url type="text/html" method="GET" template="https://ssl.scroogle.org/cgi-bin/nbbw.cgi?Gw={searchTerms}"/>
+	<Contact>scy-opensearch@scytale.name</Contact>
+	<Developer>Tim Weber of scytale.name</Developer>
+	<scy:Alias>s</scy:Alias>
+	<scy:Position>2</scy:Position>
+</OpenSearchDescription>
