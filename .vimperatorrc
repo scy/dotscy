@@ -1,4 +1,5 @@
 set visualbell
+set defsearch=ix
 
 map <C-h> :set invhlsearch<CR>
 map <F1> :tab help<CR>

@@ -57,6 +57,9 @@ user_pref("security.warn_submit_insecure", false);
 user_pref("security.warn_viewing_mixed", true);
 user_pref("security.warn_viewing_mixed.show_once", false);
 
+// Default search engine is Ixquick.
+user_pref("keyword.URL", "https://ixquick.com/do/metasearch.pl?query=");
+
 // OpenBook preferences.
 user_pref("openbook.autoAddFolder", "NC:BookmarksRoot");
 user_pref("openbook.autoDo", 1);
