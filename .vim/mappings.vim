@@ -80,3 +80,7 @@ map <C-Down> <C-]>
 " <C-Up> will jump back again.
 imap <C-Up> <C-O><C-Up>
 map <C-Up> <C-T>
+
+" <C-RightMouse> will jump back as well (inverting <C-LeftMouse>).
+imap <C-RightMouse> <C-Up>
+nmap <C-RightMouse> <C-Up>
