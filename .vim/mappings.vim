@@ -72,3 +72,11 @@ map <M-x> :simalt ~x<CR>
 
 " <C-Space> will do completion just as <C-N> does.
 imap <C-Space> <C-N>
+
+" <C-Down> will jump to the current tag (<C-]> is too hard on German keyboards).
+imap <C-Down> <C-O><C-Down>
+map <C-Down> <C-]>
+
+" <C-Up> will jump back again.
+imap <C-Up> <C-O><C-Up>
+map <C-Up> <C-T>
