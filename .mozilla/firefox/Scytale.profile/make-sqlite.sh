@@ -24,11 +24,11 @@ cd searchplugins/opensearch
 
 for F in *.xml; do
 	# Retrieve the position from the XML file.
-	ORDER="$(sed -nr -e 's#^[\t ]*<scy:Position>([0-9]+)</scy:Position>[\t ]*$#\1#p' "$F")"
+	ORDER="$(sed -nr -e 's#<scy:Position>([0-9]+)</scy:Position>#\1#p' "$F" | tr -cd 0-9)"
 	# Add the "I" value to prevent having duplicate "order" values.
 	ORDER="$(expr "$ORDER" + "$I")"
 	# Get the alias.
-	ALIAS="$(sed -nr -e 's#^[\t ]*<scy:Alias>([a-zA-Z0-9]+)</scy:Alias>[\t ]*$#\1#p' "$F")"
+	ALIAS="$(sed -nr -e 's#<scy:Alias>([a-zA-Z0-9]+)</scy:Alias>#\1#p' "$F" | tr -d '\n\t ')"
 	# Create queries.
 	QUERY="${QUERY}INSERT INTO engine_data (engineid, name, value) VALUES('[profile]/$F', 'order', $ORDER);"
 	QUERY="${QUERY}INSERT INTO engine_data (engineid, name, value) VALUES('[profile]/$F', 'alias', '$ALIAS');"
@@ -41,6 +41,6 @@ done
 cd - >/dev/null
 
 # Make the query more beautiful and send it to SQLite.
-QUERY="$(echo "$QUERY" | sed 's/;/;\n/g')"
+QUERY="$(echo "$QUERY" | tr ';' '\n' | sed -nr -e 's/.+$/\0;/p')"
 
 echo "$QUERY" | sqlite3 search.sqlite
