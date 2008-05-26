@@ -23,6 +23,8 @@ let cursor = getpos('.')
 let wasmodified = &modified
 normal gg
 silent! s/\v%^(\n*)[> ]*-{5}%(Original Message|Ursprüngliche Nachricht)-{5}\n[> ]*%(From|Von): (.+)\n[> ]*%(Sent|Gesendet): (.+)\n%([> ]*.*\n){-}[> ]*$/\1\3, \2:/
+call setpos('.', cursor)
+silent! s/\v%^(\n*)(.+)\[mailto:([a-zA-Z0-9._@-]+)\]:$/\1\2<\3>:/
 if wasmodified
 	set modified
 else
