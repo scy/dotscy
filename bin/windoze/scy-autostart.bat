@@ -1,5 +1,5 @@
 @Echo Off
 
 CD %HOME%\bin\windoze
-Start allchars.bat
-Start external.bat
+Call allchars.bat
+Call external.bat
