@@ -6,3 +6,4 @@ Debug
 Release
 .*.swp
 *.dll
+Session.vim
