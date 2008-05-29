@@ -40,5 +40,5 @@ endfunction
 command! FlexSize call FlexSizeResize()
 
 augroup flexsize
-	au WinEnter,VimResized * FlexSize
+	" au WinEnter,VimResized * FlexSize
 augroup end
