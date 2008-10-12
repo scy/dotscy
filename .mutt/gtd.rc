@@ -1,0 +1,8 @@
+set auto_tag=yes
+set resolve=no
+macro pager,index "\e1" "<clear-flag>N<save-message>=test<enter><enter><next-undeleted>"
+macro pager,index "\e2" "<clear-flag>N<save-message>=fup<enter><enter><next-undeleted>"
+macro pager,index "\e3" "<clear-flag>N<save-message>=hold<enter><enter><next-undeleted>"
+macro pager,index "\e4" "<clear-flag>N<save-message>=arch<enter><enter><next-undeleted>"
+macro pager,index "\e5" "<clear-flag>N<flag-message><save-message>=arch<enter><enter><next-undeleted>"
+macro pager,index "\e6" "<clear-flag>N<save-message>=spam<enter><enter><next-undeleted>"
