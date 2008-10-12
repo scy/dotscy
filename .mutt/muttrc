@@ -25,6 +25,7 @@ set timeout=15
 
 set edit_headers=yes
 set autoedit=yes
+set auto_tag=yes
 set beep_new=yes
 set delete=yes
 set include=yes
@@ -110,3 +111,4 @@ set strict_threads
 set quit=ask-no
 
 source ~/.mutt/gpg.rc
+source ~/.mutt/gtd.rc
