@@ -5,7 +5,7 @@ OUTDIR="$HOME"
 TPLDIR="$OUTDIR/$LNBASE"
 
 # Which files to ignore when copying over to $OUTDIR.
-SEDCMD="s/^(\.git|dotfiles.sh|bin|[^/]+\.(txt|ini|bat))$//"
+SEDCMD="s/^(\.git|dotfiles.sh|bin|res|[^/]+\.(txt|ini|bat))$//"
 
 # Formatted death.
 die() {
@@ -19,7 +19,7 @@ find . -maxdepth 1 | grep -v '^\.$' | cut -d / -f 2- | sed -r -e "$SEDCMD" | whi
 	if [[ ! -z "$ITEM" ]]; then
 		LNTARGET="$LNBASE/$ITEM" # Where to link to.
 		if [[ -L "$ITEM" ]]; then
-			# If template is symlink itself, copy instead of linking to link.
+			# If template is a symlink itself, copy instead of linking to link.
 			cp -uPa "$ITEM" "$OUTDIR"
 		elif [[ ( ! -L "$OUTDIR/$ITEM" ) || ( "$(stat -c %Y "$OUTDIR/$ITEM" 2>/dev/null)" -lt "$(stat -c %Y "$ITEM")" ) ]]; then
 			# If target doesn't exist as symlink or is out-of-date, link it.
