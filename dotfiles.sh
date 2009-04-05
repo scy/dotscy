@@ -5,7 +5,7 @@ OUTDIR="$HOME"
 TPLDIR="$OUTDIR/$LNBASE"
 
 # Which files to ignore when copying over to $OUTDIR.
-SEDCMD="s/^(\.git|dotfiles.sh|bin|res|[^/]+\.(txt|ini|bat))$//"
+SEDCMD="s/^(\.git|\.scy|dotfiles.sh|bin|res|[^/]+\.(txt|ini|bat))$//"
 
 # Formatted death.
 die() {
