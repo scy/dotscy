@@ -1,7 +1,9 @@
+! Reload this with “xrdb -merge .Xdefaults”.
+
 XTerm*background: black
 XTerm*foreground: grey
 XTerm*pointerColor: SpringGreen
-XTerm*font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
 ! No really, this should be the standard.
 XTerm*metaSendsEscape: true
 
@@ -10,12 +12,12 @@ XTerm*metaSendsEscape: true
 ! Fade out the text when terminal is not focused.
 Rxvt.fading: 30
 
-! Nice font, but doesn't have a bold version, therefore disable it...
-Rxvt.font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
-Rxvt.boldFont:
-Rxvt.italicFont:
-Rxvt.boldItalicFont:
-! ...and enable brighter colors for what's supposed to be bold.
+! Nice font, but doesn't have an italic version, therefore use the normal one…
+Rxvt.font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.boldFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.italicFont: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.boldItalicFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
+! …and enable brighter colors for ANSI “bold”.
 Rxvt.intensityStyles: true
 
 ! Tiny scroll bar at the right side.
