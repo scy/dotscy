@@ -52,5 +52,10 @@ alias GPSF3='exiftool -overwrite_original -GPSLatitude=49.489682 -GPSLatitudeRef
 
 
 
+# On Windows/Cygwin, do some special things.
+[ "$OSTYPE" = 'cygwin' ] && . "$HOME/.bash_windows"
+
+
+
 # Add local bash config, if any.
 [[ -r "$HOME/.bash_local" ]] && . "$HOME/.bash_local"
