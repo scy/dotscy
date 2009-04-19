@@ -30,6 +30,8 @@
 *%
 *%=============================================================================
 
+*% Retrieved from http://openprinting.org/foomatic-db/db/source/PPD/Kyocera/en/Kyocera_FS-3700+_en.ppd
+
 *FileVersion: "8.2"
 *FormatVersion: "4.3"
 *LanguageEncoding: ISOLatin1 
@@ -605,7 +607,7 @@
 
 *% Imageable Area Definitions
 *DefaultImageableArea: A4
-*ImageableArea A4/A4: "12 10 583 832"
+*ImageableArea A4/A4: "18 39 595 840"
 *ImageableArea A5/A5: "12 12 409 585"
 *ImageableArea A6/A6: "12 10 285 411"
 *ImageableArea B5/B5 (JIS): "21 10 495 719"
