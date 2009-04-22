@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.08 for scy on Tue Apr 21 09:36:38 2009.
+# Written by xscreensaver-demo 5.08 for scy on Tue Apr 21 15:10:32 2009.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	2:00:00
@@ -25,9 +25,9 @@ captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
 dpmsEnabled:	True
-dpmsStandby:	0:30:00
-dpmsSuspend:	0:30:00
-dpmsOff:	0:30:00
+dpmsStandby:	2:01:00
+dpmsSuspend:	2:01:00
+dpmsOff:	2:31:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
