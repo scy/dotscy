@@ -24,6 +24,10 @@ alias Brh='. ~/.bashrc'
 alias Bal='E ~/.bash_aliases && Brh'
 alias Brc='E ~/.bashrc && Brh'
 
+# Git things.
+alias G='git'
+alias Gfr='G fetch && G rebase origin'
+
 # ls shortcuts.
 alias ll='ls -lh'
 alias la='ls -a'
