@@ -26,7 +26,7 @@ alias Brc='E ~/.bashrc && Brh'
 
 # Git things.
 alias G='git'
-alias Gfr='G fetch && G rebase origin'
+alias Gfr='G fetch && G rebase origin && read -n 1 -p "Show a diff? [Y/n] " r && [ "$r" = y -o "$r" = Y -o -z "$r" ] && G diff ORIG_HEAD'
 
 # ls shortcuts.
 alias ll='ls -lh'
