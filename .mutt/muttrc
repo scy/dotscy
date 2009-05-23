@@ -1,5 +1,5 @@
-set postponed==Drafts
-set record==Sent
+set postponed="=[Google Mail]/Drafts"
+set record="=[Google Mail]/Sent Mail"
 
 mailboxes !
 
@@ -30,6 +30,9 @@ set beep_new=yes
 set delete=yes
 set include=yes
 
+set header_cache="~/.mutt/cache"
+set message_cachedir="~/.mutt/cache"
+
 ignore *
 unignore from: to: date: cc: bcc: subject: message-id:
 unignore x-mailer: user-agent:
@@ -49,10 +52,6 @@ set pager_context=2
 set pager_index_lines=6
 set pager_stop
 
-# set sidebar_visible
-set sidebar_width=25
-
-color sidebar_new brightwhite default
 color normal white default
 color bold brightwhite default
 color signature brightblack default
