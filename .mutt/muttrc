@@ -1,3 +1,7 @@
+set folder="imaps://scytale.name@imap.googlemail.com"
+set spoolfile="imaps://scytale.name@imap.googlemail.com/INBOX"
+set sendmail="ssh chani.scytale.name -- /usr/sbin/sendmail -oem -oi"
+
 set postponed="=[Google Mail]/Drafts"
 set record="=[Google Mail]/Sent Mail"
 
