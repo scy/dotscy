@@ -90,3 +90,8 @@ HISTCONTROL='ignorespace'
 HISTSIZE=10000
 HISTFILESIZE=$HISTSIZE
 HISTTIMEFORMAT="$TIME_DEFAULT  "
+
+
+
+# Set up GPG agent.
+eval "$(gpg-agent.sh 2>/dev/null)"
