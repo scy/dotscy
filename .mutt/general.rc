@@ -116,3 +116,4 @@ set quit=ask-no
 
 source ~/.mutt/gpg.rc
 source ~/.mutt/gtd.rc
+source ~/.mutt/sig.rc
