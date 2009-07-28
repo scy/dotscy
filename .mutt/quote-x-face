@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+# perl script to quote my_hdr commands for Mutt.
+# mainly useful for X-Face. headers.
+# (c) 2004 Christoph Berg, GNU GPL.
+# 2004-06-13 cb: initial version
+
+@f = <>;
+foreach (@f) {
+	chomp;
+	s/([\\;'"`\$#])/\\$1/g;
+}
+
+print "my_hdr ";
+print join '\n', @f;
+print "\n";
