@@ -35,7 +35,7 @@ set my_gtd4='<delete-message>'
 set my_gtd5="<flag-message>$my_gtd4"
 
 # 6: Tag as spam.
-set my_gtd6='<save-message>=[Google Mail]/Spam<enter><enter>'
+set my_gtd6='<save-message>=[Google%20Mail]/Spam<enter><enter>'
 
 # Now, the macros.
 
