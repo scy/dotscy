@@ -29,7 +29,8 @@ set mail_check=60
 set timeout=15
 
 set edit_headers=yes
-set autoedit=yes
+set autoedit=no
+set fast_reply=yes
 set auto_tag=yes
 set beep_new=yes
 set delete=yes
@@ -114,6 +115,10 @@ set strict_threads
 
 set quit=ask-no
 
+set alias_file=~/.mutt/alias.rc
+source $alias_file
+
 source ~/.mutt/gpg.rc
 source ~/.mutt/gtd.rc
+source ~/.mutt/lists.rc
 source ~/.mutt/sig.rc
