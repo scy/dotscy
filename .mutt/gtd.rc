@@ -23,13 +23,13 @@ set my_gtdsuffix='\
 # These are my general mail actions, here the Google Mail variant.
 
 # 2: Act ASAP.
-set my_gtd2='<save-message>=act<enter><enter>'
+set my_gtd2='<sync-mailbox><save-message>=act<enter><enter>'
 
 # 3: Act later. (Currently there’s no difference.)
 set my_gtd3="$my_gtd2"
 
 # 4: Archive.
-set my_gtd4='<delete-message>'
+set my_gtd4='<sync-mailbox><delete-message>'
 
 # 5: Flag and archive (important messages, “reference”).
 set my_gtd5="<flag-message>$my_gtd4"
