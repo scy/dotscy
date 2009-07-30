@@ -3,17 +3,12 @@
 # message only. That’s why “auto_tag” is set.
 # Also, the cursor should not move off the message while we’re processing it.
 # That’s what “resolve=no” is for.
-# The “N” flag is cleared for all messages because they are no longer new.
-# However, since <clear-flag> is not valid in the pager, we need a workaround:
-# The my_gtdprefix and my_gtdprefixindex variables and seperate macros.
 
 set my_gtdprefix='\
 <enter-command>set my_gtdautotag=$auto_tag<enter>\
 <enter-command>set my_gtdresolve=$resolve<enter>\
 <enter-command>set auto_tag=yes<enter>\
 <enter-command>set resolve=no<enter>'
-
-set my_gtdprefixindex="$my_gtdprefix<clear-flag>N"
 
 set my_gtdsuffix='\
 <enter-command>set auto_tag=$my_gtdautotag<enter>\
@@ -23,13 +18,13 @@ set my_gtdsuffix='\
 # These are my general mail actions, here the Google Mail variant.
 
 # 2: Act ASAP.
-set my_gtd2='<sync-mailbox><save-message>=act<enter><enter>'
+set my_gtd2='<save-message>=act<enter><enter>'
 
 # 3: Act later. (Currently there’s no difference.)
 set my_gtd3="$my_gtd2"
 
 # 4: Archive.
-set my_gtd4='<sync-mailbox><delete-message>'
+set my_gtd4='<delete-message>'
 
 # 5: Flag and archive (important messages, “reference”).
 set my_gtd5="<flag-message>$my_gtd4"
@@ -39,14 +34,8 @@ set my_gtd6='<save-message>=[Google%20Mail]/Spam<enter><enter>'
 
 # Now, the macros.
 
-macro index "\e2" "$my_gtdprefixindex$my_gtd2$my_gtdsuffix"
-macro index "\e3" "$my_gtdprefixindex$my_gtd3$my_gtdsuffix"
-macro index "\e4" "$my_gtdprefixindex$my_gtd4$my_gtdsuffix"
-macro index "\e5" "$my_gtdprefixindex$my_gtd5$my_gtdsuffix"
-macro index "\e6" "$my_gtdprefixindex$my_gtd6$my_gtdsuffix"
-
-macro pager "\e2" "$my_gtdprefix$my_gtd2$my_gtdsuffix"
-macro pager "\e3" "$my_gtdprefix$my_gtd3$my_gtdsuffix"
-macro pager "\e4" "$my_gtdprefix$my_gtd4$my_gtdsuffix"
-macro pager "\e5" "$my_gtdprefix$my_gtd5$my_gtdsuffix"
-macro pager "\e6" "$my_gtdprefix$my_gtd6$my_gtdsuffix"
+macro index,pager "\e2" "$my_gtdprefix$my_gtd2$my_gtdsuffix"
+macro index,pager "\e3" "$my_gtdprefix$my_gtd3$my_gtdsuffix"
+macro index,pager "\e4" "$my_gtdprefix$my_gtd4$my_gtdsuffix"
+macro index,pager "\e5" "$my_gtdprefix$my_gtd5$my_gtdsuffix"
+macro index,pager "\e6" "$my_gtdprefix$my_gtd6$my_gtdsuffix"
