@@ -23,3 +23,4 @@
 	sd = svn dcommit
 	sf = svn fetch
 	st = stash
+	sta = stash apply
