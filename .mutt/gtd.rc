@@ -32,6 +32,9 @@ set my_gtd5="<flag-message>$my_gtd4"
 # 6: Tag as spam.
 set my_gtd6='<save-message>=[Google%20Mail]/Spam<enter><enter>'
 
+# 0: Archive all messages.
+set my_gtd0='<tag-pattern>.<enter><sync-mailbox><tag-prefix-cond><delete-message>'
+
 # Now, the macros.
 
 macro index,pager "\e2" "$my_gtdprefix$my_gtd2$my_gtdsuffix"
@@ -39,3 +42,5 @@ macro index,pager "\e3" "$my_gtdprefix$my_gtd3$my_gtdsuffix"
 macro index,pager "\e4" "$my_gtdprefix$my_gtd4$my_gtdsuffix"
 macro index,pager "\e5" "$my_gtdprefix$my_gtd5$my_gtdsuffix"
 macro index,pager "\e6" "$my_gtdprefix$my_gtd6$my_gtdsuffix"
+
+macro index       "\e0" "$my_gtdprefix$my_gtd0$my_gtdsuffix"
