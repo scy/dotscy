@@ -15,7 +15,7 @@ scmprompt() {
 		local branch="$(git symbolic-ref HEAD 2>/dev/null)"
 		if [ -n "$branch" ]; then
 			echo -n "${branch#refs/heads/} "
-			local flags="$(git status | sed -n -e 's/^# Your branch is ahead of .\+ by \([0-9]\+\) commits.$/\1/p' -e 's/^# Changes to be committed:$/+/p' -e 's/^# Changed but not updated:$/~/p' -e 's/^# Untracked files:$/?/p' | tr -d \\n)"
+			local flags="$(git status | sed -n -e 's/^# Your branch is ahead of .\+ by \([0-9]\+\) commits\?.$/\1/p' -e 's/^# Changes to be committed:$/+/p' -e 's/^# Changed but not updated:$/~/p' -e 's/^# Untracked files:$/?/p' | tr -d \\n)"
 			[ -n "$flags" ] && echo -n "$flags "
 		fi
 	fi
