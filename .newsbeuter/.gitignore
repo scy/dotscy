@@ -1,3 +1,5 @@
 lock.pid
 queue
 urls
+cache.db
+history.*
