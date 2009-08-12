@@ -9,6 +9,20 @@ unset PROMPT_COMMAND
 
 
 
+# SCM status information in the prompt.
+scmprompt() {
+	if which git >/dev/null; then
+		local branch="$(git symbolic-ref HEAD 2>/dev/null)"
+		if [ -n "$branch" ]; then
+			echo -n "${branch#refs/heads/} "
+			local flags="$(git status | sed -n -e 's/^# Your branch is ahead of .\+ by \([0-9]\+\) commits.$/\1/p' -e 's/^# Changes to be committed:$/+/p' -e 's/^# Changed but not updated:$/~/p' -e 's/^# Untracked files:$/?/p' | tr -d \\n)"
+			[ -n "$flags" ] && echo -n "$flags "
+		fi
+	fi
+}
+
+
+
 # Define the prompt.
 
 USERCOLOR=32                             # green by default
@@ -32,7 +46,7 @@ case "$TERM" in
 		unset TITLE;;
 esac
 
-PS1="$TITLE\[\e[1;${USERCOLOR}m\]\u\[\e[0;32m\]@\[\e[1;${HOSTCOLOR}m\]\h\[\e[1;34m\] \w \[\e[1;30m\]\$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)\[\e[0;37m\] \A \[\e[1;${USERCOLOR}m\]\\\$\[\e[0m\] "
+PS1="$TITLE\[\e[1;${USERCOLOR}m\]\u\[\e[0;32m\]@\[\e[1;${HOSTCOLOR}m\]\h\[\e[1;34m\] \w \[\e[0;36m\]\$(scmprompt)\[\e[1;30m\]\$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)\[\e[0;37m\] \A \[\e[1;${USERCOLOR}m\]\\\$\[\e[0m\] "
 unset TITLE
 unset HOSTCOLOR
 unset USERCOLOR
