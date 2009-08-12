@@ -9,6 +9,8 @@
 	mnemonicprefix = true
 [interactive]
 	singlekey = true
+[merge]
+	tool = vimdiff
 [alias]
 	a = add
 	ap = add -p
