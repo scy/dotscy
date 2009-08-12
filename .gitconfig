@@ -5,6 +5,8 @@
 	diff = auto
 	status = auto
 	branch = auto
+[interactive]
+	singlekey = true
 [alias]
 	a = add
 	ap = add -p
