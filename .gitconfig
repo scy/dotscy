@@ -5,3 +5,18 @@
 	diff = auto
 	status = auto
 	branch = auto
+[alias]
+	a = add
+	ap = add -p
+	c = commit
+	d = diff
+	f = fetch
+	fr = !git fetch && git rebase origin && read -n 1 -p 'Show a diff? [Y/n] ' r && [ $r = y -o $r = Y -o -z $r ] && git diff ORIG_HEAD; echo
+	oops = rebase -i HEAD~20
+	p = push
+	rb = rebase
+	rbi = rebase -i
+	s = status
+	sd = svn dcommit
+	sf = svn fetch
+	st = stash

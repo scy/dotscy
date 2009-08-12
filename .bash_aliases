@@ -26,7 +26,11 @@ alias Brc='E ~/.bashrc && Brh'
 
 # Git things.
 alias G='git'
-alias Gfr='G fetch && G rebase origin && read -n 1 -p "Show a diff? [Y/n] " r && [ "$r" = y -o "$r" = Y -o -z "$r" ] && G diff ORIG_HEAD'
+eval alias $( \
+	git config --global --get-regexp '^alias\.' | \
+	sed -e 's/^alias\.\([^ ]\+\) .\+$/G\1="G \1"/' | \
+	tr '\n' ' ' \
+)
 
 # ls shortcuts.
 alias ll='ls -lh'
