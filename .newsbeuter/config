@@ -14,7 +14,7 @@ reload-time 23
 # browser ...
 
 # Don't store the articles in the config dir.
-cache-file "~/.newsbeuter-data/cache.db"
+# cache-file "~/.newsbeuter-data/cache.db"
 
 # Remove removed feeds and items when quitting.
 cleanup-on-quit yes
@@ -26,7 +26,7 @@ confirm-exit yes
 # datetime-format ...
 
 # Save errors.
-error-log "~/.newsbeuter-data/error.log"
+# error-log "~/.newsbeuter-data/error.log"
 
 # Keep an infinite backlog.
 max-items 0
@@ -36,10 +36,6 @@ notify-screen yes
 
 # Automatically add Podcasts.
 podcast-auto-enqueue yes
-
-# Read my blogroll and use it. Redundancy sucks.
-opml-url "https://scytale.name/files/scytale.opml"
-urls-source opml
 
 # Good if you're testing configuration changes.
 suppress-first-reload yes
