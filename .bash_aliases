@@ -40,9 +40,11 @@ alias ll='ls -lh'
 alias la='ls -a'
 
 # Calendar stuff.
-alias rem='rem -m -b1'
-alias remind='remind -m -b1'
-alias bday='E ~/doc/pim/cal/birthdays && ~/doc/pim/cal/generate.sh'
+remindopts='-m -b1 -q -i\$DateSep=\"-\" -i\$LatDeg=49 -i\$LatMin=29 -i\$LatSec=25 -i\$LongDeg=8 -i\$LongMin=28 -i\$LongSec=24 -i\$Location=\"Mannheim\"'
+alias remind="remind $remindopts"
+alias rem="rem $remindopts"
+alias bday='E ~/pim/cal/bday && mkrem.sh'
+alias W="mkrem.sh && wyrd"
 
 # Music stuff.
 alias M='mpc'
