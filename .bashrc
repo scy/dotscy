@@ -76,11 +76,6 @@ export PATH="$HOME/bin:$HOME/doc/trackdb:$HOME/proj/bashnag:$MASTERPATH:/usr/sbi
 
 
 
-# Disable the preprocessor for less, it's confusing for HTML etc.
-unset LESSOPEN
-
-
-
 # Set locale.
 export LC_ALL='en_US.UTF-8'
 
@@ -109,3 +104,8 @@ HISTTIMEFORMAT="$TIME_DEFAULT  "
 
 # Set up GPG agent.
 eval "$(gpg-agent.sh 2>/dev/null)"
+
+
+
+# Regenerate .less, if required.
+[ -r "$HOME/.lesskey" -a "$HOME/.lesskey" -nt "$HOME/.less" ] && lesskey
