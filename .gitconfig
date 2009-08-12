@@ -5,6 +5,8 @@
 	autocrlf = false
 [color]
 	ui = auto
+[diff]
+	mnemonicprefix = true
 [interactive]
 	singlekey = true
 [alias]
