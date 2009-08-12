@@ -13,6 +13,8 @@
 	dc = diff --cached
 	f = fetch
 	fr = !git fetch && git rebase origin && read -n 1 -p 'Show a diff? [Y/n] ' r && [ $r = y -o $r = Y -o -z $r ] && git diff ORIG_HEAD; echo
+	l = log
+	lp = log -p
 	oops = rebase -i HEAD~20
 	p = push
 	rb = rebase
