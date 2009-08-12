@@ -1,6 +1,8 @@
 [user]
 	name = Tim Weber
 	email = scy@scytale.name
+[core]
+	autocrlf = false
 [color]
 	ui = auto
 [interactive]
