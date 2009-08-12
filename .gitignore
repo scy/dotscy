@@ -20,3 +20,6 @@ patch.txt
 
 # Secrets.
 .cvspass
+
+# Things I don't want to have in version control.
+.config/gtk-2.0
