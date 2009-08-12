@@ -2,9 +2,7 @@
 	name = Tim Weber
 	email = scy@scytale.name
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+	ui = auto
 [interactive]
 	singlekey = true
 [alias]
