@@ -4,12 +4,10 @@ TIME_DEFAULT="$TIME_LONG"
 
 
 
-# Not needed, but sometimes pre-defined.
-unset PROMPT_COMMAND
-
-
-
 # SCM status information in the prompt.
+unset PSGIT
+PSGITCMD=':'
+which git >/dev/null && PSGITCMD='gitprompt'
 gitprompt() {
 	local branch="$(git symbolic-ref HEAD 2>/dev/null)"
 	if [ -n "$branch" ]; then
@@ -21,33 +19,69 @@ gitprompt() {
 
 
 
+scyprompt() {
+	# Refresh the Git prompt, if we have Git.
+	PSGIT="$($PSGITCMD)"
+	# Refresh the load average.
+	PSLOAD="$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)"
+	# Refresh the jobs count.
+	local runningjobs="$(jobs -r | wc -l)"
+	local stoppedjobs="$(jobs -s | wc -l)"
+	PSJOBS="$([[ "$runningjobs" -gt 0 ]] && echo -n "${runningjobs}r")$([[ "$runningjobs" -gt 0 && "$stoppedjobs" -gt 0 ]] && echo -n '/')$([[ "$stoppedjobs" -gt 0 ]] && echo -n "${stoppedjobs}s")"
+	[ -n "$PSJOBS" ] && PSJOBS="$PSJOBS "
+	# End of refreshments. Start working.
+	PS1="$PSFIX"
+	# Git info.
+	PS1="$PS1\\[\\e[0;36m\\]$PSGIT"
+	# Load average.
+	PS1="$PS1\\[\\e[1;30m\\]$PSLOAD"
+	# Current time.
+	PS1="$PS1\\[\\e[0;37m\\] \\A "
+	# Number of jobs.
+	PS1="$PS1\\[\\e[0;33m\\]$PSJOBS"
+	# Prompt character.
+	PS1="$PS1\\[\\e[1;32m\\]\\$"
+	# Back to normal.
+	PS1="$PS1\\[\\e[0m\\] "
+}
+
+
+
 # Define the prompt.
 
-USERCOLOR=32                             # green by default
-[[ "$USER" != 'scy' ]] && USERCOLOR=33   # yellow if not "scy"
-[[ "$UID" -eq 0 ]] && USERCOLOR=31       # red if root
+PSUSERCOLOR=32                             # green by default
+[[ "$USER" != 'scy' ]] && PSUSERCOLOR=33   # yellow if not "scy"
+[[ "$UID" -eq 0 ]] && PSUSERCOLOR=31       # red if root
 
 case "$HOSTNAME" in
 	bijaz)
-		HOSTCOLOR=32;;   # green for the default, bijaz.
+		PSHOSTCOLOR=32;;   # green for the default, bijaz.
 	chani)
-		HOSTCOLOR=33;;   # yellow for chani
+		PSHOSTCOLOR=33;;   # yellow for chani
 	*)
-		HOSTCOLOR=37;;   # white by default
+		PSHOSTCOLOR=37;;   # white by default
 esac
 
 # Use window titles only in known X terminals.
 case "$TERM" in
 	xterm*|rxvt*|Eterm|aterm|kterm|gnome|screen)
-		TITLE='\[\e]0;\u@\h:\w\a\]';;
+		PSTITLE='\[\e]0;\u@\h:\w\a\]';;
 	*)
-		unset TITLE;;
+		unset PSTITLE;;
 esac
 
-PS1="$TITLE\[\e[1;${USERCOLOR}m\]\u\[\e[0;32m\]@\[\e[1;${HOSTCOLOR}m\]\h\[\e[1;34m\] \w \[\e[0;36m\]$(which git >/dev/null && echo '$(gitprompt)')\[\e[1;30m\]\$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)\[\e[0;37m\] \A \[\e[1;${USERCOLOR}m\]\\\$\[\e[0m\] "
-unset TITLE
-unset HOSTCOLOR
-unset USERCOLOR
+# Window title, if in a supported terminal.
+PSFIX="$PSTITLE"
+# User name, colored accordingly.
+PSFIX="$PSFIX\\[\\e[1;${PSUSERCOLOR}m\\]\\u"
+# @ character.
+PSFIX="$PSFIX\\[\\e[0;32m\\]@"
+# Host name, colored accordingly.
+PSFIX="$PSFIX\\[\\e[1;${PSHOSTCOLOR}m\\]\\h"
+# Working directory.
+PSFIX="$PSFIX\\[\\e[1;34m\\] \\w "
+
+PROMPT_COMMAND='scyprompt'
 
 
 
