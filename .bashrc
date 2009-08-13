@@ -20,6 +20,7 @@ gitprompt() {
 
 
 scyprompt() {
+	local r="$?"
 	# Refresh the Git prompt, if we have Git.
 	PSGIT="$($PSGITCMD)"
 	# Refresh the load average.
@@ -39,8 +40,8 @@ scyprompt() {
 	PS1="$PS1\\[\\e[0;37m\\] \\A "
 	# Number of jobs.
 	PS1="$PS1\\[\\e[0;33m\\]$PSJOBS"
-	# Prompt character.
-	PS1="$PS1\\[\\e[1;32m\\]\\$"
+	# Prompt character (red when last command failed, else green).
+	PS1="$PS1\\[\\e[1;3$(($r > 0 ? 1 : 2))m\\]\\$"
 	# Back to normal.
 	PS1="$PS1\\[\\e[0m\\] "
 }
@@ -141,3 +142,8 @@ eval "$(gpg-agent.sh 2>/dev/null)"
 
 # Regenerate .less, if required.
 [ -r "$HOME/.lesskey" -a "$HOME/.lesskey" -nt "$HOME/.less" ] && lesskey
+
+
+
+# Don't return false.
+true
