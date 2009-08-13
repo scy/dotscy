@@ -15,7 +15,7 @@ gitprompt() {
 		echo -n "${branch#refs/heads/} "
 		# If this is a git-svn repository, ahead calc works different.
 		if [ -d "$(git rev-parse --git-dir 2>/dev/null)/svn" ]; then
-			flags="$(git rev-list "$(git log --pretty=format:'%H %b' | grep -m 1 -A 2 '^git-svn-id: ' | tail -n 1 | cut -d ' ' -f 1)..HEAD^" | wc -l)s"
+			flags="$(git rev-list "$(git log --pretty=format:'%H %b' | grep -m 1 -A 2 '^git-svn-id: ' | tail -n 1 | cut -d ' ' -f 1)..HEAD^" | wc -l | grep -v '^0$')s"
 		fi
 		flags="$flags$(git status 2>/dev/null | sed -n -e 's/^# Your branch is ahead of .\+ by \([0-9]\+\) commits\?.$/\1/p' -e 's/^# Changes to be committed:$/+/p' -e 's/^# Changed but not updated:$/~/p' -e 's/^# Untracked files:$/?/p' | tr -d \\n)"
 		[ -n "$flags" ] && echo -n "$flags "
