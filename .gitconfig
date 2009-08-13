@@ -15,6 +15,7 @@
 	a = add
 	ap = add -p
 	c = commit
+	ca = commit -a
 	d = diff
 	dc = diff --cached
 	f = fetch
