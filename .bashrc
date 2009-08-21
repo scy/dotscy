@@ -24,12 +24,26 @@ gitprompt() {
 
 
 
+# Load status in the prompt.
+# If we have /proc/loadavg, use it.
+if [ -r '/proc/loadavg' ]; then
+	PSLOADCMD='loadprompt'
+else
+	# Simply display nothing.
+	PSLOADCMD=':'
+fi
+loadprompt() {
+	echo "$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null) "
+}
+
+
+
 scyprompt() {
 	local r="$?"
 	# Refresh the Git prompt, if we have Git.
 	PSGIT="$($PSGITCMD)"
 	# Refresh the load average.
-	PSLOAD="$(cut -d ' ' -f 1 /proc/loadavg 2>/dev/null)"
+	PSLOAD="$($PSLOADCMD)"
 	# Refresh the jobs count.
 	local runningjobs="$(jobs -r | wc -l)"
 	local stoppedjobs="$(jobs -s | wc -l)"
@@ -42,7 +56,7 @@ scyprompt() {
 	# Load average.
 	PS1="$PS1\\[\\e[1;30m\\]$PSLOAD"
 	# Current time.
-	PS1="$PS1\\[\\e[0;37m\\] \\A "
+	PS1="$PS1\\[\\e[0;37m\\]\\A "
 	# Number of jobs.
 	PS1="$PS1\\[\\e[0;33m\\]$PSJOBS"
 	# Prompt character (red when last command failed, else green).
