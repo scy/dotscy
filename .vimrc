@@ -1,3 +1,5 @@
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+
 colorscheme dunkel
 set nobackup
 set nocompatible
@@ -55,8 +57,6 @@ let s .= " %P"                                | " percentage
 let s .= "/%LL"                               | " number of lines
 set statusline=%!s
 set laststatus=2
-
-set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
 " meta-keys generate <esc>a .. <esc>z for me
 set timeout
