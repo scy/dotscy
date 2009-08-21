@@ -145,8 +145,16 @@ eval "$(gpg-agent.sh 2>/dev/null)"
 
 
 
-# Regenerate .less, if required.
-[ -r "$HOME/.lesskey" -a "$HOME/.lesskey" -nt "$HOME/.less" ] && lesskey
+# If .less does not exist, we have to do something.
+if [ -r "$HOME/.lesskey" -a "$HOME/.lesskey" -nt "$HOME/.less" ]; then
+	# If we have lesskey, use it.
+	if which lesskey 2>/dev/null; then
+		lesskey
+	else
+		# Ugly workaround: Set $LESS.
+		eval export LESS=\'"$(sed -n -e 's/^LESS=\(.*\)$/\1/p' "$HOME/.lesskey")"\'
+	fi
+fi
 
 
 
