@@ -20,7 +20,7 @@
 	d = diff
 	dc = diff --cached
 	f = fetch
-	fr = !git fetch && git rebase origin && type read >/dev/null 2>&1 && read -n 1 -p 'Show a diff? [Y/n] ' r && [ $r = y -o $r = Y -o -z $r ] && git diff ORIG_HEAD; echo
+	fr = "!bash -c 'git fetch && git rebase origin && type read >/dev/null 2>&1 && read -n 1 -p \"Show a diff? [Y/n] \" r && [ $r = y -o $r = Y -o -z $r ] && git diff ORIG_HEAD; echo"
 	l = log
 	lp = log -p
 	oops = rebase -i HEAD~20
