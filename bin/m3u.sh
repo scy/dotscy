@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mplayer -playlist "$@"
