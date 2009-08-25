@@ -1,5 +1,7 @@
 set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
+filetype on
+syntax on
 colorscheme dunkel
 set nobackup
 set nocompatible
