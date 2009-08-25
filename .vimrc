@@ -16,6 +16,7 @@ set mouse=a
 set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 set list
 set nojoinspaces
+set backspace=indent,eol,start
 " Search caseless only if the query contains only lowercase characters.
 set ignorecase smartcase
 set keymodel=startsel
