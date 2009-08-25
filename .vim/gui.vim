@@ -1,6 +1,6 @@
 " Did I mention I love Terminus? This is the Windows font, I'm not using gvim 
 " under X at the moment.
-set guifont=ter-112n:h9
+set guifont=ter-112n:h9,Consolas:h9:cANSI
 
 " Disable the toolbar. Once I disabled the menu here, but the reason for that 
 " went away after discovering the 'winaltkeys' option.
