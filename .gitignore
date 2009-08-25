@@ -11,6 +11,7 @@
 .thumbnails
 .viminfo
 mplayer
+vimperator
 
 # Standard name of e-mail-formatted patches when using this somewhere else.
 patch.txt
