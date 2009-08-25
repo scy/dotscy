@@ -59,8 +59,12 @@ scyprompt() {
 	PS1="$PS1\\[\\e[0;37m\\]\\A "
 	# Number of jobs.
 	PS1="$PS1\\[\\e[0;33m\\]$PSJOBS"
-	# Prompt character (red when last command failed, else green).
-	PS1="$PS1\\[\\e[1;3$(($r > 0 ? 1 : 2))m\\]\\$"
+	# Prompt character. Red (and showing return value) on error.
+	if [[ "$r" -gt 0 ]]; then
+		PS1="$PS1\\[\\e[1;31m\\]$r\\$"
+	else
+		PS1="$PS1\\[\\e[1;32m\\]\\$"
+	fi
 	# Back to normal.
 	PS1="$PS1\\[\\e[0m\\] "
 }
