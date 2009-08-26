@@ -3,7 +3,6 @@ set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.
 if $OS =~ "^Windows"
 	set lm=en
 	set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
-	source $VIMRUNTIME/vimrc_example.vim
 	
 	" The default encoding is most likely not Latin1 but (on German systems) 
 	" Windows-1252. Change that, and the collation as well.
