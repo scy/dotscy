@@ -9,9 +9,6 @@ command! Chars lmap <M-7> „|lmap <M-8> “|lmap <M-9> ”|set iminsert=1|set i
 " a: select the whole file.
 map <Leader>a ggVG
 
-" <M-c> will copy the current selection to the clipboard.
-vmap <M-c> "+y
-
 " <M-f> will change case of the first letter of the preceding word.
 imap <M-f> <C-O><M-f>
 map <M-f> :call ScyChangeCase()<CR>
