@@ -1,3 +1,8 @@
+" Use , as mapleader, keep the useful ',' command available as '_'.
+let mapleader = ","
+noremap _ ,
+noremap ,, ,
+
 " Enable Neo-like Unicode quotes (Neo is not always available).
 command! Chars lmap <M-7> „|lmap <M-8> “|lmap <M-9> ”|set iminsert=1|set imsearch=-1|set imcmdline
 
