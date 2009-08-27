@@ -106,4 +106,7 @@ augroup ScyFixes
 	autocmd BufRead */.git/TAG_EDITMSG goto 1 | startinsert
 	" When diffing, use a maximized window for maximized uberblick.
 	autocmd GUIEnter * if &diff | simalt ~x | endif
+	" TODO: When the file starts with
+	" # This is a combination of
+	" then don't go into insert mode.
 augroup end
