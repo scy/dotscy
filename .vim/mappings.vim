@@ -1,6 +1,3 @@
-" ^K will cut the current line, ^U paste it (nano-like behaviour)
-inoremap <C-K> <C-O>dd
-inoremap <C-U> <C-O>P
 
 " <M-a> will select the whole file.
 imap <M-a> <C-O><M-a>
