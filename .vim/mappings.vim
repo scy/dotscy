@@ -9,9 +9,11 @@ command! Chars lmap <M-7> „|lmap <M-8> “|lmap <M-9> ”|set iminsert=1|set i
 " a: select the whole file.
 map <Leader>a ggVG
 
-" <M-f> will change case of the first letter of the preceding word.
-imap <M-f> <C-O><M-f>
-map <M-f> :call ScyChangeCase()<CR>
+" f: change case of the first letter of the preceding word.
+" This is so important that I bind it on M-f as well.
+imap <M-f> <C-O><Leader>f
+map <Leader>f :call ScyChangeCase()<CR>
+map <M-f> <Leader>f
 
 " <M-g> will insert an informal greeting.
 imap <M-g> <Esc><M-g>
