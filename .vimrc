@@ -98,37 +98,8 @@ let s .= "/%LL"                               | " number of lines
 set statusline=%!s
 set laststatus=2
 
-" meta-keys generate <esc>a .. <esc>z for me
-set timeout
-set nottimeout
-set timeoutlen=100
-exec "imap \eOD <Left>"
-exec "imap \eOC <Right>"
-exec "imap \eOA <Up>"
-exec "imap \eOB <Down>"
-exec "map \eOD <Left>"
-exec "map \eOC <Right>"
-exec "map \eOA <Up>"
-exec "map \eOB <Down>"
-exec "imap \eOd <C-Left>"
-exec "imap \eOc <C-Right>"
-exec "imap \eOa <C-Up>"
-exec "imap \eOb <C-Down>"
-exec "map \eOd <C-Left>"
-exec "map \eOc <C-Right>"
-exec "map \eOa <C-Up>"
-exec "map \eOb <C-Down>"
-let c='a'
-while c != 'z'
-	let C=toupper(c)
-	exec "map \e".c." <M-".c.">"
-	exec "map \e".C." <M-".C.">"
-	exec "imap \e".c." <M-".c.">"
-	exec "imap \e".C." <M-".C.">"
-	exec "set <M-".c.">=\e".c
-	exec "set <M-".C.">=\e".C
-	let c = nr2char(1+char2nr(c))
-endwhile
+" Let's see whether I can live without Esc-keycodes.
+set notimeout nottimeout
 
 augroup ScyFixes
 	autocmd BufRead */.git/COMMIT_EDITMSG goto 1 | startinsert
