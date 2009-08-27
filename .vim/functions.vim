@@ -69,11 +69,6 @@ function! ScyScrapSentence()
 	normal dis
 endfunction
 
-function! ScySelectAll()
-	" Move to first line, start linewise visual mode, move to last line.
-	normal ggVG
-endfunction
-
 function! ScyShortFEnc()
 	" If no file encoding is set, use the system encoding.
 	let e = (&fileencoding == "") ? &enc : &fenc

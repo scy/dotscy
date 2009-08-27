@@ -6,9 +6,8 @@ noremap ,, ,
 " Enable Neo-like Unicode quotes (Neo is not always available).
 command! Chars lmap <M-7> „|lmap <M-8> “|lmap <M-9> ”|set iminsert=1|set imsearch=-1|set imcmdline
 
-" <M-a> will select the whole file.
-imap <M-a> <C-O><M-a>
-map <M-a> :call ScySelectAll()<CR>
+" a: select the whole file.
+map <Leader>a ggVG
 
 " <M-c> will copy the current selection to the clipboard.
 vmap <M-c> "+y
