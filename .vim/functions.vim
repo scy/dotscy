@@ -93,12 +93,4 @@ function! ScyShortFEnc()
 	return r
 endfunction
 
-function! ScyToggleNumbers()
-	if &number
-		set nonumber
-		set nowrap
-	else
-		set number
-		set wrap
-	endif
-endfunction
+command! Numbers if &number | set nonumber | set nowrap | else | set number | set wrap |endif

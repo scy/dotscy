@@ -35,7 +35,7 @@ map <Leader>m :call ScyMailEnd("Beste Grüße,", "Tim Weber.")<CR>
 map <Leader>m :call ScyMailEnd("Kind regards,", "Tim Weber.")<CR>
 
 " n: toggle number-and-wrap mode.
-map <Leader>n :call ScyToggleNumbers()<CR>
+map <Leader>n :Numbers<CR>
 
 " s: split this quoted line here to reply to it.
 map <Leader>s :call ScyQuoteSplit()<CR>i
