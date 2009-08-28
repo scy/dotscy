@@ -35,8 +35,8 @@ function! ScyMailEnd(greeting, name)
 	endif
 	" Insert the greeting.
 	execute "normal " . start . a:greeting . "\n\n\t" . a:name . "\n\e"
-	" Remove everything below.
-	normal dG
+	" Remove everything below and move to the greeting line for editing.
+	normal dG2k0
 endfunction
 
 function! ScyQuoteJoin()
