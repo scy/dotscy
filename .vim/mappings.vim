@@ -15,41 +15,33 @@ imap <M-f> <C-O><Leader>f
 map <Leader>f :call ScyChangeCase()<CR>
 map <M-f> <Leader>f
 
-" <M-g> will insert an informal greeting.
-imap <M-g> <Esc><M-g>
-map <M-g> :call ScyMailEnd("Gruß,", "Tim.")<CR>
+" g: insert an informal greeting.
+map <Leader>g :call ScyMailEnd("Gruß,", "Tim.")<CR>
 
-" <M-G> will insert an informal greeting in English.
-imap <M-G> <Esc><M-G>
-map <M-G> :call ScyMailEnd("Regards,", "Tim.")<CR>
+" G: insert an informal greeting in English.
+map <Leader>G :call ScyMailEnd("Regards,", "Tim.")<CR>
 
-" <M-h> will toggle hlsearch.
-imap <M-h> <C-O><M-h>
-map <M-h> :set invhlsearch<CR>
+" h: toggle hlsearch.
+map <Leader>h :set invhlsearch<CR>
 
 " <M-j> will join this quoted line (in mails) with the previous one.
 imap <M-j> <C-O><M-j>
 map <M-j> :call ScyQuoteJoin()<CR>
 
-" <M-m> will insert a formal greeting ("MfG").
-imap <M-m> <Esc><M-m>
-map <M-m> :call ScyMailEnd("Beste Grüße,", "Tim Weber.")<CR>
+" m: insert a formal greeting ("MfG").
+map <Leader>m :call ScyMailEnd("Beste Grüße,", "Tim Weber.")<CR>
 
-" <M-M> will insert a formal greeting in English.
-imap <M-M> <Esc><M-M>
-map <M-M> :call ScyMailEnd("Kind regards,", "Tim Weber.")<CR>
+" M: insert a formal greeting in English.
+map <Leader>m :call ScyMailEnd("Kind regards,", "Tim Weber.")<CR>
 
-" <M-n> will toggle number-and-wrap mode.
-imap <M-n> <C-O><M-n>
-map <M-n> :call ScyToggleNumbers()<CR>
+" n: toggle number-and-wrap mode.
+map <Leader>n :call ScyToggleNumbers()<CR>
 
-" <M-s> will split this quoted line here to reply to it.
-imap <M-s> <C-O><M-s>
-map <M-s> :call ScyQuoteSplit()<CR>i
+" s: split this quoted line here to reply to it.
+map <Leader>s :call ScyQuoteSplit()<CR>i
 
-" <M-S> will start the current sentence from scratch.
-imap <M-S> <C-O><M-S>
-map <M-S> :call ScyScrapSentence()<CR>
+" S: start the current sentence from scratch.
+map <Leader>S :call ScyScrapSentence()<CR>
 
 " <M-v> will paste the clipboard's contents.
 " TODO: This is temporarily disabled on Windows because "ö" happens to be
@@ -59,18 +51,18 @@ if $OS !~ "^Windows"
 	map <M-v> "+gP
 endif
 
-" <M-w> will write the file contents.
-imap <M-w> <C-O><M-w>
-map <M-w> :w<CR>
+" w: write the file contents.
+" Since this is important, it is ^S in insert mode as well.
+imap <C-S> <C-O><Leader>w
+map <Leader>w :w<CR>
 
 " <M-W> will write all files and run ctags.
 " TODO: :!start looks like it's Windows-only...
 imap <M-W> <C-O><M-W>
 map <M-W> :wa<CR>:!start ctags -R<CR>
 
-" <M-x> will maximize a Windows GUI window.
-imap <M-x> <C-O><M-x>
-map <M-x> :simalt ~x<CR>
+" x: maximize a Windows GUI window.
+map <Leader>x :simalt ~x<CR>
 
 " <C-Space> will do completion just as <C-N> does.
 imap <C-Space> <C-N>
