@@ -52,9 +52,10 @@ if $OS !~ "^Windows"
 endif
 
 " w: write the file contents.
-" Since this is important, it is ^S in insert mode as well.
-imap <C-S> <C-O><Leader>w
+" Since this is important, it bound to ^S as well.
 map <Leader>w :w<CR>
+map <C-S> <Leader>w
+imap <C-S> <C-O><Leader>w
 
 " <M-W> will write all files and run ctags.
 " TODO: :!start looks like it's Windows-only...
