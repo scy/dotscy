@@ -64,8 +64,8 @@ map <M-W> :wa<CR>:!start ctags -R<CR>
 " x: maximize a Windows GUI window.
 map <Leader>x :simalt ~x<CR>
 
-" <C-Space> will do completion just as <C-N> does.
-imap <C-Space> <C-N>
+" Make <C-Space> equivalent to <Esc>, since it can be reached more easily.
+imap <C-Space> <Esc>
 
 " <C-Down> will jump to the current tag (<C-]> is too hard on German keyboards).
 imap <C-Down> <C-O><C-Down>
