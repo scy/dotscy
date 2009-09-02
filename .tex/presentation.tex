@@ -1,0 +1,19 @@
+% TODO: Localize according to babel setting.
+% TODO: Localize "example" environment.
+\input{unicode.tex}
+\usepackage{listings}
+\usepackage[scaled]{luximono}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\lstset{language=,extendedchars=false,basicstyle=\small\ttfamily\color{lightgray},backgroundcolor=\color{black},escapechar=\%}
+\newcommand\SH[1]{{\color{green}\$ }{\color{white}#1}}
+\def\TYPE{\lstinline[basicstyle=\small\ttfamily\color{darkgreen}]}
+\usetheme[compress]{Berlin}
+
+\def\UseOverviews{
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Übersicht}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+}
