@@ -99,7 +99,7 @@ set statusline=%!s
 set laststatus=2
 
 " Let's see whether I can live without Esc-keycodes.
-set notimeout nottimeout
+set notimeout ttimeout
 
 augroup ScyFixes
 	autocmd BufRead */.git/COMMIT_EDITMSG goto 1 | startinsert

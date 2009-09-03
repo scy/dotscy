@@ -43,14 +43,6 @@ map <Leader>s :call ScyQuoteSplit()<CR>i
 " S: start the current sentence from scratch.
 map <Leader>S :call ScyScrapSentence()<CR>
 
-" <M-v> will paste the clipboard's contents.
-" TODO: This is temporarily disabled on Windows because "ö" happens to be
-" the same as "v" with 8th bit set... -.-
-if $OS !~ "^Windows"
-	imap <M-v> <C-O><M-v>
-	map <M-v> "+gP
-endif
-
 " w: write the file contents.
 " Since this is important, it bound to ^S as well.
 map <Leader>w :w<CR>
