@@ -13,6 +13,7 @@
 	tool = vimdiff
 [alias]
 	a = add
+	am = am
 	ap = add -p
 	bash = !bash
 	c = commit
@@ -20,6 +21,8 @@
 	d = diff
 	dc = diff --cached
 	f = fetch
+	fp = format-patch --stdout --thread -C origin..HEAD
+	fpp = "!git fp > scy-git-patch.txt"
 	fr = "!bash -c 'git fetch && git rebase origin && type read >/dev/null 2>&1 && read -n 1 -p \"Show a diff? [Y/n] \" r && [ $r = y -o $r = Y -o -z $r ] && git diff ORIG_HEAD; echo"
 	l = log
 	lp = log -p
@@ -27,6 +30,7 @@
 	p = push
 	rb = rebase
 	rbi = rebase -i
+	rbo = rebase origin
 	s = status
 	sd = svn dcommit
 	sf = svn fetch
