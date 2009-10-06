@@ -1,0 +1,3 @@
+[extensions]
+hgext.bookmarks =
+hgext.hg-git = /home/scy/proj/hg-git
