@@ -18,6 +18,8 @@
 	bash = !bash
 	c = commit
 	ca = commit -a
+	co = checkout
+	cob = checkout -b
 	d = diff
 	dc = diff --cached
 	f = fetch
@@ -28,6 +30,7 @@
 	lp = log -p
 	oops = rebase -i HEAD~20
 	p = push
+	pr = pull --rebase
 	rb = rebase
 	rbi = rebase -i
 	rbo = rebase origin
