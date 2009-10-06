@@ -1,0 +1,49 @@
+set shell_cmd           = sh -c
+set cookie_handler      = talk_to_socket $XDG_CACHE_HOME/uzbl/cookie_daemon_socket
+#set load_finish_handler = spawn $HOME/.uzbl/history.sh
+
+set show_status       = 1
+set status_background = #303030
+set status_format     = <span font_family="monospace"><span background="khaki" foreground="black">[\@[\@MODE]\@]</span> [<span weight="bold" foreground="red">\@[\@keycmd]\@</span>] <span foreground="#606060"> \@[\@LOAD_PROGRESSBAR]\@ </span><span foreground="#99FF66">\@[\@uri]\@</span> <span foreground="khaki">\@[\@NAME]\@</span>   <span foreground="orange">\@status_message</span><span foreground="#606060"> \@[\@SELECTED_URI]\@</span></span>
+set status_top        = 0
+set insert_indicator  = I
+set command_indicator = C
+
+# Tabs config.
+set paste_source        = primary
+set show_tablist        = 1
+set capture_new_windows = 1
+set fifo_dir            = $HOME/.uzbl/tmp
+set socket_dir          = $HOME/.uzbl/tmp
+set new_tab_title       = …
+set save_session        = 1
+set session_file        = $HOME/.uzbl/session
+set bind_tab_from_clip  = P
+set bind_goto_tab       = v_
+
+# Keyboard config.
+bind 0_  = sh "$HOME/.uzbl/gototab.sh '0%s'"
+bind 1_  = sh "$HOME/.uzbl/gototab.sh '1%s'"
+bind 2_  = sh "$HOME/.uzbl/gototab.sh '2%s'"
+bind 3_  = sh "$HOME/.uzbl/gototab.sh '3%s'"
+bind 4_  = sh "$HOME/.uzbl/gototab.sh '4%s'"
+bind 5_  = sh "$HOME/.uzbl/gototab.sh '5%s'"
+bind 6_  = sh "$HOME/.uzbl/gototab.sh '6%s'"
+bind 7_  = sh "$HOME/.uzbl/gototab.sh '7%s'"
+bind 8_  = sh "$HOME/.uzbl/gototab.sh '8%s'"
+bind 9_  = sh "$HOME/.uzbl/gototab.sh '9%s'"
+bind :_  = chain '%s'
+bind   = exit
+bind q   = exit
+bind f   = forward
+bind F   = back
+bind i   = toggle_insert_mode
+bind gg_ = set uri = http://www.google.com/search?q=%s
+bind o   = spawn "$HOME/.uzbl/open.sh"
+bind p   = sh 'echo "set uri = $(xclip -selection primary -o)" > "$4"'
+bind r   = reload
+bind t   = spawn "$HOME/.uzbl/open.sh" t
+bind y   = spawn "$HOME/.uzbl/yank.sh" url primary
+bind x   = spawn "$HOME/.uzbl/bookmark.sh" ''
+bind X   = spawn "$HOME/.uzbl/bookmark.sh" 'l8r'
+bind !r  = sh 'cat "$1" > "$4"'

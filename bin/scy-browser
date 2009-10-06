@@ -1,0 +1,20 @@
+#!/bin/sh
+
+UZBLDIR="$HOME/.uzbl"
+# I hate those XDG dirs. Therefore, fake them.
+for dir in CACHE CONFIG DATA; do
+	export XDG_${dir}_HOME="$HOME/.uzbl/fakexdg/$dir"
+done
+
+pipe="$(find "$UZBLDIR/tmp" -user "$UID" -name 'uzbltabbed*' -print | sort | tail -n 1)"
+
+if [ -p "$pipe" ]; then
+	for url in "$@"; do
+		echo "new $url" > "$pipe"
+	done
+	echo 'bring_to_front' > "$pipe"
+else
+	"$UZBLDIR/cookie_daemon.py" start
+	"$HOME/.uzbl/uzbl_tabbed.py" "$@"
+	"$UZBLDIR/cookie_daemon.py" stop
+fi
