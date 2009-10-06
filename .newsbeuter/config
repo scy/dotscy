@@ -1,52 +1,15 @@
-# Automatically refresh on startup and after an interval.
+# Refresh automatically.
 auto-reload yes
-
-# This is the interval.
-reload-time 23
-
-# TODO: Keyboard mappings.
-# bind-key ...
-
-# TODO: Bookmarking.
-# bookmark-cmd ...
-
-# TODO: Browser.
-# browser ...
-
-# Don't store the articles in the config dir.
-# cache-file "~/.newsbeuter-data/cache.db"
-
-# Remove removed feeds and items when quitting.
-cleanup-on-quit yes
-
-# I always press Q one time too much.
-confirm-exit yes
-
-# TODO: Think of something cool.
-# datetime-format ...
-
-# Save errors.
-# error-log "~/.newsbeuter-data/error.log"
-
-# Keep an infinite backlog.
-max-items 0
-
-# I'm running newsbeuter in screen, so use this to notify.
-notify-screen yes
-
-# Automatically add Podcasts.
-podcast-auto-enqueue yes
-
-# Good if you're testing configuration changes.
 suppress-first-reload yes
 
+# Don't accidentally quit.
+confirm-exit yes
 
+# Retrieve podcasts automatically.
+podcast-auto-enqueue yes
 
-# Some really nice filters follow.
+# Be fast when reloading.
+reload-threads 5
 
-# Remove the boring "link of the day" and commercials from UserFriendly.
-ignore-article "http://www.userfriendly.org/rss/uf.rss" "title !~ \"^Cartoon For \""
-
-# Remove the blahblah from other webcomics.
-ignore-article "http://www.penny-arcade.com/rss.xml"  "title =~ \"^News: \""
-ignore-article "http://www.cad-comic.com/rss/rss.xml" "title =~ \"^News: \""
+# Where to save podcasts.
+download-path "/mnt/ark/a/music/podcasts/%h"
