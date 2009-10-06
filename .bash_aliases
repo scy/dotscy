@@ -51,6 +51,7 @@ alias W="mkrem.sh && wyrd"
 alias M='mpc'
 alias Mrandom='mpc clear; mpc add / >/dev/null; mpc shuffle; mpc play'
 alias Mn='mpc next'
+alias karate='EMAIL=scy@scytale.name ~/proj/kissaudio/karate'
 
 # scp should preserve modification times and display a progress bar.
 alias scp='scp -qp'
