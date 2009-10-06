@@ -33,7 +33,8 @@ eval alias $( \
 )
 
 # Change to oqlt repository.
-alias oqlt='cd "$HOME/org/oqlt" && git status'
+alias Oqlt='cd "$HOME/org/oqlt/oqlt" && git status'
+alias oqlt='cd "$HOME/org/oqlt"'
 
 # ls shortcuts.
 alias ll='ls -lh'
