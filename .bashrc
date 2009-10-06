@@ -176,5 +176,9 @@ fi
 
 
 
+export IPOD_MOUNTPOINT='/mnt/kermit'
+
+
+
 # Don't return false.
 true
