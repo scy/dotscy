@@ -177,6 +177,7 @@ fi
 
 
 export IPOD_MOUNTPOINT='/mnt/kermit'
+export ECHANGELOG_USER="Tim Weber (Scytale) scy-gentoo$(echo -n '@')scytale.name"
 
 
 
