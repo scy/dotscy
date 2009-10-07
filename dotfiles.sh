@@ -4,8 +4,14 @@ LNBASE=".$USER"
 OUTDIR="$HOME"
 TPLDIR="$OUTDIR/$LNBASE"
 
+if [ "$(sed --version 2>&1 | cut -b 3)" = 'GNU' ]; then
+	ESED='sed -r'
+else
+	ESED='sed -E'
+fi
+
 # Which files to ignore when copying over to $OUTDIR.
-SEDCMD="s/^(\.git|\.gitignore|\.scy|dotfiles.sh|res|[^/]+\.(txt|ini|bat))$//"
+SEDCMD='s/^(\.git|\.gitignore|\.scy|dotfiles\.sh|res|[^/]\{1,\}\.(txt|ini|bat))$//'
 
 # Formatted death.
 die() {
@@ -15,15 +21,16 @@ die() {
 
 cd "$TPLDIR" || die "could not change to template directory '$TPLDIR'"
 
-find . -maxdepth 1 | grep -v '^\.$' | cut -d / -f 2- | sed -r -e "$SEDCMD" | while read ITEM; do
-	if [[ ! -z "$ITEM" ]]; then
+find . -maxdepth 1 | cut -b 3- | $ESED -e "$SEDCMD" | while read ITEM; do
+	if [ -n "$ITEM" ]; then
 		LNTARGET="$LNBASE/$ITEM" # Where to link to.
-		if [[ -L "$ITEM" ]]; then
+		# If the destination already exists and is no symlink, remove it.
+		[ -e "$OUTDIR/$ITEM" -a \( ! -L "$OUTDIR/$ITEM" \) ] && rm -rf "$OUTDIR/$ITEM"
+		if [ -L "$ITEM" ]; then
 			# If template is a symlink itself, copy instead of linking to link.
-			cp -uPa "$ITEM" "$OUTDIR"
-		elif [[ ( ! -L "$OUTDIR/$ITEM" ) || ( "$(stat -c %Y "$OUTDIR/$ITEM" 2>/dev/null)" -lt "$(stat -c %Y "$ITEM")" ) ]]; then
-			# If target doesn't exist as symlink or is out-of-date, link it.
-			ln -sfT "$LNTARGET" "$OUTDIR/$ITEM"
+			cp -Pa "$ITEM" "$OUTDIR"
+		else
+			ln -sf "$LNTARGET" "$OUTDIR/$ITEM"
 		fi
 	fi
 done
