@@ -28,7 +28,7 @@ alias Brc='E ~/.bashrc && Brh'
 alias G='git'
 eval alias $( \
 	git config --global --get-regexp '^alias\.' | \
-	sed -e 's/^alias\.\([^ ]\+\) .\+$/G\1="G \1"/' | \
+	sed -e 's/^alias\.\([^ ]\{1,\}\) .\{1,\}$/G\1="G \1"/' | \
 	tr '\n' ' ' \
 )
 
