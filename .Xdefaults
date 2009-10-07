@@ -3,7 +3,7 @@
 XTerm*background: black
 XTerm*foreground: grey
 XTerm*pointerColor: SpringGreen
-XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+XTerm*font: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
 ! No really, this should be the standard.
 XTerm*metaSendsEscape: true
 
@@ -13,10 +13,10 @@ XTerm*metaSendsEscape: true
 Rxvt.fading: 30
 
 ! Nice font, but doesn't have an italic version, therefore use the normal one…
-Rxvt.font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
-Rxvt.boldFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
-Rxvt.italicFont: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
-Rxvt.boldItalicFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.font: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.boldFont: -misc-fixed-bold-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.italicFont: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+Rxvt.boldItalicFont: -misc-fixed-bold-r-*-*-14-*-*-*-*-*-*-*
 ! …and enable brighter colors for ANSI “bold”.
 Rxvt.intensityStyles: true
 
