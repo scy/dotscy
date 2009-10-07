@@ -4,3 +4,6 @@
 
 # Display reminders.
 rem 2>/dev/null
+
+# Don't return false.
+true

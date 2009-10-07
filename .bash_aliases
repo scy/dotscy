@@ -74,3 +74,8 @@ alias GPSF3='exiftool -overwrite_original -GPSLatitude=49.489682 -GPSLatitudeRef
 
 # Add local bash config, if any.
 [[ -r "$HOME/.bash_local" ]] && . "$HOME/.bash_local"
+
+
+
+# Don't return false.
+true
