@@ -51,8 +51,8 @@ scyprompt() {
 	# Refresh the load average.
 	PSLOAD="$($PSLOADCMD)"
 	# Refresh the jobs count.
-	local runningjobs="$(jobs -r | wc -l)"
-	local stoppedjobs="$(jobs -s | wc -l)"
+	local runningjobs="$(jobs -r | wc -l | tr -cd 0-9)"
+	local stoppedjobs="$(jobs -s | wc -l | tr -cd 0-9)"
 	PSJOBS="$([[ "$runningjobs" -gt 0 ]] && echo -n "${runningjobs}r")$([[ "$runningjobs" -gt 0 && "$stoppedjobs" -gt 0 ]] && echo -n '/')$([[ "$stoppedjobs" -gt 0 ]] && echo -n "${stoppedjobs}s")"
 	[ -n "$PSJOBS" ] && PSJOBS="$PSJOBS "
 	# End of refreshments. Start working.
