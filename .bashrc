@@ -4,6 +4,12 @@ TIME_DEFAULT="$TIME_LONG"
 
 
 
+# More into the PATH, but don't recursively bloat when reloading .bashrc.
+[[ -z "$MASTERPATH" ]] && export MASTERPATH="$PATH"
+export PATH="$HOME/bin:$HOME/doc/trackdb:$MASTERPATH:/usr/sbin:/sbin:/opt/local/bin"
+
+
+
 # SCM status information in the prompt.
 unset PSGIT
 PSGITCMD=':'
@@ -123,12 +129,6 @@ done
 
 # Load aliases.
 [[ -f "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases"
-
-
-
-# More into the PATH, but don't recursively bloat when reloading .bashrc.
-[[ -z "$MASTERPATH" ]] && export MASTERPATH="$PATH"
-export PATH="$HOME/bin:$HOME/doc/trackdb:$HOME/proj/bashnag:$MASTERPATH:/usr/sbin:/sbin"
 
 
 
