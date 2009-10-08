@@ -8,7 +8,7 @@ subscribe ^(debate|chaostreffs|aliens)@(lists\.)?ccc\.de$ ^.+@lists\.c3ma\.de$
 set hostname=scytale.name
 set from=scy@scytale.name
 set realname="Tim Weber"
-alternates ^.+@(|.+\.)(scytale\.(d|nam)e|tim-?weber\.name)$ ^((tiweber|mathadm)@rumms|tim\.weber@students)\.uni-mannheim\.de$ ^scytale\.de@gmx\.net$ ^weber@eworks\.de$
+alternates ^.+@(|.+\.)(scytale\.(d|nam)e|tim-?weber\.name)$ ^scytale@oqlt\.de$ ^((tiweber|mathadm)@rumms|tim\.weber@students)\.uni-mannheim\.de$ ^scytale\.de@gmx\.net$ ^weber@eworks\.de$
 set reverse_name=yes
 set reverse_realname=no
 set use_envelope_from=yes
