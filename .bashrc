@@ -88,6 +88,8 @@ case "$HOSTNAME" in
 		PSHOSTCOLOR=32;;   # green for the default, bijaz.
 	chani)
 		PSHOSTCOLOR=33;;   # yellow for chani
+	malus)
+		PSHOSTCOLOR=35;;   # magenta for malus
 	*)
 		PSHOSTCOLOR=37;;   # white by default
 esac
@@ -124,6 +126,8 @@ PROMPT_COMMAND='scyprompt'
 for file in /etc/DIR_COLORS "$HOME/.dir_colors"; do
 	[[ -r "$file" ]] && eval $(dircolors -b "$file")
 done
+# And enable colors in OS X terminals.
+export CLICOLOR=1
 
 
 
