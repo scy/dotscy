@@ -6,4 +6,4 @@ xset b 10 900 80
 "$HOME/bin/term.sh" &
 "$HOME/bin/gpg-agent.sh"
 [ "$HOSTNAME" = 'box' ] && synergys
-exec awesome
+exec i3
