@@ -170,7 +170,7 @@ eval "$(gpg-agent.sh 2>/dev/null)"
 # If .less does not exist, we have to do something.
 if [ -r "$HOME/.lesskey" -a "$HOME/.lesskey" -nt "$HOME/.less" ]; then
 	# If we have lesskey, use it.
-	if which lesskey 2>/dev/null; then
+	if which lesskey 1>/dev/null 2>&1; then
 		lesskey
 	else
 		# Ugly workaround: Set $LESS.
