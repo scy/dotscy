@@ -137,10 +137,7 @@ export CLICOLOR=1
 
 
 # Set locale.
-export LC_ALL='en_US.UTF-8'
-
-# On bijaz, use German instead.
-[[ "$HOSTNAME" == 'bijaz' ]] && export LC_ALL='de_DE.UTF-8'
+export LANG='en_US.UTF-8'
 
 
 

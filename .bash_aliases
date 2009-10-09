@@ -7,8 +7,6 @@ alias E="$EDITOR"
 # Browser.  Currently I'm still using firefox.
 export BROWSER="firefox '%s' &"
 
-# German man pages suck, they're outdated and crappy.
-alias man='LC_ALL=C man'
 # Default settings for cal.
 alias cal='cal -m -3'
 
