@@ -1,4 +1,5 @@
 #!/bin/sh
+killall xconsole
 setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap "$HOME/.scy/res/neo_de.xmodmap"
 xscreensaver &
