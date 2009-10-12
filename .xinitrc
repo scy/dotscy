@@ -1,4 +1,5 @@
 #!/bin/sh
+setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap "$HOME/.scy/res/neo_de.xmodmap"
 xscreensaver &
 xset b 10 900 80 r rate 250 25
