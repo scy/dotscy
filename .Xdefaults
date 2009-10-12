@@ -12,7 +12,7 @@ XTerm*metaSendsEscape: true
 ! Fade out the text when terminal is not focused.
 Rxvt.fading: 30
 
-! Nice font, but doesn't have an italic version, therefore use the normal one…
+! Nice font, but does not have an italic version, therefore use the normal one…
 Rxvt.font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 Rxvt.boldFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-1
 Rxvt.italicFont: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
@@ -23,7 +23,7 @@ Rxvt.intensityStyles: true
 ! Tiny scroll bar at the right side.
 Rxvt.scrollstyle: plain
 Rxvt.scrollBar_right: true
-! Don't scroll while in buffer, even on output, except if I press a key.
+! Do not scroll while in buffer, even on output, except if I press a key.
 Rxvt.scrollTtyOutput: false
 Rxvt.scrollWithBuffer: false
 Rxvt.scrollTtyKeypress: true
@@ -42,7 +42,7 @@ Rxvt.loginShell: true
 ! Sorry Vim, 8th bit meta is just broken.
 Rxvt.meta8: false
 
-! Disable Perl extensions for now, I don't actively use them
+! Disable Perl extensions for now, I do not actively use them
 Rxvt.perl-ext:
 Rxvt.perl-ext-common:
 
@@ -77,7 +77,7 @@ Rxvt.color15: #FFFFFF
 ! URxvt.matcher.button: 1
 ! URxvt.matcher.pattern.1: [\\w+-]+:\\/\\/
 
-! The following settings currently don't work for whatever reason.
+! The following settings currently do not work for whatever reason.
 ! Rxvt.shading: 50
 ! URxvt*inheritPixmap: true
 ! URxvt*tintColor: blue
