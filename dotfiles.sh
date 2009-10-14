@@ -11,7 +11,7 @@ else
 fi
 
 # Which files to ignore when copying over to $OUTDIR.
-SEDCMD='s/^(\.git|\.gitignore|\.scy|dotfiles\.sh|res|[^/]\{1,\}\.(txt|ini|bat))$//'
+SEDCMD='s/^(\.git|\.gitignore|\.scy|dotfiles\.sh|res|[^/]{1,}\.(txt|ini|bat))$//'
 
 # Formatted death.
 die() {
