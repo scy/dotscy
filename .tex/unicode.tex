@@ -2,3 +2,20 @@
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+\PreloadUnicodePage{0}
+
+\usepackage[colorlinks]{hyperref}
+\newcommand\refurl[2]{#2\footnote{\url{#1}}}
+
+\def\ifmonospace{\ifdim\fontdimen3\font=0pt }
+
+%FIXME: Spacing after # too wide.
+\def\Csharp{%
+	\ifmonospace%
+		C\#%
+	\else%
+		C\kern-.1667em\raise.30ex\hbox{\smaller{\#} }%
+	\fi%
+	\spacefactor1000 }
