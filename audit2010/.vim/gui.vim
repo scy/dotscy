@@ -2,6 +2,11 @@
 " under X at the moment.
 set guifont=ter-112n:h9,Consolas:h9:cANSI
 
+" Make MacVim look pimpy.
+if has("gui_macvim")
+	set transparency=10
+endif
+
 " Disable the toolbar. Once I disabled the menu here, but the reason for that 
 " went away after discovering the 'winaltkeys' option.
 set guioptions-=T
