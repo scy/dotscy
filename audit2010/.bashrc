@@ -83,7 +83,7 @@ PSUSERCOLOR=32                             # green by default
 [[ "$USER" != 'scy' ]] && PSUSERCOLOR=33   # yellow if not "scy"
 [[ "$UID" -eq 0 ]] && PSUSERCOLOR=31       # red if root
 
-case "$HOSTNAME" in
+case "$(echo "$HOSTNAME" | cut -d . -f 1)" in
 	bijaz)
 		PSHOSTCOLOR=32;;   # green for the default, bijaz.
 	chani)
