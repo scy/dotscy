@@ -20,4 +20,4 @@ case "$(hostname)" in
 		WM='false'
 		;;
 esac
-exec "$WM"
+exec "$WM" >/dev/null
