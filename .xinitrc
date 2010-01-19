@@ -11,6 +11,9 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # Load my favorite keyboard layout.
 xmodmap "$HOME/.res/neo_de.xmodmap"
 
+# Configure external monitors.
+"$HOME/bin/autovga.sh"
+
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
 	bijaz)
