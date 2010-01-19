@@ -3,7 +3,6 @@
 XTerm*background: black
 XTerm*foreground: grey
 XTerm*pointerColor: SpringGreen
-XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 ! No really, this should be the standard.
 XTerm*metaSendsEscape: true
 
@@ -11,14 +10,6 @@ XTerm*metaSendsEscape: true
 
 ! Fade out the text when terminal is not focused.
 Rxvt.fading: 30
-
-! Nice font, but does not have an italic version, therefore use the normal one…
-Rxvt.font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
-Rxvt.boldFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-1
-Rxvt.italicFont: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
-Rxvt.boldItalicFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-1
-! …and enable brighter colors for ANSI “bold”.
-Rxvt.intensityStyles: true
 
 ! Tiny scroll bar at the right side.
 Rxvt.scrollstyle: plain
