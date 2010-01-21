@@ -38,3 +38,7 @@
 	sf = svn fetch
 	st = stash
 	sta = stash apply
+[url "git@github.com:"]
+	insteadOf = github:
+[url "git://github.com/"]
+	insteadOf = gitpub:

@@ -1,2 +1,12 @@
 alias ssh-autoadd="ssh-add -l 2>/dev/null | grep -q ' $HOME/\\.ssh/id_rsa (RSA)\$' || ssh-add '$HOME/.ssh/id_rsa' 2>/dev/null"
 alias S='ssh-autoadd; ssh'
+
+# Git things.
+if which git >/dev/null 2>&1; then
+	alias G='git'
+	eval alias $( \
+		git config --global --get-regexp '^alias\.' | \
+		sed -e 's/^alias\.\([^ ]\{1,\}\) .\{1,\}$/G\1="G \1"/' | \
+		tr '\n' ' ' \
+	)
+fi
