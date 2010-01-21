@@ -1,0 +1,2 @@
+alias ssh-autoadd="ssh-add -l 2>/dev/null | grep -q ' $HOME/\\.ssh/id_rsa (RSA)\$' || ssh-add '$HOME/.ssh/id_rsa' 2>/dev/null"
+alias S='ssh-autoadd; ssh'
