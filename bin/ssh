@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ssh-add -l 2>/dev/null | grep -q " $HOME/\\.ssh/id_rsa (RSA)\$" || ssh-add "$HOME/.ssh/id_rsa" >/dev/null 2>&1
+realssh="$(which -a ssh | head -n 2 | tail -n 1)"
+exec "$realssh" "$@"
