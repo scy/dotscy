@@ -2,9 +2,9 @@
 include "/etc/wyrdrc"
 
 # Cheat when editing: Edit the source file in src/.
-set edit_old_command = "wyrd-edit \"%file%\" \"%line%\""
-set edit_new_command = "wyrd-edit \"%file%\" \"\""
-set edit_any_command = "wyrd-edit \"%file%\" \"\""
+#set edit_old_command = "wyrd-edit \"%file%\" \"%line%\""
+#set edit_new_command = "wyrd-edit \"%file%\" \"\""
+#set edit_any_command = "wyrd-edit \"%file%\" \"\""
 
 # We're german over here.
 set week_starts_monday = "true"
