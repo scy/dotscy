@@ -14,6 +14,9 @@ xmodmap "$HOME/.res/neo_de.xmodmap"
 # Configure external monitors.
 "$HOME/bin/autovga.sh"
 
+# If available, load private configuration data.
+[ -e "$HOME/.sh/private" ] && . "$HOME/.sh/private"
+
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
 	bijaz)
