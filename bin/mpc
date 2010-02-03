@@ -1,0 +1,12 @@
+#!/bin/sh
+
+realmpc="$(which -a mpc | head -n 2 | tail -n 1)"
+
+case "$1" in
+all)
+	"$realmpc" stop && "$realmpc" clear && "$realmpc" listall | "$realmpc" add && "$realmpc" random on && "$realmpc" play
+	;;
+*)
+	"$realmpc" "$@"
+	;;
+esac
