@@ -19,11 +19,8 @@ xmodmap "$HOME/.res/neo_de.xmodmap"
 
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
-	bijaz)
-		WM='i3'
-		;;
 	*)
-		WM='false'
+		WM='i3'
 		;;
 esac
 exec "$WM" >/dev/null
