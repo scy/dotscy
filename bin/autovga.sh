@@ -10,7 +10,7 @@ if xrandr | grep -q '^VGA1 connected '; then
 	fi
 elif xrandr | grep -q '^DVI-0 connected '; then
 	# Work machine.
-	xrandr --output DVI-0 --right-of VGA-0
+	xrandr --output DVI-0 --left-of VGA-0
 else
 	# No external display. Currently, do nothing.
 	:
