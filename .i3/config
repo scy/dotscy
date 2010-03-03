@@ -121,7 +121,8 @@ bind Mod1+Shift+26 exit
 # Mod1+Shift+r restarts i3 inplace
 bind Mod1+Shift+27 restart
 
-#############################################################
-# DELETE THE FOLLOWING LINES TO DISABLE THE WELCOME MESSAGE #
-#############################################################
-exec xmessage -file /etc/i3/welcome
+assign Navigator 1
+assign icedove-bin 10
+
+workspace  1 screen 0 www
+workspace 10 screen 0 com
