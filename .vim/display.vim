@@ -4,3 +4,5 @@ set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 
 " Activate syntax highlighting by default.
 syntax on
+
+colorscheme dunkel
