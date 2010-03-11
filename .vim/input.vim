@@ -42,3 +42,6 @@ set noautoindent nocindent nosmartindent
 noremap  o    o<C-O>:call MightyIndent(-1)<CR>
 noremap  O    O<C-O>:call MightyIndent(+1)<CR>
 inoremap <CR> <CR><C-O>:call MightyIndent(-1)<CR>
+
+" Do not timeout on mappings, but on keycodes.
+set notimeout ttimeout timeoutlen=50
