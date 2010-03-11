@@ -2,33 +2,43 @@
 set mouse=a
 
 " Use this after creating a new line.
-" All tabs and spaces which are present at the beginning of the previous (above)
-" line will be inserted at the beginning of this line as well, if it is empty.
-function! MightyIndent()
+" All tabs and spaces at the beginning of the current line (if any) will be
+" replaced by exactly the same whitespace string as on the line above (or below,
+" determined by the "offset" argument). This fixes Vim's behavior of filling up
+" with as many tabs as possible.
+function! MightyIndent(offset)
+	" Retrieve position of the new line.
 	let pos = getpos('.')
-	" If current line is the first or it's not empty, do nothing.
-	if pos[1] == 1 || getline('.') != ''
-		return
-	endif
-	let prevline = getline(pos[1] - 1)
-	let prefixlen = match(prevline, '\S')
+	" The "template" line is the one containing the whitespace to be copied.
+	let templine = pos[1] + a:offset
+	let template = getline(templine)
+	let prefixlen = match(template, '\S')
 	" If no non-whitespace was found, copy the whole line.
 	if prefixlen == -1
-		let prefixlen = strlen(prevline)
+		let prefixlen = strlen(template)
 	endif
-	" If the previous line is not indented, do nothing.
+	" If the template line is not indented, do nothing.
 	if prefixlen == 0
 		return
 	endif
-	" Insert the whitespace.
-	call setline(pos[1], prevline[0:prefixlen - 1])
+	" Retrieve everything after the initial whitespace on the current line.
+	let thisline = getline(pos[1])
+	let suffixpos = match(thisline, '\S')
+	" If non-whitespace was found, copy everything after it into "thistext".
+	if suffixpos != -1
+		let thistext = thisline[suffixpos : ]
+	else
+		let thistext = ""
+	endif
+	" Change the line.
+	call setline(pos[1], template[0 : prefixlen - 1] . thistext)
 	" Position the cursor after the whitespace.
-	let pos[2] = prefixlen
+	let pos[2] = prefixlen + 1
 	call setpos('.', pos)
 endfunction
 
 " Use MightyIndent.
 set noautoindent nocindent nosmartindent
-noremap  o    o<C-O>:call MightyIndent()<CR>
-noremap  O    O<C-O>:call MightyIndent()<CR>
-inoremap <CR> <CR><C-O>:call MightyIndent()<CR>
+noremap  o    o<C-O>:call MightyIndent(-1)<CR>
+noremap  O    O<C-O>:call MightyIndent(+1)<CR>
+inoremap <CR> <CR><C-O>:call MightyIndent(-1)<CR>
