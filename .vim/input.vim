@@ -45,3 +45,17 @@ inoremap <CR> <CR><C-O>:call MightyIndent(-1)<CR>
 
 " Do not timeout on mappings, but on keycodes.
 set notimeout ttimeout timeoutlen=50
+
+" If given an argument, use n spaces to indent. Else, use a tab.
+function! TabWiz(...)
+	if a:0 == 0
+		set noexpandtab tabstop=8
+	else
+		execute "set expandtab tabstop=" . a:1
+	endif
+endfunction
+
+" Define :T for fast access to TabWiz.
+command! -nargs=? T :call TabWiz(<args>)
+" Initialize.
+T
