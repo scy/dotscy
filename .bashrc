@@ -1,5 +1,5 @@
 s() {
-	[ -e "$HOME/.sh/$1" ] && source "$HOME/.sh/$1"
+	[ -e "$HOME/.sh/$1" ] && . "$HOME/.sh/$1"
 }
 
 s aliases
