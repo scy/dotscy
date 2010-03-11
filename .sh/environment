@@ -1,0 +1,3 @@
+# If $HOSTNAME is not set, set it.
+[ -z "$HOSTNAME" ] && HOSTNAME="$(hostname)"
+export HOSTNAME
