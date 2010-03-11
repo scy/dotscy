@@ -13,6 +13,7 @@
 	tool = vimdiff
 [alias]
 	a = add
+	ae = add -e
 	am = am
 	ap = add -p
 	bash = !bash
