@@ -3,7 +3,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Display reminders, if remind is installed.
-which remind &>/dev/null && rem 2>/dev/null
+# which remind &>/dev/null && rem 2>/dev/null
 
 # Don't return false.
 true
