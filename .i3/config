@@ -121,6 +121,16 @@ bind Mod1+Shift+26 exit
 # Mod1+Shift+r restarts i3 inplace
 bind Mod1+Shift+27 restart
 
+# Multimedia keys.
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86Tools exec mpc all
+
+# Other funky keys.
+bindsym XF86ScreenSaver exec xtrlock
+
 assign Navigator 1
 assign icedove-bin 10
 
