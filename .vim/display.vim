@@ -53,3 +53,6 @@ let s .= "/%LL"                        | " number of lines
 set statusline=%!s
 " Always show a status line.
 set laststatus=2
+
+" Show partial normal mode commands and mappings in the command line.
+set showcmd
