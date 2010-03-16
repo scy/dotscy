@@ -1,3 +1,12 @@
+" Make backspace go back.
 map <BS> :back<CR>
+
+" Use my own external editor and pass it the current URL.
 set editor="scy-vimperator-editor ''"
 autocmd LocationChange . :set editor="scy-vimperator-editor '<url>'"
+
+" Ring a visual bell on errors.
+set errorbells visualbell
+
+" Let me manually focus input elements.
+set focuscontent
