@@ -11,6 +11,9 @@ export HOSTNAME
 # Set favorite pager.
 export PAGER="$HOME/bin/scy-pager"
 
+# Use a colored pager for man pages.
+export MANPAGER="$HOME/bin/manpager.sh"
+
 # Set favorite editor.
 export EDITOR="$HOME/bin/scy-editor"
 export VISUAL="$EDITOR"
