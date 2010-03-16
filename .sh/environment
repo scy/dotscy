@@ -1,3 +1,9 @@
+# Set $PATH. To prevent pre- and appending to $PATH for every config reload,
+# first store the "master path" determined by host-wide configuration.
+[ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
+# Modify according to my needs.
+export PATH="$HOME/bin:$MASTERPATH"
+
 # If $HOSTNAME is not set, set it.
 [ -z "$HOSTNAME" ] && HOSTNAME="$(hostname)"
 export HOSTNAME
