@@ -9,7 +9,7 @@ which killall >/dev/null 2>&1 && killall xconsole
 setxkbmap -option terminate:ctrl_alt_bksp
 
 # Load my favorite keyboard layout.
-xmodmap "$HOME/.res/neo_de.xmodmap"
+xmodmap "$HOME/res/neo_de.xmodmap"
 
 # Configure external monitors.
 "$HOME/bin/autovga.sh"
