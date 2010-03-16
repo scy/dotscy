@@ -70,6 +70,8 @@ case "$HOSTNAME" in
 		PSHOSTCOLOR=32;;   # green for the default, bijaz.
 	chani)
 		PSHOSTCOLOR=33;;   # yellow for chani
+	dotstim)
+		PSHOSTCOLOR=30;;   # grey for work machine
 	malus)
 		PSHOSTCOLOR=35;;   # magenta for malus
 	*)
