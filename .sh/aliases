@@ -1,3 +1,11 @@
+# Core commands.
+alias ls='ls --color=auto'
+alias l='ls -lh'
+alias la='l -a'
+alias lt='l -t'
+alias lta='lt -a'
+alias lat='lta'
+
 # SSH things.
 eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\+\)$/S\1="S \1"/p' .ssh/config | tr '\n' ' ')
 
