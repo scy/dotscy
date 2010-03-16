@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if which gvim >/dev/null; then
+	exec gvim -f "$@"
+else
+	return 0
+fi

@@ -1,1 +1,2 @@
 map <BS> :back<CR>
+set editor=scy-vimperator-editor
