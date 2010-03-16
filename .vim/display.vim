@@ -5,8 +5,10 @@ set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 " Activate syntax highlighting by default.
 syntax on
 
+" Use my own color scheme.
 colorscheme dunkel
 
+" A function to shorten the current encoding as much as possible.
 function! ShortFEnc()
 	" If no file encoding is set, use the system encoding.
 	let e = (&fileencoding == "") ? &enc : &fenc
@@ -30,6 +32,8 @@ function! ShortFEnc()
 	if &fileencoding == "" | let r .= "?" | endif
 	return r
 endfunction
+
+" Status line.
 let s = ""
 let s .= "%<"                          | " truncate at the start
 let s .= "%f%8* | "                    | " file name
@@ -47,4 +51,5 @@ let s .= ":%c%V"                       | " column number, virtual column (if dif
 let s .= " %P"                         | " percentage
 let s .= "/%LL"                        | " number of lines
 set statusline=%!s
+" Always show a status line.
 set laststatus=2
