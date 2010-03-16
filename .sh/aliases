@@ -7,7 +7,7 @@ alias lta='lt -a'
 alias lat='lta'
 
 # SSH things.
-eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\+\)$/S\1="S \1"/p' .ssh/config | tr '\n' ' ')
+eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\+\)$/S\1="S \1"/p' "$HOME/.ssh/config" | tr '\n' ' ')
 
 # Git things.
 if which git >/dev/null 2>&1; then
