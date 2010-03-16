@@ -8,6 +8,9 @@ export PATH="$HOME/bin:$MASTERPATH"
 [ -z "$HOSTNAME" ] && HOSTNAME="$(hostname)"
 export HOSTNAME
 
+# Set favorite pager.
+export PAGER="$HOME/bin/scy-pager"
+
 # Set favorite editor.
 export EDITOR="$HOME/bin/scy-editor"
 export VISUAL="$EDITOR"

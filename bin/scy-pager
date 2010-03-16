@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if which less >/dev/null; then
+	exec less
+else
+	exec more
+fi
