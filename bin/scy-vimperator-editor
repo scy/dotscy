@@ -1,6 +1,7 @@
 #!/bin/sh
 
 if which gvim >/dev/null; then
+	export VIMPERATOR_URL="$1"; shift
 	exec gvim -f "$@"
 else
 	return 0

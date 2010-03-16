@@ -1,2 +1,3 @@
 map <BS> :back<CR>
-set editor=scy-vimperator-editor
+set editor="scy-vimperator-editor ''"
+autocmd LocationChange . :set editor="scy-vimperator-editor '<url>'"
