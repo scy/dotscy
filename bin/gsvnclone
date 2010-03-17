@@ -1,0 +1,29 @@
+#!/bin/sh
+
+url="$1"; shift
+proj="$(basename "$url")"
+
+user="$1"; shift
+
+if [ "$#" -eq 0 ]; then
+	stdlayout='-s'
+else
+	stdlayout=''
+fi
+
+git svn init "$stdlayout" --username="$user" "$url" "$proj"
+cd "$proj"
+
+autmpl="$HOME/.svnauthors"
+aufile='.git/svnauthors'
+if [ -e "$autmpl" ]; then
+	cp "$autmpl" "$aufile"
+fi
+scy-editor "$aufile"
+if [ -e "$autmpl" ] && diff -q "$autmpl" "$aufile" >/dev/null; then
+	rm "$aufile"
+	aufile="$autmpl"
+fi
+git config svn.authorsfile "$aufile"
+
+git svn fetch
