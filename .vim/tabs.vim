@@ -43,6 +43,10 @@ function! IndentGuess()
 			let max = key
 		endif
 	endfor
+	" If the lines are not indented at all, do nothing.
+	if max == 0
+		return
+	endif
 	" If more lines are tabbed than spaced, assume tabs are used.
 	if d['t'] > d[max]
 		" Leave 'tabstop' untouched (i.e. fall back to user default).
