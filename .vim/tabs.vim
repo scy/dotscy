@@ -102,14 +102,16 @@ inoremap <CR> <CR><C-O>:call MightyIndent(-1)<CR>
 " If given an argument, use n spaces to indent. Else, use a tab.
 function! TabWiz(...)
 	if a:0 == 0
-		set noexpandtab tabstop=8
+		execute 'set noexpandtab tabstop=' . g:tabwiz_default_ts
 	else
-		execute "set expandtab tabstop=" . a:1
+		execute 'set expandtab tabstop=' . a:1
 	endif
 endfunction
 
 " Define :T for fast access to TabWiz.
 command! -nargs=? T :call TabWiz(<args>)
+" Set TabWiz defaults. You might want to change this.
+let g:tabwiz_default_ts = 8
 " Initialize.
 T
 
