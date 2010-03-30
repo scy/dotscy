@@ -26,8 +26,8 @@
 	f = fetch
 	fp = format-patch --stdout --thread -C origin..HEAD
 	fpp = "!git fp > scy-git-patch.txt"
-	l = log
-	lp = log -p
+	l = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate:   %ad%n%n%w(76,4,4)%s%n%n%-b%n'
+	lp = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate:   %ad%n%n%w(76,4,4)%s%n%n%-b%n' -p
 	oops = rebase -i HEAD~20
 	p = push
 	pr = pull --rebase
