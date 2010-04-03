@@ -2,7 +2,7 @@
 # first store the "master path" determined by host-wide configuration.
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 # Modify according to my needs.
-export PATH="$HOME/bin:$MASTERPATH"
+export PATH="$HOME/bin:/usr/sbin:/sbin:$MASTERPATH:/opt/local"
 
 # If $HOSTNAME is not set, set it.
 [ -z "$HOSTNAME" ] && HOSTNAME="$(hostname)"
