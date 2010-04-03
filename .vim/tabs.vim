@@ -13,7 +13,10 @@ function! IndentGuess()
 		if m == 0 && matchend(getline(i), '^	*') > 0
 			" Count this line as using tabs, be done.
 			let d['t'] += 1
-		else
+		" Completely ignore (really) empty lines. These often occur as
+		" empty lines between two indented ones, biasing towards those
+		" lines' indent level, which is not what we want.
+		elseif getline(i) != ''
 			" Calculate difference to previous line.
 			let diff = abs(m - last)
 			" Ignore differences which are zero or insane.
@@ -25,9 +28,9 @@ function! IndentGuess()
 				" Count this line.
 				let d[diff] += 1
 			endif
+			" This line will soon be the previous one.
+			let last = m
 		endif
-		" This line will soon be the previous one.
-		let last = m
 		let i += 1
 	endwhile
 	" Now, find the difference that appeared most often.
