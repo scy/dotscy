@@ -1,0 +1,13 @@
+s() {
+	[ -e "$HOME/.sh/$1" ] && . "$HOME/.sh/$1"
+}
+
+s environment
+s aliases
+
+# If this shell is for some reason not interactive, stop at this point.
+# This check is possibly total bullshit.
+if [ -z "$PS1" ]; then return; fi
+
+s private
+s prompt

@@ -1,0 +1,7 @@
+# A login shell does everything an interactive shell does...
+[ -f "$HOME/.sh/interactive" ] && . "$HOME/.sh/interactive"
+
+# ...plus more.
+
+# Don't return false.
+true
