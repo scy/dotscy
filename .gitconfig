@@ -37,6 +37,7 @@
 	s = status
 	sd = svn dcommit
 	sf = svn fetch
+	sr = svn rebase
 	st = stash
 	sta = stash apply
 [url "git@github.com:"]
