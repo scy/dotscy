@@ -1,0 +1,9 @@
+# When leaving the console, clear the screen to increase privacy.
+# $SHLVL is non-POSIX, but at least bash has it available.
+if [ "$SHLVL" = 1 ]; then
+	if [ -x /usr/bin/clear_console ]; then
+		/usr/bin/clear_console -q
+	elif which clear >/dev/null; then
+		clear
+	fi
+fi
