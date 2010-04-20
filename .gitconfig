@@ -34,6 +34,7 @@
 	pr = pull --rebase
 	rb = rebase
 	rbi = rebase -i
+	rbm = rebase master
 	rbo = rebase origin
 	s = status
 	sd = svn dcommit
