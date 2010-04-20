@@ -1,0 +1,32 @@
+#!/bin/sh
+
+gitdir="$(git rev-parse --git-dir)"
+default="$(cat "$gitdir/default-branch" 2>/dev/null)"
+cmd="$1"
+[ "$#" -ge 1 ] && shift
+
+case "$cmd" in
+checkout|co)
+	git checkout "${default:-master}" "$@"
+	;;
+rebase|rb)
+	if [ -z "$default" ]; then
+		echo 'no default branch set' >&2
+		exit 2
+	fi
+	source='master'
+	if [ "$#" -ge 1 ]; then
+		if ( echo "$1" | grep -q / ) || ( [ ! -f "$gitdir/refs/heads/$1" ] ); then
+			:
+		else
+			source="$1"
+			shift
+		fi
+	fi
+	git checkout "$default" &&
+	git rebase "$source" "$@"
+	;;
+*)
+	echo "$default"
+	;;
+esac

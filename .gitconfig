@@ -24,6 +24,8 @@
 	cob = checkout -b
 	com = checkout master
 	d = diff
+	db = default-branch checkout
+	dbr = default-branch rebase
 	dc = diff --cached
 	f = fetch
 	fp = format-patch --stdout --thread -C origin..HEAD
