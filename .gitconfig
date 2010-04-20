@@ -22,6 +22,7 @@
 	ca = commit -a
 	co = checkout
 	cob = checkout -b
+	com = checkout master
 	d = diff
 	dc = diff --cached
 	f = fetch
