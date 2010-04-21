@@ -17,3 +17,13 @@ export MANPAGER="$HOME/bin/manpager.sh"
 # Set favorite editor.
 export EDITOR="$HOME/bin/scy-editor"
 export VISUAL="$EDITOR"
+
+# Set favorite time formats.
+TIME_LONG='%a %d %b %y %H:%M:%S'
+TIME_DEFAULT="$TIME_LONG"
+
+# Give us a long history.
+HISTCONTROL='ignorespace'
+HISTSIZE=10000
+HISTFILESIZE="$HISTSIZE"
+HISTTIMEFORMAT="$TIME_DEFAULT  "
