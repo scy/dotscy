@@ -9,5 +9,4 @@ s aliases
 # This check is possibly total bullshit.
 if [ -z "$PS1" ]; then return; fi
 
-s private
 s prompt
