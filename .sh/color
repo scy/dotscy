@@ -1,0 +1,11 @@
+# The Linux console supports the "ESC ] P nrrggbb" escape sequence to change
+# the terminal's color palette.
+if [ "$TERM" = 'linux' ]; then
+	# Read my colors as defined in the Rxvt config, convert and set them.
+	sed -n -e 's/^Rxvt\.color\([0-9]*\): *#\([0-9a-f]*\)$/\1:\2/p' "$HOME/.Xdefaults" |
+	while read -r line; do
+		idx="$(printf '%x' "$(echo "$line" | cut -d : -f 1)")";
+		col="$(echo "$line" | cut -d : -f 2)";
+		echo -n "]P$idx$col"
+	done
+fi
