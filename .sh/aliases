@@ -1,5 +1,6 @@
 # ls
-alias ls='ls --color=auto'
+# Only use --color if ls actually knows that parameter.
+ls --color "$HOME" >/dev/null 2>&1 && alias ls='ls --color=auto'
 alias l='ls -lh'
 alias la='l -a'
 alias lt='l -t'

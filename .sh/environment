@@ -28,5 +28,8 @@ HISTSIZE=10000
 HISTFILESIZE="$HISTSIZE"
 HISTTIMEFORMAT="$TIME_DEFAULT  "
 
+# Make BSD (and therefore Mac) utils use colors.
+export CLICOLOR=1
+
 # Configure less.
 export LESS='--ignore-case --jump-target=1 --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-2'
