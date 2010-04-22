@@ -37,30 +37,30 @@ Rxvt.meta8: false
 Rxvt.perl-ext:
 Rxvt.perl-ext-common:
 
-! Colors! 
-! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white
-Rxvt.background: #000000
-Rxvt.foreground: #999999
+! Colors!
 Rxvt.cursorColor: SpringGreen
 Rxvt.cursorColor2: black
 Rxvt.pointerColor: SpringGreen
 Rxvt.scrollColor: #8888AA
-Rxvt.color0: #000000
-Rxvt.color1: #880000
-Rxvt.color2: #008800
-Rxvt.color3: #888800
-Rxvt.color4: #2222FF
-Rxvt.color5: #880088
-Rxvt.color6: #008888
-Rxvt.color7: #999999
-Rxvt.color8: #666666
-Rxvt.color9: #FF0000
-Rxvt.color10: #00FF00
-Rxvt.color11: #FFFF00
-Rxvt.color12: #8888FF
-Rxvt.color13: #FF00FF
-Rxvt.color14: #00FFFF
-Rxvt.color15: #FFFFFF
+! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white
+Rxvt.background: #000000
+Rxvt.color0:     #000000
+Rxvt.color8:     #666666
+Rxvt.color1:     #9c0804
+Rxvt.color9:     #e80e07
+Rxvt.color2:     #5c991c
+Rxvt.color10:    #7bcc25
+Rxvt.color3:     #ffa929
+Rxvt.color11:    #fff129
+Rxvt.color4:     #003687
+Rxvt.color12:    #0063f7
+Rxvt.color5:     #4f0035
+Rxvt.color13:    #cf008a
+Rxvt.color6:     #06767a
+Rxvt.color14:    #0abcc2
+Rxvt.foreground: #bebebe
+Rxvt.color7:     #bebebe
+Rxvt.color15:    #ffffff
 
 ! I need to work on a nice pattern.
 ! URxvt.perl-ext: matcher
