@@ -9,6 +9,7 @@
 /.esd_auth
 /.gconfd/saved_state
 /.gstreamer-*/registry.*.bin
+/.icedove/
 /.lesshst
 /.macromedia/Flash_Player/
 /.mozilla/appreg
