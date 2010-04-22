@@ -27,3 +27,6 @@ HISTCONTROL='ignorespace'
 HISTSIZE=10000
 HISTFILESIZE="$HISTSIZE"
 HISTTIMEFORMAT="$TIME_DEFAULT  "
+
+# Configure less.
+export LESS='--ignore-case --jump-target=1 --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-2'
