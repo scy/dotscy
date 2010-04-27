@@ -114,7 +114,7 @@ endfunction
 " Define :T for fast access to TabWiz.
 command! -nargs=? T :call TabWiz(<args>)
 " Set TabWiz defaults. You might want to change this.
-let g:tabwiz_default_ts = 8
+let g:tabwiz_default_ts = 4
 " Initialize.
 T
 
