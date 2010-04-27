@@ -31,6 +31,12 @@ case "$cmd" in
 checkout|co)
 	git checkout "${default:-master}" "$@"
 	;;
+merge|m)
+	requiredefaultbranch
+	source="$(paramormaster "$@")" && shift
+	git checkout "$default" &&
+	git merge "$source" "$@"
+	;;
 rebase|rb)
 	requiredefaultbranch
 	source="$(paramormaster "$@")" && shift

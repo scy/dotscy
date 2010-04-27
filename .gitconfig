@@ -25,6 +25,7 @@
 	com = checkout master
 	d = diff
 	db = default-branch checkout
+	dbm = default-branch merge
 	dbr = default-branch rebase
 	dc = diff --cached
 	f = fetch
