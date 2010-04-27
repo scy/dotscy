@@ -12,21 +12,28 @@ requiredefaultbranch() {
 	fi
 }
 
+paramormaster() {
+	if [ "$#" -ge 1 ]; then
+		if ( echo "$1" | grep -q / ) || ( [ ! -f "$gitdir/refs/heads/$1" ] ); then
+			echo 'master'
+			return 1
+		else
+			echo "$1"
+			return 0
+		fi
+	else
+		echo 'master'
+		return 2
+	fi
+}
+
 case "$cmd" in
 checkout|co)
 	git checkout "${default:-master}" "$@"
 	;;
 rebase|rb)
 	requiredefaultbranch
-	source='master'
-	if [ "$#" -ge 1 ]; then
-		if ( echo "$1" | grep -q / ) || ( [ ! -f "$gitdir/refs/heads/$1" ] ); then
-			:
-		else
-			source="$1"
-			shift
-		fi
-	fi
+	source="$(paramormaster "$@")" && shift
 	git checkout "$default" &&
 	git rebase "$source" "$@"
 	;;
