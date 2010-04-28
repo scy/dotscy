@@ -24,9 +24,6 @@ Rxvt.saveLines: 10000
 ! Make it old-school.
 Rxvt.cursorBlink: true
 
-! rxvt-unicode terminfo exists on too few systems.
-Rxvt.termName: rxvt
-
 ! Open login shells.
 Rxvt.loginShell: true
 
