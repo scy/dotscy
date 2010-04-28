@@ -1,0 +1,3 @@
+[submodule ".vim/syntax/markdown"]
+	path = .vim/syntax/markdown
+	url = gitpub:plasticboy/vim-markdown.git
