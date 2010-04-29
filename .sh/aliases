@@ -13,7 +13,23 @@ alias V="$(if which vim >/dev/null; then echo vim -R; else echo L; fi)"
 alias E="scy-editor"
 
 # Settings for ncal.
-alias ncal='ncal -w3M'
+# First, determine what kind of ncal we have.
+which ncal >/dev/null && ncal -3 >/dev/null 2>&1
+case "$?" in
+1)
+	# None at all. In that case, alias ncal to cal.
+	alias ncal='cal'
+	;;
+64)
+	# An OS X cal. All hope is lost. BSD cals suck alredy, Mac cals are unbearable.
+	:
+	;;
+0)
+	# A BSD ncal. Define some defaults.
+	alias ncal='ncal -w3M'
+	;;
+esac
+
 # Settings for cal.
 # First, determine what kind of cal we have.
 calversion="$(cal -V 2>&1)"
@@ -25,8 +41,10 @@ case "$?" in
 	fi
 	;;
 64)
-	# This is probably a BSD cal. It sucks royally. If we have ncal, use that instead.
-	which ncal >/dev/null && alias cal=ncal
+	# This is probably a BSD cal. It sucks royally. Use ncal instead.
+	# Note that if we don't have ncal available, ncal will be an alias to cal (see above).
+	# The shell will break this circular aliasing by calling "cal", which is exactly what we want.
+	alias cal=ncal
 	;;
 esac
 
