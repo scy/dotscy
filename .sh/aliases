@@ -12,6 +12,24 @@ alias L="$(if which less >/dev/null; then echo less; else echo more; fi)"
 alias V="$(if which vim >/dev/null; then echo vim -R; else echo L; fi)"
 alias E="scy-editor"
 
+# Settings for ncal.
+alias ncal='ncal -w3M'
+# Settings for cal.
+# First, determine what kind of cal we have.
+calversion="$(cal -V 2>&1)"
+case "$?" in
+0)
+	if echo "$calversion" | grep -q ' util-linux'; then
+		# This is a util-linux(-ng) cal which at least understands -3 and -m for "monday".
+		alias cal='cal -3m'
+	fi
+	;;
+64)
+	# This is probably a BSD cal. It sucks royally. If we have ncal, use that instead.
+	which ncal >/dev/null && alias cal=ncal
+	;;
+esac
+
 # SSH things.
 eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\+\)$/S\1="S \1"/p' "$HOME/.ssh/config" | tr '\n' ' ')
 
