@@ -4,3 +4,6 @@
 [submodule ".vim/pathogen"]
 	path = .vim/pathogen
 	url = gitpub:tpope/vim-pathogen.git
+[submodule ".vim/bundle/textile"]
+	path = .vim/bundle/textile
+	url = gitpub:scy/vim-textile.git
