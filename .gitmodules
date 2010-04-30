@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/textile"]
 	path = .vim/bundle/textile
 	url = gitpub:scy/vim-textile.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = gitpub:tpope/vim-surround.git
