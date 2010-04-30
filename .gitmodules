@@ -1,6 +1,3 @@
-[submodule ".vim/syntax/markdown"]
-	path = .vim/syntax/markdown
-	url = gitpub:plasticboy/vim-markdown.git
 [submodule ".vim/pathogen"]
 	path = .vim/pathogen
 	url = gitpub:tpope/vim-pathogen.git
@@ -10,3 +7,6 @@
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = gitpub:tpope/vim-surround.git
+[submodule ".vim/bundle/markdown"]
+	path = .vim/bundle/markdown
+	url = gitpub:scy/vim-markdown.git
