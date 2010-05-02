@@ -6,7 +6,7 @@ include "/etc/wyrdrc"
 #set edit_new_command = "wyrd-edit \"%file%\" \"\""
 #set edit_any_command = "wyrd-edit \"%file%\" \"\""
 
-# We're german over here.
+# We're German over here.
 set week_starts_monday = "true"
 set schedule_12_hour = "false"
 set selection_12_hour = "false"
@@ -35,6 +35,9 @@ set advance_warning = "false"
 set busy_level1 = "0"
 
 # Set colors.
-color calendar_level1	white	black
-color calendar_level2	green	black
-color calendar_level3	red		black
+color calendar_level1 white black
+color calendar_level2 green black
+color calendar_level3 red   black
+
+# I _never_ use the "natural language" feature. Q is for quit! Always!
+bind "q" quit
