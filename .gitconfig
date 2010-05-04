@@ -42,6 +42,7 @@
 	rbm = rebase master
 	rbo = rebase origin
 	s = status
+	sm = submodule
 	sd = svn dcommit
 	sf = svn fetch
 	sr = svn rebase
