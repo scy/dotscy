@@ -1,5 +1,6 @@
 /.aptitude/
 /.bash_history
+/.cache/
 /.config/enchant/*.dic
 /.config/enchant/*.exc
 /.config/gtk-*/gtkfilechooser.ini
@@ -7,6 +8,7 @@
 /.dbus/session-bus/
 /.dmenu_cache
 /.esd_auth
+/.gconf/
 /.gconfd/saved_state
 /.gstreamer-*/registry.*.bin
 /.icedove/
