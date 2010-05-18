@@ -5,6 +5,7 @@
 /.config/enchant/*.exc
 /.config/gtk-*/gtkfilechooser.ini
 /.config/Trolltech.conf
+/.dbshell
 /.dbus/session-bus/
 /.dmenu_cache
 /.esd_auth
