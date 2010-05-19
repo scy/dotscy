@@ -1,5 +1,58 @@
-" Make backspace go back.
+
+" Don't warn on about:config.
+set! general.warnOnAboutConfig=false
+
+" No close buttons on tabs.
+set! browser.tabs.closeButtons=2
+
+" Always display tabs bar.
+set! browser.tabs.autoHide=false
+
+" Allow for smaller and wider tabs.
+set! browser.tabs.tabMinWidth=50
+set! browser.tabs.tabMaxWidth=4000
+
+" Open in new tabs instead of new windows. Always.
+set! browser.link.open_newwindow=3
+set! browser.link.open_newwindow.restriction=0
+
+" No automatic update checks.
+set! app.update.enabled=false
+set! browser.search.update=false
+set! extensions.update.enabled=false
+set! extensions.update.notifyUser=false
+
+" No prefetching.
+set! network.prefetch-next=false
+
+" Empty start page.
+set! browser.startup.
+
+" Make backspace go back, control-backspace go forward.
 map <BS> :back<CR>
+map <C-BS> :forward<CR>
+
+" Make Alt-O and Alt-T do default searches.
+execute "map <A-o> :open " + options.defsearch + " "
+execute "map <A-t> :tabopen " + options.defsearch + " "
+
+" Show a tab number over the tab icon.
+set guioptions=N
+
+" Hints for input fields use their label, then their name.
+set hintinputs="label,name"
+
+" Open some things that should open in a new tab in a new tab.
+set newtab="all"
+
+" Use smart case searches.
+set ignorecase smartcase
+
+" Do not use suggest engines.
+set suggestengines=""
+
+" Complete awesomely.
+set wildoptions="auto" wildmode="list:longest"
 
 " Use my own external editor and pass it the current URL.
 set editor="scy-vimperator-editor ''"
@@ -10,3 +63,6 @@ set errorbells visualbell
 
 " Let me manually focus input elements.
 set focuscontent
+
+" Clear the command bar.
+echo
