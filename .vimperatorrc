@@ -1,3 +1,62 @@
+" Delete all search engines when starting up. Add my favorite ones.
+javascript <<EOF
+var bss = services.get("browserSearch");
+bss.getEngines({}).forEach(function (engine) { bss.removeEngine(engine); });
+var myengines = [ ["Google",
+                   "http://www.google.com/favicon.ico",
+                   "g",
+                   "Google Web Search",
+                   "GET",
+                   "http://www.google.com/search?q={searchTerms}",
+                  ],
+                  ["Google Code",
+                   "http://www.google.com/favicon.ico",
+                   "gc",
+                   "Google Code Search",
+                   "GET",
+                   "http://www.google.com/codesearch?q={searchTerms}",
+                  ],
+                  ["Ixquick",
+                   "http://www.ixquick.com/favicon.ico",
+                   "i",
+                   "Ixquick Web Search",
+                   "GET",
+                   "https://s4-eu.ixquick.com/do/metasearch.pl?prf=f5253fd910e2393ad4ab017fd499462f&query={searchTerms}",
+                  ],
+                  ["Scroogle",
+                   "http://www.scroogle.org/favicon.ico",
+                   "s",
+                   "Scroogle Web Search",
+                   "GET",
+                   "https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw={searchTerms}&n=5",
+                  ],
+                  ["Twitter",
+                   "http://search.twitter.com/favicon.png",
+                   "t",
+                   "Twitter Search",
+                   "GET",
+                   "http://search.twitter.com/search?q={searchTerms}",
+                  ],
+                  ["MozillaZine KB",
+                   "http://kb.mozillazine.org/favicon.ico",
+                   "mozkb",
+                   "MozillaZine Knowledge Base Search",
+                   "GET",
+                   "http://kb.mozillazine.org/Special:Search?search={searchTerms}",
+                  ]
+                ];
+// Wikipedia in several languages.
+['de', 'en'].forEach(function (lang) {
+	myengines.push(["Wikipedia " + lang, "http://" + lang + ".wikipedia.org/favicon.ico", "w" + lang, "Wikipedia " + lang, "GET", "http://" + lang + ".wikipedia.org/wiki/Special:Search?search={searchTerms}"]);
+});
+myengines.forEach(function (engine) {
+	bss.addEngineWithDetails(engine[0] + " (Scytale)", engine[1], engine[2], engine[3], engine[4], engine[5]);
+});
+bss.defaultEngine = bss.getEngineByName(myengines[0][0] + " (Scytale)")
+EOF
+
+" Set the default engine.
+set defsearch="g"
 
 " Don't warn on about:config.
 set! general.warnOnAboutConfig=false
