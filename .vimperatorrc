@@ -66,6 +66,25 @@ EOF
 " Set the default engine.
 set defsearch="g"
 
+" A builtin is.gd shortener.
+javascript <<EOF
+shortenURLIsGd = function (url) {
+	var req = new XMLHttpRequest();
+	req.open("GET", "http://is.gd/api.php?longurl=" + escape(url), true)
+	req.onreadystatechange = function (ev) {
+		if (req.readyState == 4) {
+			if (req.status == 200) {
+				util.copyToClipboard(req.responseText, true);
+			} else {
+				liberator.echo(req.responseText);
+			}
+		}
+	}
+	req.send(null);
+}
+EOF
+map <silent> gy :javascript shortenURLIsGd(buffer.URL);<CR>
+
 " Don't warn on about:config.
 set! general.warnOnAboutConfig=false
 
