@@ -1,3 +1,11 @@
+" Delete all bookmarks when starting up (because I'll manage them manually).
+javascript <<EOF
+var bms = services.get("bookmarks");
+bms.removeFolderChildren(bms.bookmarksMenuFolder);
+bms.removeFolderChildren(bms.toolbarFolder);
+bms.removeFolderChildren(bms.unfiledBookmarksFolder);
+EOF
+
 " Delete all search engines when starting up. Add my favorite ones.
 javascript <<EOF
 var bss = services.get("browserSearch");
