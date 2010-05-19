@@ -9,12 +9,16 @@
 /.dbus/session-bus/
 /.dmenu_cache
 /.esd_auth
+/.fontconfig/
 /.gconf/
 /.gconfd/saved_state
+/.gegl-0.0/
+/.gimp-2.6/
 /.gstreamer-*/registry.*.bin
 /.icedove/
 /.lesshst
 /.macromedia/Flash_Player/
+/.mc/
 /.mozilla/appreg
 /.mozilla/extensions/
 /.mozilla-thunderbird/
@@ -22,6 +26,7 @@
 /.purple/
 /.recently-used.xbel
 /.subversion/
+/.thumbnails/
 /.Xauthority
 /.xsession-errors
 /Desktop/
