@@ -118,9 +118,9 @@ set! browser.startup.
 map <BS> :back<CR>
 map <C-BS> :forward<CR>
 
-" Make Alt-O and Alt-T do default searches.
-execute "map <A-o> :open " + options.defsearch + " "
-execute "map <A-t> :tabopen " + options.defsearch + " "
+" Make Alt-g and Alt-G do default searches.
+execute "map <A-g> :open " + options.defsearch + " "
+execute "map <A-G> :tabopen " + options.defsearch + " "
 
 " Show a tab number over the tab icon.
 set guioptions=N
