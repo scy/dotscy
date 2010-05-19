@@ -1,0 +1,4 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+/* I really don't need it. Plus, it gets confused by Vimperator's tab number overlay. */
+.tabs-newtab-button { display:none; }
