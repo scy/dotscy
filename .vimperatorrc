@@ -119,7 +119,7 @@ set ignorecase smartcase
 set suggestengines=""
 
 " Complete awesomely.
-set wildoptions="auto" wildmode="list:longest"
+set wildoptions="auto" wildmode="list:full"
 
 " Use my own external editor and pass it the current URL.
 set editor="scy-vimperator-editor ''"
