@@ -11,11 +11,13 @@ set defsearch="g"
 
 " Delete all default search engines when starting up. My own are in searchplugins/ in my profile.
 javascript <<EOF
-var bss = services.get("browserSearch");
-bss.getDefaultEngines({}).forEach(function (engine) { bss.removeEngine(engine); });
-bss.defaultEngine = bss.getEngineByAlias(options.defsearch)
-*/
+fixSearchEngines = function () {
+	var bss = services.get("browserSearch");
+	bss.getDefaultEngines({}).forEach(function (engine) { bss.removeEngine(engine); });
+	bss.defaultEngine = bss.getEngineByAlias(options.defsearch);
+}
 EOF
+autocmd VimperatorEnter .* :javascript fixSearchEngines();
 
 " A builtin is.gd shortener.
 javascript <<EOF
