@@ -74,7 +74,7 @@ execute "map <A-g> :open " + options.defsearch + " "
 execute "map <A-G> :tabopen " + options.defsearch + " "
 
 " Show a tab number over the tab icon.
-set guioptions=Nr
+set guioptions=Nrb
 
 " Hints for input fields use their label, then their name.
 set hintinputs="label,name"
