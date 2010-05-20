@@ -62,8 +62,9 @@ set! extensions.update.notifyUser=false
 " No prefetching.
 set! network.prefetch-next=false
 
-" Empty start page.
-set! browser.startup.
+" Homepage, schmomepage.
+set! browser.startup.homepage="http://scytale.name/"
+set! browser.startup.page=0
 
 " Make backspace go back, control-backspace go forward.
 map <BS> :back<CR>
