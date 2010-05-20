@@ -2,7 +2,7 @@
 
 # List of preferred editors, space-seperated, favorite one first.
 # All * characters will be replaced by spaces when running.
-editors='vim nano*-w'
+editors='Vim vim nano*-w'
 
 # Find the first available editor.
 for editor in $editors; do
