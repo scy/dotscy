@@ -56,10 +56,14 @@ set! browser.link.open_newwindow=3
 set! browser.link.open_newwindow.restriction=0
 
 " No automatic update checks.
-set! app.update.enabled=false
-set! browser.search.update=false
-set! extensions.update.enabled=false
-set! extensions.update.notifyUser=false
+" FIXME: This check should be a blacklist, not a whitelist.
+javascript <<EOF
+doAutomaticUpdates = (navigator.platform.match("Mac") != null);
+options.setPref("app.update.enabled", doAutomaticUpdates);
+options.setPref("browser.search.update", doAutomaticUpdates);
+options.setPref("extensions.update.enabled", doAutomaticUpdates);
+options.setPref("extensions.update.notifyUser", doAutomaticUpdates);
+EOF
 
 " No prefetching.
 set! network.prefetch-next=false
