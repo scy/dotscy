@@ -118,16 +118,16 @@ endfunction
 
 " Use MightyIndent.
 set noautoindent nocindent nosmartindent
-noremap  o    o<C-O>:call MightyIndent(-1)<CR>
-noremap  O    O<C-O>:call MightyIndent(+1)<CR>
-inoremap <CR> <CR><C-O>:call MightyIndent(-1)<CR>
+noremap  <silent>        o    o<C-O>:call MightyIndent(-1)<CR>
+noremap  <silent>        O    O<C-O>:call MightyIndent(+1)<CR>
+inoremap <silent>        <CR> <CR><C-O>:call MightyIndent(-1)<CR>
 
 " If given an argument, use n spaces to indent. Else, use a tab.
 function! TabWiz(...)
 	if a:0 == 0
-		execute 'set noexpandtab tabstop=' . g:tabwiz_default_ts
+		execute 'set noexpandtab softtabstop=0 tabstop=' . g:tabwiz_default_ts . ' shiftwidth=' . g:tabwiz_default_ts
 	else
-		execute 'set expandtab tabstop=' . a:1
+		execute 'set expandtab softtabstop=0 tabstop=' . a:1 . ' shiftwidth=' . a:1
 	endif
 endfunction
 
