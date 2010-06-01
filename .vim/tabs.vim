@@ -116,11 +116,32 @@ function! MightyIndent(offset)
 	call setpos('.', pos)
 endfunction
 
+" If there are only spaces left of the cursor and expandtab is set, remove as
+" many spaces as needed to reduce the indent depth by one. If the number of
+" spaces is not a multiple of 'tabstop', remove until reaching the first
+" possible multiple.
+function! MightyBackspace()
+	let bs = "\<BS>"
+	if !&expandtab
+		return bs
+	endif
+	let numspaces = matchend(getline('.'), '^ *\%' . col('.') . 'c')
+	if numspaces < 2
+		return bs
+	endif
+	let numdel = numspaces % &tabstop
+	if numdel == 0
+		let numdel = &tabstop
+	endif
+	return repeat(bs, numdel)
+endfunction
+
 " Use MightyIndent.
 set noautoindent nocindent nosmartindent
 noremap  <silent>        o    o<C-O>:call MightyIndent(-1)<CR>
 noremap  <silent>        O    O<C-O>:call MightyIndent(+1)<CR>
 inoremap <silent>        <CR> <CR><C-O>:call MightyIndent(-1)<CR>
+inoremap <silent> <expr> <BS> MightyBackspace()
 
 " If given an argument, use n spaces to indent. Else, use a tab.
 function! TabWiz(...)
