@@ -6,5 +6,5 @@ set nocompatible
 filetype off
 filetype plugin on
 
-" Incremental search with highlighting.
-set incsearch hlsearch
+" Incremental smart-case search with highlighting.
+set incsearch hlsearch ignorecase smartcase
