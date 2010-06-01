@@ -29,6 +29,7 @@
 	dbr = default-branch rebase
 	dc = diff --cached
 	f = fetch
+	find = "!find . -not -path './.git/*'"
 	fp = format-patch --stdout --thread -C origin..HEAD
 	fpp = "!git fp > scy-git-patch.txt"
 	k = "!gitk --all; cd \"$HOME\"; git checkout .gitk; cd - >/dev/null"
