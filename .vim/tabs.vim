@@ -1,4 +1,23 @@
-" Automatically set indent-relevant parameters.
+" Philosophy:
+"  1) Code should be indented using tabs.
+"  2) Aligning content in multiple lines should be done with spaces, while the
+"     lines themselves should still be indented with tabs. In other words,
+"     tabs are only valid at the beginning of a line. As soon as there has
+"     been a non-tab character, no other tabs may follow. This keeps tab with
+"     variable.
+"  3) There are people who have a different philosophy. Do not make it hard to
+"     work with them.
+"  4) Vim's default of indenting with as many tabs as possible, then
+"     continuing with spaces sucks. If my tabwidth is 4 and I indent a line
+"     with a tab and 10 spaces, the next line should not be indented with 3
+"     tabs and 2 spaces. Don't try to be smarter than you are.
+"  5) Spamming files with modelines sucks as well. Indentation style of files
+"     can be guessed by simple algorithms most of the time.
+
+" Automatically set indent-relevant parameters based on the file's content.
+" What it basically does is to calculate the indentation level difference
+" between consecutive lines and use the one found most often as the file's
+" tabwidth.
 function! IndentGuess()
 	" Measure the complete file or the first 500 lines.
 	let numlines = max([line('$'), 500])
@@ -23,10 +42,11 @@ function! IndentGuess()
 			if diff > 0 && diff <= 16
 				" Initialize missing dictionary keys.
 				if !has_key(d, diff)
-					let d[diff] = 0
+					let d[diff] = 1
+				else
+					" Count this line.
+					let d[diff] += 1
 				endif
-				" Count this line.
-				let d[diff] += 1
 			endif
 			" This line will soon be the previous one.
 			let last = m
