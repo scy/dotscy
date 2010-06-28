@@ -38,10 +38,20 @@ shortenURLIsGd = function (url) {
 EOF
 map <silent> gy :javascript shortenURLIsGd(buffer.URL);<CR>
 
+" XPath shortcuts.
+javascript <<EOF
+var xpUnordered = function(selector) {
+	return content.document.evaluate(selector, content.document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+}
+var xpExists = function(selector) {
+	return xpUnordered(selector).snapshotLength > 0;
+}
+EOF
+
 " On-the-fly CSS class adding based on XPath matches.
 javascript <<EOF
 var CSSFrickel = function(selector, class) {
-	var rows = content.document.evaluate(selector, content.document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+	var rows = xpUnordered(selector);
 	for (var i = 0; i < rows.snapshotLength; i++) {
 		content.document.getElementById(rows.snapshotItem(i).id).className += " " + class;
 	}
