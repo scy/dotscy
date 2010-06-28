@@ -38,6 +38,16 @@ shortenURLIsGd = function (url) {
 EOF
 map <silent> gy :javascript shortenURLIsGd(buffer.URL);<CR>
 
+" On-the-fly CSS class adding based on XPath matches.
+javascript <<EOF
+var CSSFrickel = function(selector, class) {
+	var rows = content.document.evaluate(selector, content.document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+	for (var i = 0; i < rows.snapshotLength; i++) {
+		content.document.getElementById(rows.snapshotItem(i).id).className += " " + class;
+	}
+};
+EOF
+
 " Don't warn on about:config.
 set! general.warnOnAboutConfig=false
 
