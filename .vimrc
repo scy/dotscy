@@ -11,3 +11,4 @@ source ~/.vim/storage.vim
 source ~/.vim/input.vim
 source ~/.vim/tabs.vim
 source ~/.vim/netrw.vim
+source ~/.vim/git.vim
