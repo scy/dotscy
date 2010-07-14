@@ -5,6 +5,7 @@
 /.config/enchant/*.exc
 /.config/gtk-*/gtkfilechooser.ini
 /.config/Trolltech.conf
+/.config/vlc/
 /.dbshell
 /.dbus/session-bus/
 /.dmenu_cache
@@ -17,11 +18,13 @@
 /.gstreamer-*/registry.*.bin
 /.icedove/
 /.lesshst
+/.local/share/vlc/
 /.macromedia/Flash_Player/
 /.mc/
 /.mozilla/appreg
 /.mozilla/extensions/
 /.mozilla-thunderbird/
+/.mysql_history
 /.psi/
 /.purple/
 /.recently-used.xbel
