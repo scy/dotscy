@@ -59,6 +59,11 @@ Rxvt.foreground: #bebebe
 Rxvt.color7:     #bebebe
 Rxvt.color15:    #ffffff
 
+! Default font.
+Rxvt.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
+Rxvt.boldFont: -misc-fixed-bold-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
+Rxvt.italicFont: -misc-fixed-medium-o-semicondensed-*-13-*-*-*-*-*-iso10646-*
+
 ! I need to work on a nice pattern.
 ! URxvt.perl-ext: matcher
 ! URxvt.urlLauncher: firefox
