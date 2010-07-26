@@ -56,3 +56,8 @@ set laststatus=2
 
 " Show partial normal mode commands and mappings in the command line.
 set showcmd
+
+" GUI options.
+set guioptions+=acfegtr
+set guioptions-=mT
+set guifont=-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
