@@ -26,4 +26,4 @@ augroup CursoRestoR
 	autocmd BufReadPost * call s:cursorestor()
 augroup end
 
-let g:CursoRestoR_blacklist = ['/\.git/COMMIT_EDITMSG']
+let g:CursoRestoR_blacklist = ['/\.git/\(COMMIT_EDITMSG\|.*\.diff\)$']
