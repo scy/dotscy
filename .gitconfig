@@ -44,7 +44,7 @@
 	rbo = rebase origin
 	s = status
 	sm = submodule
-	sd = svn dcommit
+	sd = "!bash -c 'time git svn dcommit'"
 	sf = svn fetch
 	sr = svn rebase
 	st = stash
