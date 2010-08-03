@@ -1,3 +1,10 @@
 #!/bin/sh
 
-git rebase -i "$(git log --oneline --abbrev=40 | head -n 20 | tail -n 1 | cut -d ' ' -f 1)"
+if [ -n "$1" ]; then
+	max="$1"
+else
+	max='20'
+fi
+
+max="$(expr "$max" + 1)"
+git rebase -i "$(git log --oneline --abbrev=40 | head -n "$max" | tail -n 1 | cut -d ' ' -f 1)"
