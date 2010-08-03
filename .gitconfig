@@ -17,6 +17,7 @@
 	alias = "!git config --get-regexp '^alias\\.' | sed -e 's/^alias\\.//' -e 's/ /	/'"
 	am = am
 	ap = add -p
+	b = branch
 	bash = !bash
 	c = commit
 	ca = commit -a
