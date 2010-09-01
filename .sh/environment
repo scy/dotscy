@@ -4,8 +4,12 @@
 # Modify according to my needs.
 export PATH="$HOME/bin:/usr/sbin:/sbin:$MASTERPATH:/opt/local/bin:/opt/local/sbin"
 
-# If $HOSTNAME is not set, set it.
-[ -z "$HOSTNAME" ] && HOSTNAME="$(hostname)"
+# If $HOSTNAME is not set, set it. Enforce the "short" name.
+if [ -z "$HOSTNAME" ]; then
+	HOSTNAME="$(hostname -s)"
+else
+	HOSTNAME="$(echo "$HOSTNAME" | cut -d . -f 1)"
+fi
 export HOSTNAME
 
 # Set favorite pager.
