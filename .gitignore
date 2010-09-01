@@ -9,6 +9,7 @@
 /.dbshell
 /.dbus/session-bus/
 /.dmenu_cache
+/.eclim/
 /.esd_auth
 /.fontconfig/
 /.gconf/
