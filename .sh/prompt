@@ -63,8 +63,8 @@ scyprompt() {
 }
 
 PSUSERCOLOR=32                             # green by default
-[[ "$USER" != 'scy' ]] && PSUSERCOLOR=33   # yellow if not "scy"
-[[ "$UID" -eq 0 ]] && PSUSERCOLOR=31       # red if root
+[ "$USER" != 'scy' ] && PSUSERCOLOR=33   # yellow if not "scy"
+[ "$UID" -eq 0 ] && PSUSERCOLOR=31       # red if root
 
 case "$HOSTNAME" in
 	bijaz)
