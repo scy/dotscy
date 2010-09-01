@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pid="$(ps aux | sed -n -e "s#^$USER \\{1,\\}\\([0-9]\\{1,\\}\\).*/eclipse .*-application org.eclim.application_headless\$#\\1#p")"
+
+[ -z "$pid" ] && eclimd >/dev/null 2>&1 &
