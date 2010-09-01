@@ -132,5 +132,8 @@ set errorbells visualbell
 " Let me manually focus input elements.
 set focuscontent
 
+" Load a local config file, if it exists.
+source! ~/.vimperatorrc.local
+
 " Clear the command bar.
 echo
