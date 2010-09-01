@@ -12,3 +12,8 @@ source ~/.vim/input.vim
 source ~/.vim/tabs.vim
 source ~/.vim/netrw.vim
 source ~/.vim/git.vim
+
+" On my work machine, start eclimd.
+if $HOSTNAME == 'silberschweif'
+	silent !eclimd-once
+endif
