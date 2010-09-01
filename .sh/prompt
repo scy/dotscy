@@ -62,8 +62,13 @@ scyprompt() {
 	PS1="$PS1\\[\\e[0m\\] "
 }
 
-PSUSERCOLOR=32                             # green by default
-[ "$USER" != 'scy' ] && PSUSERCOLOR=33   # yellow if not "scy"
+PSUSERCOLOR=33                           # yellow by default
+# green if it's my everyday user ("scy" or, at work, "weber")
+if [ "$HOSTNAME" = 'silberschweif' ]; then
+	[ "$USER" = 'weber' ] && PSUSERCOLOR=32
+else
+	[ "$USER" = 'scy' ] && PSUSERCOLOR=32
+fi
 [ "$UID" -eq 0 ] && PSUSERCOLOR=31       # red if root
 
 case "$HOSTNAME" in
