@@ -58,6 +58,23 @@ set laststatus=2
 set showcmd
 
 " GUI options.
-set guioptions+=acfegtr
-set guioptions-=mT
+set guioptions+=acfegmtr
+set guioptions-=T
 set guifont=-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
+
+" Make MacVim look pimpy.
+if has("gui_macvim")
+	" Currently, transparency seems to work only if you enable the
+	" "experimental renderer".
+	set transparency=10
+	set fuoptions=maxvert,maxhorz
+	set guifont=Terminus\ Medium:h20
+endif
+
+" Initialize to a decent window size.
+if !exists("s:initialized")
+	let s:initialized = "yes"
+	if has("gui_running")
+		set lines=40 columns=120
+	endif
+endif
