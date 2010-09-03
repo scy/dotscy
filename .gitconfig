@@ -3,6 +3,7 @@
 	email = scy@scytale.name
 [core]
 	autocrlf = false
+	excludesfile = ~/.gitignore.global
 [color]
 	ui = auto
 [diff]
