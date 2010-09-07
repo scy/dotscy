@@ -1,6 +1,8 @@
+/.account
 /.aptitude/
 /.bash_history
 /.cache/
+/.CFUserTextEncoding
 /.config/enchant/*.dic
 /.config/enchant/*.exc
 /.config/gtk-*/gtkfilechooser.ini
@@ -31,10 +33,16 @@
 /.recently-used.xbel
 /.subversion/
 /.thumbnails/
+/.Trash/
 /.vimperatorrc.local
 /.Xauthority
 /.xsession-errors
 /Desktop/
+/Documents/
 /Downloads/
 /Library/
+/Movies/
+/Music/
+/Pictures/
+/Public/
 /Sites/
