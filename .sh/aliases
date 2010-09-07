@@ -49,7 +49,7 @@ case "$?" in
 esac
 
 # SSH things.
-eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\+\)\( # \(.*\)\)\?$/S\1="\3S \1"/p' "$HOME/.ssh/config" | tr '\n' ' ')
+eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\{1,\}\)\( # \(.*\)\)\{0,1\}$/S\1="\3S \1"/p' "$HOME/.ssh/config" | tr '\n' ' ')
 
 # Git things.
 if which git >/dev/null 2>&1; then
