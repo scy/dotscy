@@ -111,8 +111,10 @@ function! MightyIndent(offset)
 	endif
 	" Change the line.
 	call setline(pos[1], template[0 : prefixlen - 1] . thistext)
-	" Position the cursor after the whitespace.
-	let pos[2] = prefixlen + 1
+	" Position the cursor at the end of the line.
+	" (Used to be "after the whitespace", but breaks if comment chars are
+	" inserted automatically.)
+	let pos[2] = strwidth(getline(pos[1]))
 	call setpos('.', pos)
 endfunction
 
