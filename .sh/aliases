@@ -12,6 +12,9 @@ alias L="$(if which less >/dev/null; then echo less; else echo more; fi)"
 alias V="$(if which vim >/dev/null; then echo vim -R; else echo L; fi)"
 alias E="scy-editor"
 
+# Changing directories.
+alias C='cd -'
+
 # Settings for ncal.
 # First, determine what kind of ncal we have.
 which ncal >/dev/null && ncal -3 >/dev/null 2>&1
