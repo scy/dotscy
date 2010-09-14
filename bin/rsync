@@ -1,0 +1,9 @@
+#!/bin/sh
+
+better='/opt/local/bin/rsync'
+
+# On OSX, use rsync from MacPorts, if available.
+[ -x "$better" ] && exec "$better" "$@"
+
+# Execute "the other rsync".
+exec "$(which -a rsync | head -n 2 | tail -n 1)" "$@"
