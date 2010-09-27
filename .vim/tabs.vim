@@ -3,7 +3,7 @@
 "  2) Aligning content in multiple lines should be done with spaces, while the
 "     lines themselves should still be indented with tabs. In other words,
 "     tabs are only valid at the beginning of a line. As soon as there has
-"     been a non-tab character, no other tabs may follow. This keeps tab with
+"     been a non-tab character, no other tabs may follow. This keeps tab width
 "     variable.
 "  3) There are people who have a different philosophy. Do not make it hard to
 "     work with them.
@@ -85,7 +85,9 @@ endfunction
 " replaced by exactly the same whitespace string as on the line above (or below,
 " determined by the "offset" argument). This fixes Vim's behavior of filling up
 " with as many tabs as possible.
-function! MightyIndent(offset)
+" Note: This currently doesn't work well with auto-insertion of comment
+" leaders in insert mode ('formatoptions' containing "r").
+function! MightyIndent(offset, ateol)
 	" Retrieve position of the new line.
 	let pos = getpos('.')
 	" The "template" line is the one containing the whitespace to be copied.
@@ -111,10 +113,15 @@ function! MightyIndent(offset)
 	endif
 	" Change the line.
 	call setline(pos[1], template[0 : prefixlen - 1] . thistext)
-	" Position the cursor at the end of the line.
-	" (Used to be "after the whitespace", but breaks if comment chars are
-	" inserted automatically.)
-	let pos[2] = strwidth(getline(pos[1]))
+	" If the cursor should be positioned at the end of line (e.g. after the
+	" "o" command, do it.
+	if a:ateol
+		let pos[2] = strlen(getline(pos[1]))
+	else
+		" Position the cursor after the inserted whitespace.
+		let pos[2] = prefixlen + 1
+	endif
+	" Position the cursor.
 	call setpos('.', pos)
 endfunction
 
@@ -140,9 +147,9 @@ endfunction
 
 " Use MightyIndent.
 set noautoindent nocindent nosmartindent
-noremap  <silent>        o    o<C-O>:call MightyIndent(-1)<CR>
-noremap  <silent>        O    O<C-O>:call MightyIndent(+1)<CR>
-inoremap <silent>        <CR> <CR><C-O>:call MightyIndent(-1)<CR>
+noremap  <silent>        o    o<C-O>:call MightyIndent(-1, 1)<CR>
+noremap  <silent>        O    O<C-O>:call MightyIndent(+1, 1)<CR>
+inoremap <silent>        <CR> <CR><C-O>:call MightyIndent(-1, 0)<CR>
 inoremap <silent> <expr> <BS> MightyBackspace()
 
 " If given an argument, use n spaces to indent. Else, use a tab.
