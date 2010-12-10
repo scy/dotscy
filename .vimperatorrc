@@ -76,6 +76,9 @@ set! browser.tabs.tabMaxWidth=4000
 set! browser.link.open_newwindow=3
 set! browser.link.open_newwindow.restriction=0
 
+" For the love of God, don't let popups (opened in a tab) resize my whole browser.
+set! dom.disable_window_move_resize=true
+
 " No automatic update checks.
 " FIXME: This check should be a blacklist, not a whitelist.
 javascript <<EOF
