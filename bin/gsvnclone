@@ -11,7 +11,7 @@ else
 	stdlayout=''
 fi
 
-git svn init "$stdlayout" --username="$user" "$url" "$proj"
+git svn init $stdlayout --username="$user" "$url" "$proj"
 cd "$proj"
 
 autmpl="$HOME/.svnauthors"
