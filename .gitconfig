@@ -59,3 +59,5 @@
 	insteadOf = scy:
 [url "scy@git.4null4.org:git/oqlt/"]
 	insteadOf = oqlt:
+[branch "master"]
+	mergeoptions = --no-ff
