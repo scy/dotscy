@@ -15,7 +15,7 @@
 [alias]
 	a = add
 	ae = add -e
-	alias = "!git config --get-regexp '^alias\\.' | sed -e 's/^alias\\.//' -e 's/ /	/'"
+	alias = !git config --get-regexp '^alias\\.' | sed -e 's/^alias\\.//' -e 's/ /\t/'
 	am = am
 	ap = add -p
 	b = branch
@@ -31,12 +31,12 @@
 	dbr = default-branch rebase
 	dc = diff --cached
 	f = fetch
-	find = "!find . -not -path './.git/*'"
+	find = !find . -not -path './.git/*'
 	fp = format-patch --stdout --thread -C origin..HEAD
-	fpp = "!git fp > scy-git-patch.txt"
+	fpp = !git fp > scy-git-patch.txt
 	k = "!gitk --all; cd \"$HOME\"; git checkout .gitk; cd - >/dev/null"
-	l = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate:   %ad%n%n%w(76,4,4)%s%n%n%-b%n'
-	lp = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate:   %ad%n%n%w(76,4,4)%s%n%n%-b%n' -p
+	l = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate: %ad%n%n%w(76,4,4)%s%n%n%-b%n'
+	lp = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate: %ad%n%n%w(76,4,4)%s%n%n%-b%n' -p
 	oops = oops
 	p = push
 	pr = pull --rebase
@@ -46,7 +46,7 @@
 	rbo = rebase origin
 	s = status
 	sm = submodule
-	sd = "!bash -c 'time git svn dcommit'"
+	sd = !bash -c 'time git svn dcommit'
 	sf = svn fetch
 	sr = svn rebase
 	st = stash
