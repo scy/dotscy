@@ -155,9 +155,9 @@ inoremap <silent> <expr> <BS> MightyBackspace()
 " If given an argument, use n spaces to indent. Else, use a tab.
 function! TabWiz(...)
 	if a:0 == 0
-		execute 'set noexpandtab softtabstop=0 tabstop=' . g:tabwiz_default_ts . ' shiftwidth=' . g:tabwiz_default_ts
+		execute 'setlocal noexpandtab softtabstop=0 tabstop=' . g:tabwiz_default_ts . ' shiftwidth=' . g:tabwiz_default_ts
 	else
-		execute 'set expandtab softtabstop=0 tabstop=' . a:1 . ' shiftwidth=' . a:1
+		execute 'setlocal expandtab softtabstop=0 tabstop=' . a:1 . ' shiftwidth=' . a:1
 	endif
 endfunction
 
