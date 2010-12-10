@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cols="$(stty -a | sed -n -e 's/^.*; *\([0-9]\{1,\}\) columns;.*$/\1/p')"
+
+git diff --stat="$cols,$(expr "$cols" - 16)" "$@"

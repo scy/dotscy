@@ -22,6 +22,7 @@
 	bash = !bash
 	c = commit
 	ca = commit -a
+	cf = changed-files
 	co = checkout
 	cob = checkout -b
 	com = checkout master
