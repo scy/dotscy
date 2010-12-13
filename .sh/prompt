@@ -74,14 +74,12 @@ fi
 case "$HOSTNAME" in
 	bijaz)
 		PSHOSTCOLOR=32;;   # green for the default, bijaz.
-	chani)
-		PSHOSTCOLOR=33;;   # yellow for chani
 	silberschweif)
 		PSHOSTCOLOR=30;;   # grey for work machine
 	malus)
 		PSHOSTCOLOR=35;;   # magenta for malus
 	*)
-		PSHOSTCOLOR=37;;   # white by default
+		PSHOSTCOLOR=33;;   # yellow by default
 esac
 
 # Use window titles only in known X terminals.
