@@ -72,8 +72,8 @@ fi
 [ "$UID" -eq 0 ] && PSUSERCOLOR=31       # red if root
 
 case "$HOSTNAME" in
-	bijaz)
-		PSHOSTCOLOR=32;;   # green for the default, bijaz.
+	crys)
+		PSHOSTCOLOR=32;;   # green for the default, crys.
 	silberschweif)
 		PSHOSTCOLOR=30;;   # grey for work machine
 	malus)
