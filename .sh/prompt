@@ -64,7 +64,7 @@ scyprompt() {
 
 PSUSERCOLOR=33                           # yellow by default
 # green if it's my everyday user ("scy" or, at work, "weber")
-if [ "$HOSTNAME" = 'silberschweif' ]; then
+if [ "$HOSTNAME" = 'silberschweif' -o "$HOSTNAME" = 'nebukadnezar' ]; then
 	[ "$USER" = 'weber' ] && PSUSERCOLOR=32
 else
 	[ "$USER" = 'scy' ] && PSUSERCOLOR=32
@@ -74,6 +74,8 @@ fi
 case "$HOSTNAME" in
 	crys)
 		PSHOSTCOLOR=32;;   # green for the default, crys.
+	nebukadnezar)
+		PSHOSTCOLOR=31;;   # red for "be careful" machines
 	silberschweif)
 		PSHOSTCOLOR=30;;   # grey for work machine
 	malus)
