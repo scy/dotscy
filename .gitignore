@@ -9,6 +9,7 @@
 /.config/gtk-*/gtkfilechooser.ini
 /.config/Trolltech.conf
 /.config/vlc/
+/.cups/lpoptions
 /.dbshell
 /.dbus/session-bus/
 /.dmenu_cache
