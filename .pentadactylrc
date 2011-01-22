@@ -1,0 +1,11 @@
+source ~/.firevim/rc
+
+" Use smart case searches.
+set findcase=smart
+
+" Let me manually focus input elements.
+set strictfocus
+
+autocmd Enter .* :javascript fixSearchEngines();
+
+source! ~/.pentadactyl/rc.local
