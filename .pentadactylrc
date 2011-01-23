@@ -1,5 +1,8 @@
 source ~/.firevim/rc
 
+" Show status and command line.
+set guioptions+=scC
+
 " Use smart case searches.
 set findcase=smart
 
