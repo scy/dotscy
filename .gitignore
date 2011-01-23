@@ -22,6 +22,7 @@
 /.gconfd/saved_state
 /.gegl-0.0/
 /.gimp-2.6/
+/.gnucash/
 /.gstreamer-*/registry.*.bin
 /.icedove/
 /.lesshst
