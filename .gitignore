@@ -13,6 +13,8 @@
 /.dbshell
 /.dbus/session-bus/
 /.dmenu_cache
+/.dropbox/
+/Dropbox/
 /.eclim/
 /.esd_auth
 /.fontconfig/
