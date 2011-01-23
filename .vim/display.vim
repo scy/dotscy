@@ -68,7 +68,7 @@ if has("gui_macvim")
 	" "experimental renderer".
 	set transparency=10
 	set fuoptions=maxvert,maxhorz
-	set guifont=Terminus\ Medium:h20
+	set guifont=Inconsolata-dz:h12
 endif
 
 " Initialize to a decent window size.

@@ -128,6 +128,9 @@ autocmd Fullscreen .* :javascript document.getElementById("status-bar").setAttri
 " Ring a visual bell on errors.
 set errorbells visualbell
 
+" Style for the status/command bar.
+style -name=scyFireVimStatus * #liberator-statusline { font-family: Inconsolata-dz,Inconsolata,monospace; }
+
 " Load a local config file, if it exists.
 source! ~/.firevim/rc.local
 
