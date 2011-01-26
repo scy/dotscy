@@ -12,6 +12,8 @@
 	singlekey = true
 [merge]
 	tool = vimdiff
+[rebase]
+	autosquash = true
 [alias]
 	a = add
 	ae = add -e
