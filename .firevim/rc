@@ -82,10 +82,10 @@ set! dom.disable_window_move_resize=true
 " FIXME: This check should be a blacklist, not a whitelist.
 javascript <<EOF
 doAutomaticUpdates = (navigator.platform.match("Mac") != null);
-options.setPref("app.update.enabled", doAutomaticUpdates);
-options.setPref("browser.search.update", doAutomaticUpdates);
-options.setPref("extensions.update.enabled", doAutomaticUpdates);
-options.setPref("extensions.update.notifyUser", doAutomaticUpdates);
+prefs.set("app.update.enabled", doAutomaticUpdates);
+prefs.set("browser.search.update", doAutomaticUpdates);
+prefs.set("extensions.update.enabled", doAutomaticUpdates);
+prefs.set("extensions.update.notifyUser", doAutomaticUpdates);
 EOF
 
 " No prefetching.
