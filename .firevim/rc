@@ -133,6 +133,3 @@ style -name=scyFireVimStatus * #liberator-statusline { font-family: Inconsolata-
 
 " Load a local config file, if it exists.
 source! ~/.firevim/rc.local
-
-" Clear the command bar.
-echo
