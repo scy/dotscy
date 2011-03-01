@@ -93,7 +93,7 @@ set! network.prefetch-next=false
 
 " Homepage, schmomepage.
 set! browser.startup.homepage="http://scytale.name/"
-set! browser.startup.page=0
+set! browser.startup.page=3
 
 " Make backspace go back, control-backspace go forward.
 map <BS> :back<CR>
