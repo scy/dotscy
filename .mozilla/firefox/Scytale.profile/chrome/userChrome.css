@@ -2,3 +2,8 @@
 
 /* I really don't need it. Plus, it gets confused by Vimperator's tab number overlay. */
 .tabs-newtab-button { display:none; }
+
+tab { padding-left:0 !important; padding-right:0 !important; -moz-border-radius:0 !important; border-right:none !important; }
+tab .tab-text { font-weight:lighter !important; font-family:Helvetica,Arial,sans-serif !important; font-size:12px !important; }
+tab[protected="true"] .tab-text { color:#080 !important; font-weight:bold !important; }
+tab[selected="true"] .tab-text { font-weight:bold !important; background-color:rgba(0191,255,0,0.7) !important; }
