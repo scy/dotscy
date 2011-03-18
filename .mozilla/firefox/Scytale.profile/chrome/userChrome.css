@@ -3,6 +3,13 @@
 /* I really don't need it. Plus, it gets confused by Vimperator's tab number overlay. */
 .tabs-newtab-button { display:none; }
 
+/* Tab Kit somehow manages to let the close button reappear for protected tabs,
+ * even with browser.tabs.closeButtons=2. They are not drawn, but occupy space
+ * and are clickable, like visibility:hidden. Clicking them will not close the
+ * tab but make the tab unprotected. This sucks. So, work around like this:
+ * (The selector is that detailed to successfully override Tab Kit’s.) */
+.tabbrowser-tab[protected="true"] .tab-close-button { display:none !important; }
+
 tab { padding-left:0 !important; padding-right:0 !important; -moz-border-radius:0 !important; border-right:none !important; }
 tab .tab-text { font-weight:lighter !important; font-family:Helvetica,Arial,sans-serif !important; font-size:12px !important; }
 tab[protected="true"] .tab-text { color:#080 !important; font-weight:bold !important; }
