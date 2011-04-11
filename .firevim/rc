@@ -135,5 +135,9 @@ set errorbells visualbell
 " Style for the status/command bar.
 style -name=scyFireVimStatus * #liberator-statusline { font-family: Inconsolata-dz,Inconsolata,monospace; }
 
+" Show link URLs in the command line. This prevents them from being obstructed
+" during page load or on JS-initiated loads.
+set showstatuslinks=command
+
 " Load a local config file, if it exists.
 source! ~/.firevim/rc.local
