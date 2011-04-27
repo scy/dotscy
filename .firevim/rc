@@ -57,6 +57,10 @@ var CSSFrickel = function(selector, class) {
 };
 EOF
 
+" I don't want to read posts from Linus Neumann.
+" All posts are hidden using userContent.css, posts not by him restored here.
+autocmd -js DOMLoad netzpolitik.org var els = doc.querySelectorAll('.entry-meta .author a'); for (var i = 0; i < els.length; i++) { var el = els[i]; if (el.attributes.href.value != 'http://www.netzpolitik.org/author/linus/') { el.parentNode.parentNode.parentNode.getElementsByClassName('entry-content')[0].style.opacity = 1; } };
+
 " Don't warn on about:config.
 set! general.warnOnAboutConfig=false
 

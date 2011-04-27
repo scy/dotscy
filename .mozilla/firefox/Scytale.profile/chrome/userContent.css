@@ -1,3 +1,12 @@
+@-moz-document domain(netzpolitik.org) {
+	div.entry-content {
+		opacity:0.05;
+	}
+	div.entry-content:hover {
+		opacity:0.7;
+	}
+}
+
 a[target="_blank"], a[target="_new"] {
 	cursor:crosshair !important;
 }
