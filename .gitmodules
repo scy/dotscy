@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/vim-mkdir-on-write"]
 	path = .vim/bundle/vim-mkdir-on-write
 	url = https://github.com/scy/vim-mkdir-on-write
+[submodule ".vim/bundle/mako"]
+	path = .vim/bundle/mako
+	url = gitpub:sophacles/vim-bundle-mako.git
