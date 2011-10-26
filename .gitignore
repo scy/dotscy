@@ -25,6 +25,7 @@
 /.gnucash/
 /.gstreamer-*/registry.*.bin
 /.icedove/
+/.keepassx/
 /.lesshst
 /.local/share/vlc/
 /.macromedia/Flash_Player/
@@ -33,13 +34,17 @@
 /.mozilla/extensions/
 /.mozilla-thunderbird/
 /.mysql_history
+/.npm/
 /.psi/
 /.purple/
 /.recently-used.xbel
+/.rnd
 /.subversion/
 /.thumbnails/
 /.Trash/
 /.vimperatorrc.local
+/.wireshark/
+/.wireshark-etc/
 /.Xauthority
 /.xchat2
 /.xsession-errors
