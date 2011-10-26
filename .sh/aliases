@@ -52,6 +52,10 @@ case "$?" in
 	;;
 esac
 
+k() {
+	ncal -w "$@" | sed -e 's/^\( [ 0-9]*\)$/[0,35m\1[0m/' -e 's/^\([A-Za-z]\{2\}\) /[0,33m\1[0m /' -e 's/^\( [^0-9]*\)$/[0,34m\1[0m/'
+}
+
 # SSH things.
 eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\{1,\}\)\( # \(.*\)\)\{0,1\}$/S\1="\3S \1"/p' "$HOME/.ssh/config" | tr '\n' ' ')
 
