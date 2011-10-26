@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# If this is a mac, do nothing at all.
+if [ "$(uname 2>/dev/null)" = 'Darwin' ]; then
+	exec quartz-wm "$@"
+fi
+
 # Needed for crappily configured xdms which keep an xconsole open.
 # (I'm looking at you, Gentoo!)
 which killall >/dev/null 2>&1 && killall xconsole
