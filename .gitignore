@@ -9,6 +9,7 @@
 /.config/gtk-*/gtkfilechooser.ini
 /.config/Trolltech.conf
 /.config/vlc/
+/.cpan/
 /.cups/lpoptions
 /.dbshell
 /.dbus/session-bus/
@@ -39,6 +40,7 @@
 /.purple/
 /.recently-used.xbel
 /.rnd
+/.simfy
 /.subversion/
 /.thumbnails/
 /.Trash/
