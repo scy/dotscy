@@ -23,8 +23,11 @@
 /.gconfd/saved_state
 /.gegl-0.0/
 /.gimp-2.6/
+/.gitignore_global
 /.gnucash/
 /.gstreamer-*/registry.*.bin
+/.hgignore_global
+/.hgrc
 /.icedove/
 /.keepassx/
 /.lesshst
