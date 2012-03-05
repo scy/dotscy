@@ -5,8 +5,9 @@ set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 " Activate syntax highlighting by default.
 syntax on
 
-" Use my own color scheme.
-colorscheme dunkel
+" Use Solarized as my colorscheme.
+set background=dark
+colorscheme solarized
 
 " A function to shorten the current encoding as much as possible.
 function! ShortFEnc()
@@ -66,7 +67,7 @@ set guifont=-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
 if has("gui_macvim")
 	" Currently, transparency seems to work only if you enable the
 	" "experimental renderer".
-	set transparency=10
+	set transparency=1
 	set fuoptions=maxvert,maxhorz
 	set guifont=Inconsolata-dz:h13
 endif
