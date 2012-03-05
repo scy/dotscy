@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = gitpub:tpope/vim-surround.git
-[submodule ".vim/bundle/markdown"]
-	path = .vim/bundle/markdown
-	url = gitpub:scy/vim-markdown.git
 [submodule ".vim/bundle/remind"]
 	path = .vim/bundle/remind
 	url = gitpub:scy/vim-remind.git
