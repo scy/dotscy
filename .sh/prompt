@@ -77,7 +77,7 @@ case "$HOSTNAME" in
 	nebukadnezar)
 		PSHOSTCOLOR=31;;   # red for "be careful" machines
 	silberschweif)
-		PSHOSTCOLOR=30;;   # grey for work machine
+		PSHOSTCOLOR='';;   # default for work machine
 	malus)
 		PSHOSTCOLOR=35;;   # magenta for malus
 	*)
