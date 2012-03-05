@@ -55,7 +55,7 @@
 	sf = svn fetch
 	sr = svn rebase
 	st = stash
-	sta = stash apply
+	stp = stash pop
 [url "git@github.com:"]
 	insteadOf = github:
 [url "git://github.com/"]
