@@ -37,7 +37,7 @@ endfunction
 " Status line.
 let s = ""
 let s .= "%<"                          | " truncate at the start
-let s .= "%f%8* | "                    | " file name
+let s .= "%f %8* "                     | " file name
 let s .= '%{&ft==""?"?":&ft} '         | " file type
 let s .= "%{toupper(&ff[0:0])} "       | " file format (line endings)
 let s .= "%{ShortFEnc()}"              | " short file encoding
