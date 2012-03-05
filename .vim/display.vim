@@ -70,6 +70,7 @@ if has("gui_macvim")
 	set transparency=1
 	set fuoptions=maxvert,maxhorz
 	set guifont=Inconsolata-dz:h13
+	set listchars=tab:▸⋅,trail:␣,extends:→,precedes:←,nbsp:‗
 endif
 
 " Initialize to a decent window size.
