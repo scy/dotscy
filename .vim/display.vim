@@ -7,6 +7,7 @@ syntax on
 
 " Use Solarized as my colorscheme.
 set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
 
 " A function to shorten the current encoding as much as possible.
