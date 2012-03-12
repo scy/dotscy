@@ -13,6 +13,7 @@
 /.cups/lpoptions
 /.dbshell
 /.dbus/session-bus/
+/dia.log
 /.dmenu_cache
 /.dropbox/
 /Dropbox/
