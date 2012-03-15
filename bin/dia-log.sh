@@ -29,8 +29,11 @@ TARGET="$HOME/dia.log"
 
 # Parse options.
 text=''
-while getopts o:t: opt; do
+while getopts io:t: opt; do
 	case "$opt" in
+		i)
+			read -r text
+			;;
 		o)
 			TARGET="$OPTARG"
 			;;
