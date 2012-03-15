@@ -18,8 +18,6 @@ TARGET="$HOME/dia.log"
 #     timestamp and your awesome text
 
 # TODO:
-#  - Support setting the destination file name via some other method
-#    (environment variable, parameter etc)
 #  - Make some things smoother, maybe?
 #  - Whatever else.
 
@@ -29,8 +27,23 @@ TARGET="$HOME/dia.log"
 
 
 
-# Read the text, output it prefixed with "OK:" or output nothing at all.
-text="$(osascript -e 'tell application "System Events"' -e 'activate' -e 'display dialog "Status:" default answer ""' -e 'end tell' | sed -n -e 's/^text returned:\(.*\), button returned:OK$/OK:\1/p')"
+# Parse options.
+text=''
+while getopts o:t: opt; do
+	case "$opt" in
+		o)
+			TARGET="$OPTARG"
+			;;
+		t)
+			text="$OPTARG"
+			;;
+	esac
+done
+
+if [ -z "$text" ]; then
+	# Read the text, output it prefixed with "OK:" or output nothing at all.
+	text="$(osascript -e 'tell application "System Events"' -e 'activate' -e 'display dialog "Status:" default answer ""' -e 'end tell' | sed -n -e 's/^text returned:\(.*\), button returned:OK$/OK:\1/p')"
+fi
 
 # If there is text, log it.
 if [ -n "$text" ]; then
