@@ -5,7 +5,19 @@ TARGET="$HOME/dia.log"
 
 # This is (currently) an OS X tool.
 
-# How I use it:
+# How to use it with Alfred (needs a Powerpack license):
+#  1) Create a new AppleScript extension and paste the following code into it:
+#       on alfred_script(q)
+#         set t to q as unicode text
+#         if length of t = 0 then
+#           set t to ("[no text]" as unicode text)
+#         end if
+#         do shell script "$HOME/bin/dia-log.sh -t " & (quoted form of t)
+#       end alfred_script
+#  2) Give it a keyword, check “background”, select “optional parameter”.
+#  3) Create a new hotkey, set “add keyword” to the keyword from step 2.
+
+# How to use it with FastScripts (el cheapo):
 #  1) Get FastScripts from http://www.red-sweater.com/fastscripts/
 #  2) Install it and stuff
 #  3) Copy this file to ~/Library/Scripts to use with FastScripts
