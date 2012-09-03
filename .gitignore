@@ -23,6 +23,7 @@
 /.gconf/
 /.gconfd/saved_state
 /.gegl-0.0/
+/.gem/
 /.gimp-2.6/
 /.gitignore_global
 /.gnucash/
@@ -40,13 +41,17 @@
 /.mozilla-thunderbird/
 /.mysql_history
 /.npm/
+/.pearrc
 /.psi/
 /.purple/
 /.recently-used.xbel
 /.rnd
+/.sh_history
 /.simfy
+/.sqlite_history
 /.subversion/
 /.thumbnails/
+/.toodledo/
 /.Trash/
 /.vimperatorrc.local
 /.wireshark/
