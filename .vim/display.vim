@@ -60,7 +60,7 @@ set laststatus=2
 set showcmd
 
 " GUI options.
-set guioptions+=acfegmtr
+set guioptions+=cfegmtr
 set guioptions-=T
 set guifont=-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
 
