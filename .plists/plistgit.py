@@ -3,6 +3,9 @@ import datetime, json, os, re
 
 plists = {
 	"com.googlecode.iterm2": {
+		"exclude": (
+			(re.compile(r"^NSWindow Frame (?:.*)$"),),
+		),
 	}
 }
 
