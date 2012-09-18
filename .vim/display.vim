@@ -5,10 +5,9 @@ set listchars=tab:\|.,trail:_,extends:>,precedes:<,nbsp:_
 " Activate syntax highlighting by default.
 syntax on
 
-" Use Solarized as my colorscheme.
+" Use Smyck as my colorscheme.
 set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme smyck
 
 " A function to shorten the current encoding as much as possible.
 function! ShortFEnc()
