@@ -1,5 +1,5 @@
 from biplist import *
-import json, os
+import datetime, json, os
 
 plists = {
 	"com.googlecode.iterm2": {
@@ -17,6 +17,7 @@ def isincluded(path, settings):
 def totypeddict(plist, path=None, settings=None):
 	dicttype = type(dict())
 	listtype = type(list())
+	datetype = datetime.datetime
 	if (path == None):
 		path = ()
 	if (settings == None):
@@ -35,6 +36,8 @@ def totypeddict(plist, path=None, settings=None):
 			if isincluded(subpath, settings):
 				result.append(totypeddict(value, subpath, settings))
 		return ('arr', result)
+	if type(plist) == datetype:
+		return ('date', plist.isoformat())
 	return (type(plist).__name__, plist)
 
 for domain, settings in plists.iteritems():
