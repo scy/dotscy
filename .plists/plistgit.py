@@ -1,5 +1,5 @@
 from biplist import *
-import datetime, json, os
+import datetime, json, os, re
 
 plists = {
 	"com.googlecode.iterm2": {
@@ -9,9 +9,13 @@ plists = {
 def isincluded(path, settings):
 	if not 'exclude' in settings:
 		return True
+	tupletype = type(tuple())
 	for exclude in settings['exclude']:
-		if path == exclude:
-			return False
+		if type(exclude) == tupletype:
+			for idx in range(0, min(len(exclude), len(path))):
+				if type(exclude[idx]) == re._pattern_type:
+					if exclude[idx].match(path[idx]):
+						return False
 	return True
 
 def totypeddict(plist, path=None, settings=None):
