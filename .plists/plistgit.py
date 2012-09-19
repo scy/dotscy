@@ -33,7 +33,7 @@ def totypeddict(plist, path=None, settings=None):
 		settings = {}
 	if type(plist) == dicttype:
 		result = dict()
-		for key, value in plist.iteritems():
+		for key, value in plist.items():
 			subpath = path + (key,)
 			if isincluded(subpath, settings):
 				result[key] = totypeddict(value, subpath, settings)
@@ -56,6 +56,6 @@ for domain, settings in plists.iteritems():
 	outfile = open(os.path.expanduser(
 		'~/.plists/%s.json' % domain
 	), 'w')
-	jsonstr = json.dumps(totypeddict(plist, settings=settings), indent=2)
+	jsonstr = json.dumps(totypeddict(plist, settings=settings), indent=2, sort_keys=True)
 	outfile.write(jsonstr)
 	outfile.close()
