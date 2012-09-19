@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from biplist import *
 import datetime, json, os, re
 
