@@ -7,6 +7,9 @@ plists = {
 	"com.googlecode.iterm2": {
 		"exclude": (
 			(re.compile(r"^NSWindow Frame (?:.*)$"),),
+			(re.compile(r"^NSNav(?:LastRootDirectory|PanelExpandedSizeForOpenMode)$"),),
+			(re.compile(r"^SU(?:LastCheckTime|HasLaunchedBefore)$"),),
+			(None, None, re.compile(r"^Working Directory$")),
 		),
 	}
 }
