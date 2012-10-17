@@ -20,6 +20,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# lock the screen
+bindsym $mod+Escape exec i3lock -c 5d5d5d
+
 # kill focused window
 bindsym $mod+Shift+Q kill
 
