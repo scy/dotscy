@@ -6,7 +6,9 @@
 /.CFUserTextEncoding
 /.config/enchant/*.dic
 /.config/enchant/*.exc
+/.config/google-chrome/
 /.config/gtk-*/gtkfilechooser.ini
+/.config/Skype/
 /.config/Trolltech.conf
 /.config/vlc/
 /.cpan/
@@ -33,7 +35,9 @@
 /.icedove/
 /.keepassx/
 /.lesshst
+/.links2/
 /.local/share/vlc/
+/.local/share/recently-used.xbel
 /.macromedia/Flash_Player/
 /.mc/
 /.mozilla/appreg
@@ -42,12 +46,14 @@
 /.mysql_history
 /.npm/
 /.pearrc
+/.pki/
 /.psi/
 /.purple/
 /.recently-used.xbel
 /.rnd
 /.sh_history
 /.simfy
+/.Skype/
 /.sqlite_history
 /.subversion/
 /.thumbnails/
