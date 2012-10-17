@@ -13,8 +13,8 @@ which killall >/dev/null 2>&1 && killall xconsole
 # This enables it again.
 setxkbmap -option terminate:ctrl_alt_bksp
 
-# Load my favorite keyboard layout.
-xmodmap "$HOME/res/neo_de.xmodmap"
+# Currently, I don't use Neo. Have totally unlearned it.
+# xmodmap "$HOME/res/neo_de.xmodmap"
 
 # Configure external monitors.
 "$HOME/bin/autovga.sh"
