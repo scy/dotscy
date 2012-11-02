@@ -22,6 +22,9 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # If available, load private configuration data.
 [ -e "$HOME/.sh/private" ] && . "$HOME/.sh/private"
 
+# Start Dropbox, if installed.
+which dropbox >/dev/null 2>&1 && dropbox start -i &
+
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
 	*)
