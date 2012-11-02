@@ -16,8 +16,8 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # Currently, I don't use Neo. Have totally unlearned it.
 # xmodmap "$HOME/res/neo_de.xmodmap"
 
-# Configure external monitors.
-"$HOME/bin/autovga.sh"
+# Configure peripherals.
+"$HOME/bin/x-peripherals.sh"
 
 # If available, load private configuration data.
 [ -e "$HOME/.sh/private" ] && . "$HOME/.sh/private"
