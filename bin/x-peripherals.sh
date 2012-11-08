@@ -10,10 +10,10 @@ fi # If not work machine, do nothing.
 
 # If we have xinput, swap the scroll direction. (I'm OS X influenced.)
 if which xinput >/dev/null 2>&1; then
-	for dev in \
-	'Logitech USB Optical Mouse' \
-	'SynPS/2 Synaptics TouchPad' \
-	; do
+	xinput list --name-only | grep -F "$(printf "\
+Logitech USB Optical Mouse\n\
+SynPS/2 Synaptics TouchPad\
+")" | while read -r dev; do
 		xinput set-button-map "$dev" 1 2 3 5 4 6 7
 	done
 fi
