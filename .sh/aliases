@@ -56,6 +56,13 @@ k() {
 	ncal -w "$@" | sed -e 's/^\( [ 0-9]*\)$/[0,35m\1[0m/' -e 's/^\([A-Za-z]\{2\}\) /[0,33m\1[0m /' -e 's/^\( [^0-9]*\)$/[0,34m\1[0m/'
 }
 
+# Create a tmp directory.
+tmp() {
+	dir="${1:-tmp_$(tr -cd A-Za-z0-9_- < /dev/urandom 2>/dev/null | head -c 8)}"
+	fulldir="$HOME/tmp/$dir"
+	mkdir "$fulldir" && cd "$fulldir" && echo "now in ~/tmp/$dir"
+}
+
 # SSH things.
 eval alias "S=ssh" $(sed -n -e 's/^Host *\([^ ]\{1,\}\)\( # \(.*\)\)\{0,1\}$/S\1="\3S \1"/p' "$HOME/.ssh/config" | tr '\n' ' ')
 
