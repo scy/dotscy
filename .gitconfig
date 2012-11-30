@@ -54,6 +54,7 @@
 	sd = !bash -c 'time git svn dcommit'
 	sf = svn fetch
 	sr = svn rebase
+	sfr = !git sf && git sr
 	st = stash
 	stp = stash pop
 [url "git@github.com:"]
