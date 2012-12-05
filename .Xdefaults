@@ -6,6 +6,8 @@ XTerm*pointerColor: SpringGreen
 ! No really, this should be the standard.
 XTerm*metaSendsEscape: true
 
+xterm*termName: xterm-256color
+
 
 
 ! Fade out the text when terminal is not focused.
