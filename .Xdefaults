@@ -1,12 +1,29 @@
 ! Reload this with “xrdb -merge .Xdefaults”.
 
-XTerm*background: black
 XTerm*foreground: grey
 XTerm*pointerColor: SpringGreen
 ! No really, this should be the standard.
 XTerm*metaSendsEscape: true
 
 xterm*termName: xterm-256color
+
+xterm*background: rgb:24/24/24
+xterm*color0:     rgb:00/00/00
+xterm*color1:     rgb:c7/56/46
+xterm*color2:     rgb:8e/b3/3b
+xterm*color3:     rgb:d0/b0/3c
+xterm*color4:     rgb:72/b3/cc
+xterm*color5:     rgb:c8/a0/d1
+xterm*color6:     rgb:21/86/93
+xterm*color7:     rgb:b0/b0/b0
+xterm*color8:     rgb:5d/5d/5d
+xterm*color9:     rgb:e0/96/90
+xterm*color10:    rgb:cd/ee/69
+xterm*color11:    rgb:ff/e3/77
+xterm*color12:    rgb:9c/d9/f0
+xterm*color13:    rgb:fb/b1/f9
+xterm*color14:    rgb:77/df/d8
+xterm*color15:    rgb:f7/f7/f7
 
 
 
