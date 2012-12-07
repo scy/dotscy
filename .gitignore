@@ -4,11 +4,16 @@
 /.bash_history
 /.cache/
 /.CFUserTextEncoding
+/.config/autostart/
+/.config/dconf/
 /.config/enchant/*.dic
 /.config/enchant/*.exc
 /.config/google-chrome/
+/.config/google-googletalkplugin/
 /.config/gtk-*/gtkfilechooser.ini
+/.config/libreoffice/
 /.config/Skype/
+/.config/spotify/
 /.config/Trolltech.conf
 /.config/vlc/
 /.cpan/
