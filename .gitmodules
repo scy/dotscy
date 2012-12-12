@@ -19,3 +19,6 @@
 [submodule "res/smyck-colors"]
 	path = res/smyck-colors
 	url = https://github.com/hukl/Smyck-Color-Scheme
+[submodule ".vim/bundle/twig"]
+	path = .vim/bundle/twig
+	url = https://github.com/beyondwords/vim-twig.git
