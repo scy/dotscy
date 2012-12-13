@@ -15,6 +15,15 @@ alias E="scy-editor"
 
 # Changing directories.
 alias C='cd -'
+# Shortcuts for "cd ..", "cd ../.." etc.
+dots='.'
+dirs='..'
+for i in $(seq 1 20); do
+	dots="$dots."
+	alias $dots="cd $dirs"
+	dirs="$dirs/.."
+done
+unset dots dirs
 
 # Settings for ncal.
 # First, determine what kind of ncal we have.
