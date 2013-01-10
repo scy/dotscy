@@ -13,6 +13,9 @@ which killall >/dev/null 2>&1 && killall xconsole
 # This enables it again.
 setxkbmap -option terminate:ctrl_alt_bksp
 
+# Don't beep.
+xset b off
+
 # Currently, I don't use Neo. Have totally unlearned it.
 # xmodmap "$HOME/res/neo_de.xmodmap"
 
