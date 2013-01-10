@@ -34,7 +34,7 @@ which dropbox >/dev/null 2>&1 && dropbox start -i &
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
 	*)
-		WM='i3'
+		WM='i3 --shmlog-size=26214400'
 		;;
 esac
-exec "$WM" >/dev/null
+exec $WM >/dev/null
