@@ -87,3 +87,4 @@ fi
 
 # Typos.
 alias sido=sudo
+alias :q=exit
