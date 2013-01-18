@@ -28,6 +28,7 @@
 	co = checkout
 	cob = checkout -b
 	com = checkout master
+	cop = checkout -p
 	d = diff
 	db = default-branch checkout
 	dbm = default-branch merge
