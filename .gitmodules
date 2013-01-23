@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/twig"]
 	path = .vim/bundle/twig
 	url = https://github.com/beyondwords/vim-twig.git
+[submodule ".vim/bundle/vim-mkdir-on-write"]
+	path = .vim/bundle/vim-mkdir-on-write
+	url = https://github.com/scy/vim-mkdir-on-write
