@@ -136,6 +136,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Audio controls.
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 1+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 1-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+
+# Spotify controls.
+bindsym XF86AudioPlay exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
