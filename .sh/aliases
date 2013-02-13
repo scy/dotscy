@@ -18,6 +18,7 @@ alias C='cd -'
 # Shortcuts for "cd ..", "cd ../.." etc.
 dots='.'
 dirs='..'
+# TODO: seq is not POSIX.
 for i in $(seq 1 20); do
 	dots="$dots."
 	alias $dots="cd $dirs"
