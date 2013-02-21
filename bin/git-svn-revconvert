@@ -1,0 +1,65 @@
+#!/usr/bin/php
+<?php
+
+// A filter for git-svn repositories that tries to convert SVN revision numbers
+// in stdin to Git commit IDs and vice versa.
+
+// Usage example: git cherry -v master feature-branch-x | git svn-revconvert
+
+// Yes, this is a freakin' PHP SCRIPT. I had _work_ to do. And it works. If you
+// want to convert it to another language, feel free to do so, but don't bug me
+// with it. The only language that I'll accept a pull request for is if you
+// rewrite this as an AWK script. I'm serious. If you don't do it, I'll do it at
+// some point in the future.
+
+
+
+// The regexp that finds Subversion and Git commit IDs:
+// On a word boundary, either "r" followed by a number that's not starting with
+// zero, or a 7 or 40 characters lowercase hex string.
+define('REGEXP', '/\b(?:r[1-9][0-9]*|[0-9a-f]{7}|[0-9a-f]{40})\b/');
+
+// A global variable to cache already converted values.
+$convert_cache = array();
+
+/**
+ * Callback to convert a revision number.
+ *
+ * @param  array  $match An array with [0] being the complete match.
+ * @return string        The replacement.
+ */
+function convert_revision($match) {
+	// Access the cache.
+	global $convert_cache;
+	// There are no subpatterns, the whole match is the revision.
+	$rev = $match[0];
+	// Whether we're converting from a SVN revision number.
+	$from_svn = (substr($rev, 0, 1) == 'r');
+	// If the revision is not in the cache, convert and cache.
+	if (!array_key_exists($rev, $convert_cache)) {
+		$convert_cache[$rev] = trim(shell_exec("git svn find-rev $rev 2>/dev/null"));
+	}
+	// The converted value, read from the cache.
+	$converted = $convert_cache[$rev];
+	// If the value could not be converted, return the match unchanged.
+	if (empty($converted)) {
+		return $rev;
+	}
+	// Build a replacement.
+	$replacement = $rev
+	             . ' ['
+	             . ($from_svn ? '' : 'r')
+	             . ($from_svn ? substr($converted, 0, 7) : $converted)
+	             . ']'
+	             ;
+	// Return the replacement.
+	return $replacement;
+}
+
+// Read the input, line by line.
+while (($line = fgets(STDIN)) !== false) {
+	// Replace the revisions in the current line.
+	$replaced = preg_replace_callback(REGEXP, 'convert_revision', $line);
+	// Output the (possibly modified) line.
+	echo $replaced;
+}
