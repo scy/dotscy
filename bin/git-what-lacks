@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# This is a small wrapper for git-cherry, besically simply because I always mix
+# up the argument order and meaning. Does the same thing, but outputs a message
+# telling what's about to be displayed first.
+
+verbose=''
+upstream=''
+head=''
+limit=''
+argnum=1
+
+for arg in "$@"; do
+	if [ "$arg" = '-v' ]; then
+		verbose='-v'
+		continue
+	fi
+	case "$argnum" in
+		1)
+			upstream="$arg"
+			;;
+		2)
+			head="$arg"
+			;;
+		3)
+			limit="$arg"
+			;;
+		*)
+			echo 'git-what-lacks: excess arguments' >&2
+			exit 128
+			;;
+	esac
+	argnum=$(( $argnum + 1 ))
+done
+
+if [ "$argnum" -eq 1 ]; then
+	echo 'git-what-lacks: please specify at least the branch to compare against' >&2
+	exit 128
+	# TODO: git-cherry defaults to "the first tracked remote branch". Find out
+	#       how to get that information and default to that as well.
+fi
+
+displayhead="'$head'"
+if [ "$displayhead" = "''" ]; then
+	currentbranch="$(git symbolic-ref HEAD 2>/dev/null)"
+	if [ "$currentbranch" = '' ]; then
+		displayhead="HEAD (commit $(git rev-parse --short HEAD))"
+	else
+		displayhead="HEAD (${currentbranch#refs/heads/})"
+	fi
+fi
+
+echo "commits that are in $displayhead but not in '$upstream'"
+echo 'either completely missing (+) or with an equivalent change present (-)'
+
+case "$argnum" in
+	2)
+		git cherry $verbose "$upstream"
+		;;
+	3)
+		git cherry $verbose "$upstream" "$head"
+		;;
+	4)
+		git cherry $verbose "$upstream" "$head" "$limit"
+		;;
+esac
