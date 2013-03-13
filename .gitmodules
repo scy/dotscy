@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/mako"]
 	path = .vim/bundle/mako
 	url = gitpub:sophacles/vim-bundle-mako.git
+[submodule ".vim/bundle/gitgutter"]
+	path = .vim/bundle/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
