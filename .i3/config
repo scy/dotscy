@@ -18,7 +18,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec scy-term
 
 # lock the screen
 bindsym $mod+Escape exec i3lock -c 5d5d5d
@@ -164,7 +164,7 @@ assign [class="X-www-browser"] 1: www
 workspace "1: www" output HDMI3
 
 # Start some things on startup.
-exec i3-sensible-terminal
+exec scy-term
 exec x-www-browser
 exec skype
 exec iceweasel

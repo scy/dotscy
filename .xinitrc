@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Append $HOME/bin to the $PATH.
+# Supports my $MASTERPATH construct (see .sh/environment).
+[ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
+export PATH="$HOME/bin:$MASTERPATH"
+
 # If this is a mac, do nothing at all.
 if [ "$(uname 2>/dev/null)" = 'Darwin' ]; then
 	exec quartz-wm "$@"
