@@ -28,7 +28,7 @@ xterm*color15:    rgb:f7/f7/f7
 
 
 ! Fade out the text when terminal is not focused.
-URxvt.fading: 30
+URxvt.fading: 20
 
 ! Tiny scroll bar at the right side.
 URxvt.scrollstyle: plain
@@ -38,7 +38,7 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: false
 URxvt.scrollTtyKeypress: true
 ! Huge scrollback buffer.
-URxvt.saveLines: 10000
+URxvt.saveLines: 50000
 
 ! Make it old-school.
 URxvt.cursorBlink: true
@@ -59,29 +59,32 @@ URxvt.cursorColor2: black
 URxvt.pointerColor: SpringGreen
 URxvt.scrollColor: #8888AA
 ! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white
-URxvt.background: #000000
-URxvt.color0:     #000000
-URxvt.color8:     #666666
-URxvt.color1:     #9c0804
-URxvt.color9:     #e80e07
-URxvt.color2:     #5c991c
-URxvt.color10:    #7bcc25
-URxvt.color3:     #ffa929
-URxvt.color11:    #fff129
-URxvt.color4:     #003687
-URxvt.color12:    #0063f7
-URxvt.color5:     #4f0035
-URxvt.color13:    #cf008a
-URxvt.color6:     #06767a
-URxvt.color14:    #0abcc2
-URxvt.foreground: #bebebe
-URxvt.color7:     #bebebe
-URxvt.color15:    #ffffff
+URxvt*background: #242424
+URxvt*foreground: #b0b0b0
+URxvt*color0:     #000000
+URxvt*color1:     #c75646
+URxvt*color2:     #8eb33b
+URxvt*color3:     #d0b03c
+URxvt*color4:     #72b3cc
+URxvt*color5:     #c8a0d1
+URxvt*color6:     #218693
+URxvt*color7:     #b0b0b0
+URxvt*color8:     #5d5d5d
+URxvt*color9:     #e09690
+URxvt*color10:    #cdee69
+URxvt*color11:    #ffe377
+URxvt*color12:    #9cd9f0
+URxvt*color13:    #fbb1f9
+URxvt*color14:    #77dfd8
+URxvt*color15:    #f7f7f7
 
-! Default font.
-URxvt.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
-URxvt.boldFont: -misc-fixed-bold-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
-URxvt.italicFont: -misc-fixed-medium-o-semicondensed-*-13-*-*-*-*-*-iso10646-*
+! Default font Inconsolata, fall back to misc-fixed.
+URxvt.font:       xft:Inconsolata-dz:size=10, \
+                  -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
+! URxvt makes normal Inconsolata look too wide, tighten it up a bit.
+URxvt.letterSpace: -1
+! But add a tiny bit more space between the lines.
+URxvt.lineSpace:    1
 
 ! I need to work on a nice pattern.
 ! URxvt.perl-ext: matcher
