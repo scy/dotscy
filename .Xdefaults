@@ -28,60 +28,60 @@ xterm*color15:    rgb:f7/f7/f7
 
 
 ! Fade out the text when terminal is not focused.
-Rxvt.fading: 30
+URxvt.fading: 30
 
 ! Tiny scroll bar at the right side.
-Rxvt.scrollstyle: plain
-Rxvt.scrollBar_right: true
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
 ! Do not scroll while in buffer, even on output, except if I press a key.
-Rxvt.scrollTtyOutput: false
-Rxvt.scrollWithBuffer: false
-Rxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: false
+URxvt.scrollTtyKeypress: true
 ! Huge scrollback buffer.
-Rxvt.saveLines: 10000
+URxvt.saveLines: 10000
 
 ! Make it old-school.
-Rxvt.cursorBlink: true
+URxvt.cursorBlink: true
 
 ! Open login shells.
-Rxvt.loginShell: true
+URxvt.loginShell: true
 
 ! Sorry Vim, 8th bit meta is just broken.
-Rxvt.meta8: false
+URxvt.meta8: false
 
 ! Disable Perl extensions for now, I do not actively use them
-Rxvt.perl-ext:
-Rxvt.perl-ext-common:
+URxvt.perl-ext:
+URxvt.perl-ext-common:
 
 ! Colors!
-Rxvt.cursorColor: SpringGreen
-Rxvt.cursorColor2: black
-Rxvt.pointerColor: SpringGreen
-Rxvt.scrollColor: #8888AA
+URxvt.cursorColor: SpringGreen
+URxvt.cursorColor2: black
+URxvt.pointerColor: SpringGreen
+URxvt.scrollColor: #8888AA
 ! 0: black, 1: red, 2: green, 3: yellow, 4: blue, 5: magenta, 6: cyan, 7: white
-Rxvt.background: #000000
-Rxvt.color0:     #000000
-Rxvt.color8:     #666666
-Rxvt.color1:     #9c0804
-Rxvt.color9:     #e80e07
-Rxvt.color2:     #5c991c
-Rxvt.color10:    #7bcc25
-Rxvt.color3:     #ffa929
-Rxvt.color11:    #fff129
-Rxvt.color4:     #003687
-Rxvt.color12:    #0063f7
-Rxvt.color5:     #4f0035
-Rxvt.color13:    #cf008a
-Rxvt.color6:     #06767a
-Rxvt.color14:    #0abcc2
-Rxvt.foreground: #bebebe
-Rxvt.color7:     #bebebe
-Rxvt.color15:    #ffffff
+URxvt.background: #000000
+URxvt.color0:     #000000
+URxvt.color8:     #666666
+URxvt.color1:     #9c0804
+URxvt.color9:     #e80e07
+URxvt.color2:     #5c991c
+URxvt.color10:    #7bcc25
+URxvt.color3:     #ffa929
+URxvt.color11:    #fff129
+URxvt.color4:     #003687
+URxvt.color12:    #0063f7
+URxvt.color5:     #4f0035
+URxvt.color13:    #cf008a
+URxvt.color6:     #06767a
+URxvt.color14:    #0abcc2
+URxvt.foreground: #bebebe
+URxvt.color7:     #bebebe
+URxvt.color15:    #ffffff
 
 ! Default font.
-Rxvt.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
-Rxvt.boldFont: -misc-fixed-bold-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
-Rxvt.italicFont: -misc-fixed-medium-o-semicondensed-*-13-*-*-*-*-*-iso10646-*
+URxvt.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
+URxvt.boldFont: -misc-fixed-bold-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
+URxvt.italicFont: -misc-fixed-medium-o-semicondensed-*-13-*-*-*-*-*-iso10646-*
 
 ! I need to work on a nice pattern.
 ! URxvt.perl-ext: matcher
@@ -90,7 +90,7 @@ Rxvt.italicFont: -misc-fixed-medium-o-semicondensed-*-13-*-*-*-*-*-iso10646-*
 ! URxvt.matcher.pattern.1: [\\w+-]+:\\/\\/
 
 ! The following settings currently do not work for whatever reason.
-! Rxvt.shading: 50
+! URxvt.shading: 50
 ! URxvt*inheritPixmap: true
 ! URxvt*tintColor: blue
-! Rxvt*background: rgba:0000/0000/0000/bbbb
+! URxvt*background: rgba:0000/0000/0000/bbbb
