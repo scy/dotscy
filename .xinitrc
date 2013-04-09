@@ -36,6 +36,13 @@ which numlockx >/dev/null 2>&1 && numlockx on
 # Start Dropbox, if installed.
 which dropbox >/dev/null 2>&1 && dropbox start -i &
 
+# Start urxvtd, if installed.
+if which urxvtd >/dev/null 2>&1; then
+	mkdir -p "$HOME/.urxvt" && rm -f "$HOME/.urxvt/"urxvtd-*
+	export RXVT_SOCKET="$HOME/.urxvt/urxvtd-$(hostname)-$$"
+	urxvtd -f -o -q
+fi
+
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
 	*)
