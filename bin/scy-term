@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Usual case: urxvtd running. Start urxvtc.
+[ -S "$RXVT_SOCKET" ] && exec urxvtc "$@"
+
+# Else, try some alternatives in order.
+for term in urxvt i3-sensible-terminal x-terminal-emulator xterm; do
+	which "$term" >/dev/null 2>&1 && exec "$term" "$@"
+done
+
+# Apparently we have none.
+echo "We're fucked." >&2
+exit 1
