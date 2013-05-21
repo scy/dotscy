@@ -43,6 +43,9 @@ if which urxvtd >/dev/null 2>&1; then
 	urxvtd -f -o -q
 fi
 
+# Start smbnetfs, if installed and configured.
+[ -r "$HOME/.smb/smbnetfs.conf" -a -d '/mnt/smb' ] && which smbnetfs >/dev/null 2>&1 && smbnetfs /mnt/smb >/dev/null 2>&1
+
 # Start the right window manager etc. depending on the host.
 case "$(hostname)" in
 	*)
