@@ -2,7 +2,7 @@
 # first store the "master path" determined by host-wide configuration.
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 # Modify according to my needs.
-export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin:/sbin:$MASTERPATH:/opt/eclipse"
+export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin:/sbin:$MASTERPATH:/opt/eclipse:/usr/local/share/npm/bin"
 
 # If $HOSTNAME is not set, set it. Enforce the "short" name.
 if [ -z "$HOSTNAME" ]; then
