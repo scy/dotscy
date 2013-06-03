@@ -20,10 +20,8 @@
 /.cups/lpoptions
 /.dbshell
 /.dbus/session-bus/
-/dia.log
 /.dmenu_cache
 /.dropbox/
-/Dropbox/
 /.eclim/
 /.esd_auth
 /.fontconfig/
@@ -73,8 +71,12 @@
 /Applications/
 /cash/
 /Desktop/
+/dia.log
 /Documents/
 /Downloads/
+/Dropbox/
+/Google Drive/
+/keepass.*.key
 /Library/
 /Lightroom/
 /Movies/
