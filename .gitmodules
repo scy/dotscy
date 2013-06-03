@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/handlebars"]
+	path = .vim/bundle/handlebars
+	url = https://github.com/nono/vim-handlebars.git
