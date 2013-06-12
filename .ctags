@@ -1,4 +1,6 @@
 -n
 --format=2
+--fields=+SafiksSt
+--file-scope=no
 --sort=foldcase
 --totals=yes
