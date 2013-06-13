@@ -11,6 +11,7 @@
 /.config/google-chrome/
 /.config/google-googletalkplugin/
 /.config/gtk-*/gtkfilechooser.ini
+/.config/menus/
 /.config/libreoffice/
 /.config/Skype/
 /.config/spotify/
@@ -22,6 +23,7 @@
 /.dbus/session-bus/
 /.dmenu_cache
 /.dropbox/
+/.dropbox-dist/
 /.eclim/
 /.esd_auth
 /.fontconfig/
@@ -31,14 +33,19 @@
 /.gem/
 /.gimp-2.6/
 /.gitignore_global
+/.gnome/apps/
 /.gnucash/
 /.gstreamer-*/registry.*.bin
+/.gtk-bookmarks
 /.hgignore_global
 /.hgrc
 /.icedove/
 /.keepassx/
 /.lesshst
 /.links2/
+/.local/share/applications/
+/.local/share/desktop-directories/
+/.local/share/icons/
 /.local/share/vlc/
 /.local/share/recently-used.xbel
 /.macromedia/Flash_Player/
@@ -51,7 +58,10 @@
 /.pearrc
 /.pki/
 /.psi/
+/.pulse/*-runtime
+/.pulse-cookie
 /.purple/
+/.recently-used
 /.recently-used.xbel
 /.rnd
 /.sh_history
@@ -78,6 +88,8 @@
 /Dropbox/
 /Google Drive/
 /keepass.*.key
+# <http://crbug.com/239048>:
+/libpeerconnection.log
 /Library/
 /Lightroom/
 /Movies/
