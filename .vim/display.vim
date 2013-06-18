@@ -58,6 +58,9 @@ set laststatus=2
 " Show partial normal mode commands and mappings in the command line.
 set showcmd
 
+" Show context around the cursor.
+set scrolloff=3
+
 " GUI options.
 set guioptions+=cfegmtr
 set guioptions-=T
