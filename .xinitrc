@@ -14,10 +14,6 @@ fi
 # (I'm looking at you, Gentoo!)
 which killall >/dev/null 2>&1 && killall xconsole
 
-# More recent X servers don't terminate on C-A-Backspace anymore.
-# This enables it again.
-setxkbmap -option terminate:ctrl_alt_bksp
-
 # Don't beep.
 xset b off
 

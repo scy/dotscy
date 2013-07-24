@@ -29,3 +29,39 @@ SynPS/2 Synaptics TouchPad\
 		xinput set-button-map "$dev" 1 2 3 5 4 6 7
 	done
 fi
+
+
+
+# Funky keyboard setup. I'm currently using a ThinkPad with a Apple USB keyboard
+# connected and want to have the best of both worlds.
+
+# You also need this line in /etc/modprobe.d/hid_apple.conf in order to no
+# longer having to press Fn for the normal F keys and to swap <> and ^° again
+# (because the Apple keyboard swaps those when being used without config):
+#     options hid_apple fnmode=2 iso_layout=0
+
+# Note that this configuration will leave you with only a single "Super" key,
+# which is the left Cmd (or Win) key. You won't have a right Super key anymore.
+
+# Depending on your needs, you might want to also have a look at the Xkb option
+# "apple:alupckeys". However, I chose to do that manually.
+
+# First, enable compose on caps lock. Because who needs caps lock anyway. Also,
+# disable all other options and allow Ctrl+Alt+Backspace to zap the X server.
+setxkbmap -option '' -option compose:caps -option terminate:ctrl_alt_bksp
+
+# Next, do the Apple keyboard specific fixes. We need xinput to find out what
+# the ID of the keyboard(s) is.
+
+if have_xinput; then
+	# For each connected Apple keyboard...
+	for id in $(xinput | awk '/Apple Inc\. Apple Keyboard/ { sub(/^.*id=/, ""); sub(/[^0-9].*$/, ""); print; };'); do
+		# Set right Cmd to Alt Gr, not Super.
+		# Set right Alt to Alt, not Alt Gr.
+		setxkbmap -device "$id" \
+			-option lv3:rwin_switch -option lv3:ralt_alt
+	done
+fi
+
+# Lastly, there's my xmodmap file, which sets F13 to Print and F15 to Insert.
+xmodmap "$HOME/res/scy.xmodmap"

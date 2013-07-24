@@ -1,0 +1,7 @@
+! See ../bin/x-peripherals.sh for some explanations on what this file does.
+
+! Make F13 the "print" key.
+keycode 191 = Print
+
+! Make F15 the "Insert" key.
+keycode 193 = Insert
