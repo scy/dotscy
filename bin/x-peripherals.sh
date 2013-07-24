@@ -1,5 +1,9 @@
 #!/bin/sh
 
+
+
+# Screen setup, based on which machine this is and whether it's docked.
+
 if [ "$(hostname)" = 'coco-nb-434' ]; then      # Work machine.
 	if lsusb | grep -q ' ID 17ef:100a '; then   # Docked.
 		xrandr --output LVDS1 --auto --primary --pos 0x180 --output HDMI3 --auto --pos 1600x0
@@ -8,7 +12,10 @@ if [ "$(hostname)" = 'coco-nb-434' ]; then      # Work machine.
 	fi
 fi # If not work machine, do nothing.
 
-# If we have xinput, swap the scroll direction. (I'm OS X influenced.)
+
+
+# If we have xinput, swap the mouse scroll direction. (I'm OS X influenced.)
+
 if which xinput >/dev/null 2>&1; then
 	xinput list --name-only | grep -F "$(printf "\
 Logitech USB Optical Mouse\n\
