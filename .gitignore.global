@@ -2,3 +2,5 @@
 phpinfo.php
 Session.vim
 tags
+/.idea/
+/*.iml

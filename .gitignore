@@ -40,6 +40,8 @@
 /.hgignore_global
 /.hgrc
 /.icedove/
+# Ignore IDEA's local files, but don't ignore the config/ directory.
+/.IntelliJIdea12/system/
 /.keepassx/
 /.lesshst
 /.links2/
@@ -87,6 +89,8 @@
 /Downloads/
 /Dropbox/
 /Google Drive/
+# This holds my local installation of IDEA.
+/IDEA/
 /keepass.*.key
 # <http://crbug.com/239048>:
 /libpeerconnection.log
