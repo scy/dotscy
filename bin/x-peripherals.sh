@@ -32,8 +32,8 @@ fi
 
 
 
-# Funky keyboard setup. I'm currently using a ThinkPad with a Apple USB keyboard
-# connected and want to have the best of both worlds.
+# Funky keyboard setup. I'm currently using a ThinkPad with an Apple USB
+# keyboard connected and want to have the best of both worlds.
 
 # You also need this line in /etc/modprobe.d/hid_apple.conf in order to no
 # longer having to press Fn for the normal F keys and to swap <> and ^° again
