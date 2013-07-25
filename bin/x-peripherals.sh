@@ -39,6 +39,10 @@ fi
 # longer having to press Fn for the normal F keys and to swap <> and ^° again
 # (because the Apple keyboard swaps those when being used without config):
 #     options hid_apple fnmode=2 iso_layout=0
+# If the module is loaded in the initramfs (no idea how that's decided, but for
+# me it's the case because I'm using whole disk encryption), you need that line
+# instead in /etc/modules (on Debian, ymmv on other distributions):
+#     hid_apple fnmode=2 iso_layout=0
 
 # Note that this configuration will leave you with only a single "Super" key,
 # which is the left Cmd (or Win) key. You won't have a right Super key anymore.
