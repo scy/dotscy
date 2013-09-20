@@ -58,6 +58,8 @@
 /.mozilla-thunderbird/
 /.mysql_history
 /.npm/
+/.offlineimap/
+/.offlineimappw-*
 /.pearrc
 /.pki/
 /.psi/

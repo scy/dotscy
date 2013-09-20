@@ -1,0 +1,3 @@
+[general]
+metadata = ~/.offlineimap
+ui = Basic
