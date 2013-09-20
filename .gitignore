@@ -3,6 +3,8 @@
 /.aptitude/
 /.bash_history
 /.cache/
+/.composer/.htaccess
+/.composer/cache/
 /.CFUserTextEncoding
 /.config/autostart/
 /.config/dconf/
@@ -31,7 +33,7 @@
 /.gconfd/saved_state
 /.gegl-0.0/
 /.gem/
-/.gimp-2.6/
+/.gimp-2.?/
 /.gitignore_global
 /.gitk
 /.gnome/apps/
@@ -43,12 +45,15 @@
 /.icedove/
 # Ignore IDEA's local files, but don't ignore the config/ directory.
 /.IntelliJIdea12/system/
+/.java/fonts/
 /.keepassx/
 /.lesshst
 /.links2/
 /.local/share/applications/
 /.local/share/desktop-directories/
+/.local/share/gegl-0.?/
 /.local/share/icons/
+/.local/share/spotify/
 /.local/share/vlc/
 /.local/share/recently-used.xbel
 /.macromedia/Flash_Player/
@@ -79,6 +84,7 @@
 /.toodledo/
 /.Trash/
 /.vimperatorrc.local
+/.WebIde60/
 /.wireshark/
 /.wireshark-etc/
 /.Xauthority
@@ -92,8 +98,8 @@
 /Downloads/
 /Dropbox/
 /Google Drive/
-# This holds my local installation of IDEA.
-/IDEA/
+# This holds my local installation of IDEA/PhpStorm.
+/IntelliJ/
 /keepass.*.key
 # <http://crbug.com/239048>:
 /libpeerconnection.log
