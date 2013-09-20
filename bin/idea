@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# Simple script to start IDEA.
-
-cd "$HOME/proj"
-exec ../IDEA/current/bin/idea.sh
