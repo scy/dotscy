@@ -33,6 +33,7 @@
 /.gem/
 /.gimp-2.6/
 /.gitignore_global
+/.gitk
 /.gnome/apps/
 /.gnucash/
 /.gstreamer-*/registry.*.bin
