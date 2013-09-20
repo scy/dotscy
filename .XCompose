@@ -1,0 +1,74 @@
+# My compose mappings
+# Tim Weber <http://scy.name/>
+
+# This file is not based on any popular compose file at all.
+# I created it from scratch.
+
+
+# Special whitespace
+<Multi_key> <space> <space>  : " " # nbsp
+<Multi_key> <space> <exclam> : " " # nbsp
+<Multi_key> <0>     <space>  : "​" # zero-width, breaking
+<Multi_key> <n>     <space>  : " " # n-sp
+<Multi_key> <m>     <space>  : " " # m-sp
+<Multi_key> <1>     <space>  : " " # figure space
+
+
+# Special hyphens and minuses
+<Multi_key> <minus> <question> : "­" # soft hyphen
+<Multi_key> <minus> <minus>    : "−" # minus
+<Multi_key> <4>     <minus>    : "‐" # hyphen
+<Multi_key> <minus> <exclam>   : "‑" # non-breaking hyphen
+<Multi_key> <n>     <minus>    : "–" # n-dash
+<Multi_key> <2>     <minus>    : "–" # n-dash
+<Multi_key> <m>     <minus>    : "—" # m-dash
+<Multi_key> <1>     <minus>    : "—" # m-dash
+
+
+# Accented letters
+<Multi_key> <acute> <a>     : "á"
+<Multi_key> <a>     <acute> : "á"
+<Multi_key> <acute> <e>     : "é"
+<Multi_key> <e>     <acute> : "é"
+<Multi_key> <acute> <i>     : "í"
+<Multi_key> <i>     <acute> : "í"
+<Multi_key> <acute> <o>     : "ó"
+<Multi_key> <tilde> <n>     : "ñ"
+<Multi_key> <n>     <tilde> : "ñ"
+<Multi_key> <o>     <acute> : "ó"
+<Multi_key> <acute> <u>     : "ú"
+<Multi_key> <u>     <acute> : "ú"
+<Multi_key> <acute> <y>     : "ý"
+<Multi_key> <y>     <acute> : "ý"
+
+
+# Quotation marks, German
+<Multi_key> <comma>   <comma>   : "„"
+<Multi_key> <acute>   <acute>   : "“"
+# Guillemets
+<Multi_key> <less>    <less>    : "«"
+<Multi_key> <greater> <greater> : "»"
+# Ellipsis
+<Multi_key> <period>  <period>  : "…"
+
+
+# Ligatures
+<Multi_key> <s> <z>  : "ß"
+<Multi_key> <s> <s>  : "ß"
+<Multi_key> <ssharp> : "ẞ"
+<Multi_key> <S> <Z>  : "ẞ"
+<Multi_key> <S> <S>  : "ẞ"
+
+
+# Emoticons and Emojis
+<Multi_key> <less> <3> : "♥"
+
+
+# Keys
+# These basically are Compose, Compose, the-key-you-mean.
+<Multi_key> <Multi_key> <space>     : "␣"
+<Multi_key> <Multi_key> <Multi_key> : "⎄"
+
+
+# Symbols.
+<Multi_key> <s> <w> <a> <s> : "卐"
