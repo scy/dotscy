@@ -2,7 +2,7 @@
 # first store the "master path" determined by host-wide configuration.
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 # Modify according to my needs.
-export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin:/sbin:$MASTERPATH:/opt/eclipse:/usr/local/share/npm/bin"
+export PATH="$HOME/bin:$HOME/go/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin:/sbin:$MASTERPATH:/opt/eclipse:/usr/local/share/npm/bin"
 
 # If $HOSTNAME is not set, set it. Enforce the "short" name.
 if [ -z "$HOSTNAME" ]; then
@@ -38,4 +38,6 @@ export CLICOLOR=1
 # Configure less.
 export LESS='--ignore-case --jump-target=1 --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-2'
 
+# Paths for programming languages/frameworks/tools
 export NODE_PATH='/usr/local/lib/node:/usr/local/lib/node_modules'
+export GOPATH="$HOME/go"
