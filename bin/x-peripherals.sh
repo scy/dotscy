@@ -26,7 +26,7 @@ if have_xinput; then
 Logitech USB Optical Mouse\n\
 SynPS/2 Synaptics TouchPad\
 ")" | while read -r dev; do
-		xinput set-button-map "$dev" 1 2 3 5 4 6 7
+		xinput set-button-map "$dev" 1 2 3 5 4 7 6
 	done
 fi
 
