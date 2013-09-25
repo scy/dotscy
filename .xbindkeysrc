@@ -1,0 +1,4 @@
+"[ "$(active-window 2>/dev/null)" = 'x-www-browser' ] && xvkbd -text '\Cw' >/dev/null 2>&1 &"
+b:10
+"[ "$(active-window 2>/dev/null)" = 'x-www-browser' ] && xvkbd -text '\CT' >/dev/null 2>&1 &"
+shift + b:10
