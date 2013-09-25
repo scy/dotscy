@@ -32,6 +32,9 @@ which numlockx >/dev/null 2>&1 && numlockx on
 # Start Dropbox, if installed.
 which dropbox >/dev/null 2>&1 && dropbox start -i &
 
+# Start xbindkeys, if installed.
+which xbindkeys >/dev/null 2>&1 && xbindkeys
+
 # Start urxvtd, if installed.
 if which urxvtd >/dev/null 2>&1; then
 	mkdir -p "$HOME/.urxvt" && rm -f "$HOME/.urxvt/"urxvtd-*
