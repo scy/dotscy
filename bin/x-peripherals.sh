@@ -24,6 +24,7 @@ fi # If not work machine, do nothing.
 if have_xinput; then
 	xinput list --name-only | grep -F "$(printf "\
 Logitech USB Optical Mouse\n\
+Logitech Unifying Device. Wireless PID:101a\n\
 SynPS/2 Synaptics TouchPad\
 ")" | while read -r dev; do
 		xinput set-button-map "$dev" 1 2 3 5 4 7 6
