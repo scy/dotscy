@@ -1,4 +1,4 @@
-"thumbclick.sh &"
+"$HOME/bin/thumbclick.sh &"
 b:10
-"thumbclick.sh -s &"
+"$HOME/bin/thumbclick.sh -s &"
 shift + b:10

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# We're called from xbindkeys and might not have $HOME/bin in the $PATH.
+export PATH="$HOME/bin:$PATH"
+
 xvkbdtext () {
 	xvkbd -text "$@" >/dev/null 2>&1
 }
@@ -18,7 +21,9 @@ while getopts ':s' opt; do
 	esac
 done
 
-case "$(active-window)" in
+activewindow="$(active-window)"
+
+case "$activewindow" in
 	x-www-browser)
 		if [ "$shift" = n ]; then
 			xvkbdtext '\Cw'
