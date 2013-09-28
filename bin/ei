@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Post to my eilog instance. Credentials are in ~/.netrc.
+
+# If no command line parameters are present, read from stdin.
+if [ "$#" -eq 0 ]; then
+	data="$(cat)"
+else
+	data="$@"
+fi
+
+if [ -z "$data" ]; then
+	echo 'ei: input is empty' >&2
+	exit 1
+fi
+
+printf %s "$data" | curl -n -X PUT --data-urlencode text@- https://eilog.lacerta.uberspace.de/entry
