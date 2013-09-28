@@ -62,6 +62,7 @@
 /.mozilla/extensions/
 /.mozilla-thunderbird/
 /.mysql_history
+/.netrc
 /.npm/
 /.offlineimap/
 /.offlineimappw-*
