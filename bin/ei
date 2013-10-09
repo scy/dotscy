@@ -14,4 +14,14 @@ if [ -z "$data" ]; then
 	exit 1
 fi
 
-printf %s "$data" | curl -n -X PUT --data-urlencode text@- https://eilog.lacerta.uberspace.de/entry
+# How the cURL call should be made. Allows us to conditionally redirect it or not.
+do_curl () {
+	printf %s "$data" | curl -sn -X PUT --data-urlencode text@- https://eilog.lacerta.uberspace.de/entry
+}
+
+# If stdout is a terminal and we have jq, pipe the output through jq for pretty-printing.
+if [ -t 1 ] && which jq >/dev/null 2>&1; then
+	do_curl | jq .
+else
+	do_curl
+fi
