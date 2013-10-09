@@ -11,6 +11,7 @@
 /.config/enchant/*.dic
 /.config/enchant/*.exc
 /.config/google-chrome/
+/.config/google-chrome-beta/
 /.config/google-googletalkplugin/
 /.config/gtk-*/gtkfilechooser.ini
 /.config/menus/
@@ -45,6 +46,7 @@
 /.icedove/
 # Ignore IDEA's local files, but don't ignore the config/ directory.
 /.IntelliJIdea12/system/
+/.java/deployment/
 /.java/fonts/
 /.keepassx/
 /.lesshst
@@ -53,6 +55,7 @@
 /.local/share/desktop-directories/
 /.local/share/gegl-0.?/
 /.local/share/icons/
+/.local/share/mc/
 /.local/share/spotify/
 /.local/share/vlc/
 /.local/share/recently-used.xbel
