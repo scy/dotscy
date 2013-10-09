@@ -1,3 +1,3 @@
 #!/bin/sh
 
-xprop -id "$(xprop -root | awk '/^_NET_ACTIVE_WINDOW\(WINDOW\): /{print $NF}')" | awk -F \" '/^WM_CLASS\(STRING\) = /{print $2}'
+xprop -id "$(xprop -root | awk '/^_NET_ACTIVE_WINDOW\(WINDOW\): /{print $NF}')" | awk -F \" '/^WM_CLASS\(STRING\) = /{print $2}' | cut -d ' ' -f 1
