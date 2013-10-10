@@ -24,7 +24,7 @@ done
 activewindow="$(active-window)"
 
 case "$activewindow" in
-	x-www-browser|X-www-browser)
+	x-www-browser|X-www-browser|Google-chrome)
 		if [ "$shift" = n ]; then
 			xvkbdtext '\Cw'
 		else
