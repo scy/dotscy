@@ -14,6 +14,8 @@
 /.config/google-chrome-beta/
 /.config/google-googletalkplugin/
 /.config/gtk-*/gtkfilechooser.ini
+# Ignore Hub's config (it contains an OAuth token).
+/.config/hub
 /.config/menus/
 /.config/libreoffice/
 /.config/Skype/
@@ -75,6 +77,8 @@
 /.pulse/*-runtime
 /.pulse-cookie
 /.purple/
+# Ignore PhantomJS data.
+/.qws/share/data/Ofi Labs/PhantomJS/
 /.recently-used
 /.recently-used.xbel
 /.rnd
