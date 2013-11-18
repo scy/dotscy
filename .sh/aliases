@@ -19,12 +19,12 @@ alias to='toodledo add'
 # Changing directories.
 alias C='cd -'
 # Shortcuts for "cd ..", "cd ../.." etc.
-dots='.'
+dots='..'
 dirs='..'
 # TODO: seq is not POSIX.
 for i in $(seq 1 20); do
-	dots="$dots."
 	alias $dots="cd $dirs"
+	dots="$dots."
 	dirs="$dirs/.."
 done
 unset dots dirs
