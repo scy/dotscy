@@ -19,15 +19,18 @@ alias to='toodledo add'
 # Changing directories.
 alias C='cd -'
 # Shortcuts for "cd ..", "cd ../.." etc.
-dots='.'
+dots='..'
 dirs='..'
-# TODO: seq is not POSIX.
-for i in $(seq 1 20); do
-	dots="$dots."
+i=0
+max=20
+while [ $i -lt $max ]
+do
 	alias $dots="cd $dirs"
+	dots="$dots."
 	dirs="$dirs/.."
+	: $((i=i+1))
 done
-unset dots dirs
+unset dots dirs i max
 
 # Settings for ncal.
 # First, determine what kind of ncal we have.
