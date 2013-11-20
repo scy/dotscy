@@ -1,8 +1,12 @@
 #!/bin/sh
 
-# Simple script to start IDE, currently only PhpStorm.
-# (I'll probably switch to IDEA 13 when it comes out.)
+# Simple script to start IDE, possibly IDEA or PhpStorm.
 
 cd "$HOME/proj"
 
-exec ../IntelliJ/PhpStorm/current/bin/phpstorm.sh
+for file in idea.sh phpstorm.sh; do
+	launcher="../IntelliJ/preferred/current/bin/$file"
+	if [ -x "$launcher" ]; then
+		exec "$launcher"
+	fi
+done
