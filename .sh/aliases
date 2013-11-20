@@ -28,7 +28,7 @@ do
 	alias $dots="cd $dirs"
 	dots="$dots."
 	dirs="$dirs/.."
-    true $((i=i+1))
+	: $((i=i+1))
 done
 unset dots dirs i max
 
