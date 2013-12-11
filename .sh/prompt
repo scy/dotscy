@@ -9,7 +9,7 @@ gitprompt() {
 		echo -n "${branch#refs/heads/} "
 		# svn-ahead returns nothing if this is no git-svn repo
 		flags="$(git svn-ahead %ds | sed -e 's/^0s$/s/')"
-		flags="$flags$(git status 2>/dev/null | sed -n -e 's/^# Your branch is ahead of .\{1,\} by \([0-9]\{1,\}\) commits\{0,1\}\.$/\1/p' -e 's/^# Your branch is behind .\{1,\} by \([0-9]\{1,\}\) commits\{0,1\}, and can be fast-forwarded\.$/-\1f/p' -e 's/^# and have \([0-9]\{1,\}\) and \([0-9]\{1,\}\) different commit(s) each, respectively.$/\2Y\1/p' -e 's/^# Changes to be committed:$/+/p' -e 's/^# Changed but not updated:$/~/p' -e 's/^# Changes not staged for commit:$/~/p' -e 's/^# Untracked files:$/?/p' | tr -d \\n)"
+		flags="$flags$(git status 2>/dev/null | sed -n -e '/^# /!s/^/# /' -e 's/^# Your branch is ahead of .\{1,\} by \([0-9]\{1,\}\) commits\{0,1\}\.$/\1/p' -e 's/^# Your branch is behind .\{1,\} by \([0-9]\{1,\}\) commits\{0,1\}, and can be fast-forwarded\.$/-\1f/p' -e 's/^# and have \([0-9]\{1,\}\) and \([0-9]\{1,\}\) different commit(s) each, respectively.$/\2Y\1/p' -e 's/^# Changes to be committed:$/+/p' -e 's/^# Changed but not updated:$/~/p' -e 's/^# Changes not staged for commit:$/~/p' -e 's/^# Untracked files:$/?/p' | tr -d \\n)"
 		# I sometimes forget that a subdirectory of ~/proj is not a Git repo.
 		# Warn me if the ~/proj subdir I'm in is no repo (and Git works with ~).
 		echo "$PWD" | grep -q "^$HOME/proj" && [ "$(readlink -f "./$(git rev-parse --show-cdup)" 2>/dev/null)" = "$HOME" ] && flags="$flags\\[\\e[0;31m!\\]"
