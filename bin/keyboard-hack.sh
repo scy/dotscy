@@ -7,28 +7,21 @@ xvkbdtext () {
 	xvkbd -text "$@" >/dev/null 2>&1
 }
 
-shift=n
-
-while getopts ':s' opt; do
-	case "$opt" in
-		s)
-			shift=y
-			;;
-		\?)
-			echo "Invalid option: -$OPTARG" >&2
-			exit 1
-			;;
-	esac
-done
+action="$1"
 
 activewindow="$(active-window)"
 
 case "$activewindow" in
 	x-www-browser|X-www-browser|Google-chrome)
-		if [ "$shift" = n ]; then
-			xvkbdtext '\Cw'
-		else
-			xvkbdtext '\CT'
-		fi
+		case "$action" in
+			thumb)
+				# Close tab.
+				xvkbdtext '\C\[F4]'
+				;;
+			shift-thumb)
+				# Reopen last tab.
+				xvkbdtext '\CT'
+				;;
+		esac
 		;;
 esac

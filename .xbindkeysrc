@@ -1,4 +1,4 @@
-"$HOME/bin/thumbclick.sh &"
+"$HOME/bin/keyboard-hack.sh thumb &"
 b:10
-"$HOME/bin/thumbclick.sh -s &"
+"$HOME/bin/keyboard-hack.sh shift-thumb &"
 shift + b:10
