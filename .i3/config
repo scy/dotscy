@@ -150,14 +150,17 @@ bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mp
 # With $mod:  Interactively select window or rectangle.
 # With Shift: JPEG instead of PNG.
 # With Ctrl:  Sleep 5 seconds before doing the screenshot.
-bindsym                Print               exec --no-startup-id            scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym                Shift+Print         exec --no-startup-id            scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
-bindsym --release $mod+Print               exec --no-startup-id            scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym --release $mod+Shift+Print         exec --no-startup-id            scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
-bindsym                Control+Print       exec --no-startup-id sleep 5 && scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym                Control+Shift+Print exec --no-startup-id sleep 5 && scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
-bindsym --release $mod+Control+Print       exec --no-startup-id sleep 5 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym --release $mod+Control+Shift+Print exec --no-startup-id sleep 5 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
+# Note: i3 4.2 (read: Debian Wheezy) does not support --release, so I'm using
+# `sleep 0.2` instead. I'm aware that POSIX `sleep` only supports integers, but
+# I'm not running i3 on anything non-Debian, and GNU coreutils support floats.
+bindsym      Print               exec --no-startup-id              scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
+bindsym      Shift+Print         exec --no-startup-id              scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
+bindsym $mod+Print               exec --no-startup-id sleep 0.2 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
+bindsym $mod+Shift+Print         exec --no-startup-id sleep 0.2 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
+bindsym      Control+Print       exec --no-startup-id sleep   5 && scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
+bindsym      Control+Shift+Print exec --no-startup-id sleep   5 && scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
+bindsym $mod+Control+Print       exec --no-startup-id sleep   5 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
+bindsym $mod+Control+Shift+Print exec --no-startup-id sleep   5 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
