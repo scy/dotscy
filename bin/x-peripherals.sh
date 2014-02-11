@@ -44,6 +44,7 @@ fi
 # me it's the case because I'm using whole disk encryption), you need that line
 # instead in /etc/modules (on Debian, ymmv on other distributions):
 #     hid_apple fnmode=2 iso_layout=0
+# Don't forget "sudo update-initramfs -u" afterwards!
 
 # Note that this configuration will leave you with only a single "Super" key,
 # which is the left Cmd (or Win) key. You won't have a right Super key anymore.
