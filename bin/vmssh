@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Note: This script depends on GNU awk (gawk) being installed.
+#       Okay, and virsh, of course.
+
 if [ "$#" -lt 1 ]; then
 	echo 'vmssh: usage: vmssh <domain> [interface]' >&2
 	exit 1
