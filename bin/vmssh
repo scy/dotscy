@@ -3,6 +3,12 @@
 # Note: This script depends on GNU awk (gawk) being installed.
 #       Okay, and virsh, of course.
 
+# I've tested this in Debian Wheezy with the libvirt "default" network, which is
+# bridged. It doesn't have IPv6 by default, which may be related to
+# <https://bugzilla.redhat.com/show_bug.cgi?id=501934>. Enable v6 via:
+#     echo 0 > /proc/sys/net/ipv6/conf/virbr0/disable_ipv6
+# I currently don't know how to enable this permanently, any hints welcome.
+
 if [ "$#" -lt 1 ]; then
 	echo 'vmssh: usage: vmssh <domain> [interface]' >&2
 	exit 1
