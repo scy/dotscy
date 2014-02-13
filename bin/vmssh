@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ "$#" -lt 1 ]; then
-    echo 'vmssh: usage: vmssh <domain> [interface]' >&2
-    exit 1
+	echo 'vmssh: usage: vmssh <domain> [interface]' >&2
+	exit 1
 fi
 
 domain="$1"
@@ -10,4 +10,8 @@ domain="$1"
 # Interface to use can be supplied as $2, defaults to virbr0.
 iface="${2:-virbr0}"
 
-ssh "$(sudo virsh domiflist "$domain" | sed -n -e 's/^.*\(\([0-9a-f]\{2\}:\)\{5\}[0-9a-f]\{2\}\).*$/\1/p' | gawk 'match($0, /^([0-9a-f]{2}):([0-9a-f]{2}:[0-9a-f]{2}):([0-9a-f]{2}:[0-9a-f]{2}):([0-9a-f]{2})$/, m) { printf "fe80::%02x%sff:fe%s%s\n", xor(strtonum("0x" m[1]), 2), m[2], m[3], m[4] }')%$iface"
+ssh "$(sudo virsh domiflist "$domain" | \
+	sed -n -e 's/^.*\(\([0-9a-f]\{2\}:\)\{5\}[0-9a-f]\{2\}\).*$/\1/p' | \
+	gawk 'match($0, /^([0-9a-f]{2}):([0-9a-f]{2}:[0-9a-f]{2}):([0-9a-f]{2}:[0-9a-f]{2}):([0-9a-f]{2})$/, m) {
+		printf "fe80::%02x%sff:fe%s%s\n", xor(strtonum("0x" m[1]), 2), m[2], m[3], m[4] 
+	}')%$iface"
