@@ -5,7 +5,7 @@
 cd "$HOME/proj"
 
 for file in idea.sh phpstorm.sh; do
-	launcher="../IntelliJ/preferred/current/bin/$file"
+	launcher="../IntelliJ/preferred/bin/$file"
 	if [ -x "$launcher" ]; then
 		exec "$launcher"
 	fi
