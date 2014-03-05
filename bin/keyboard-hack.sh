@@ -12,7 +12,7 @@ action="$1"
 activewindow="$(active-window)"
 
 case "$activewindow" in
-	x-www-browser|X-www-browser|Google-chrome)
+	x-www-browser|X-www-browser|google-chrome|Google-chrome)
 		case "$action" in
 			thumb)
 				# Close tab.
