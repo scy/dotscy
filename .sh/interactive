@@ -11,3 +11,8 @@ if [ -z "$PS1" ]; then return; fi
 
 s color
 s prompt
+
+# If this is not the bash, stop at this point.
+if [ -z "$BASH" ]; then return; fi
+
+s completion

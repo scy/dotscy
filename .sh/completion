@@ -1,0 +1,10 @@
+# bash completion
+
+# based on Debian's default .bashrc
+if ! shopt -oq posix; then
+	for loc in /usr/share/bash-completion/bash_completion /etc/bash_completion; do
+		if [ -f "$loc" ]; then
+			. "$loc"
+		fi
+	done
+fi
