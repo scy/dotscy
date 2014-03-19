@@ -1,3 +1,7 @@
+if which dircolors >/dev/null 2>&1; then
+	eval $(dircolors -b "$HOME/.dircolors")
+fi
+
 # The Linux console supports the "ESC ] P nrrggbb" escape sequence to change
 # the terminal's color palette.
 if [ "$TERM" = 'linux' ]; then
