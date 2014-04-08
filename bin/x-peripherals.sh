@@ -13,9 +13,6 @@ if [ "$(hostname)" = 'coco-nb-434' ]; then         # Work machine.
 	if lsusb | grep -q ' ID 17ef:100a '; then      # Docked.
 		xrandr --output HDMI1 --off
 		xrandr --output LVDS1 --auto --primary --pos 0x180 --output HDMI3 --auto --pos 1600x0
-	elif xrandr | grep -q 'HDMI1 connected '; then # Kairion office.
-		xrandr --output HDMI3 --off
-		xrandr --output LVDS1 --auto --primary --pos 1050x780 --output HDMI1 --auto --pos 0x0 --rotate left
 	else                                           # Not docked.
 		xrandr --output HDMI1 --off --output HDMI3 --off
 		xrandr --output LVDS1 --auto --primary
