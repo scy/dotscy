@@ -7,6 +7,8 @@ XTerm*metaSendsEscape: true
 
 xterm*termName: xterm-256color
 
+xterm*faceName: xft:Inconsolata-dz:size=10
+
 xterm*background: rgb:24/24/24
 xterm*color0:     rgb:00/00/00
 xterm*color1:     rgb:c7/56/46
