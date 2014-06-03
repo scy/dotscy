@@ -9,14 +9,8 @@ have_xinput () {
 
 # Screen setup, based on which machine this is and whether it's docked.
 
-if [ "$(hostname)" = 'coco-nb-434' ]; then         # Work machine.
-	if lsusb | grep -q ' ID 17ef:100a '; then      # Docked.
-		xrandr --output HDMI1 --off
-		xrandr --output LVDS1 --auto --primary --pos 0x180 --output HDMI3 --auto --pos 1600x0
-	else                                           # Not docked.
-		xrandr --output HDMI1 --off --output HDMI3 --off
-		xrandr --output LVDS1 --auto --primary
-	fi
+if [ "$(hostname -f | cut -d . -f 3-)" = 'intershop.net' ]; then # Work machine.
+	xrandr --output DVI-I-1 --auto --left-of DVI-I-2 --output DVI-I-2 --auto --rotate left
 fi # If not work machine, do nothing.
 
 
