@@ -60,7 +60,7 @@
 	stp = stash pop
 [url "git@github.com:"]
 	insteadOf = github:
-[url "git://github.com/"]
+[url "https://github.com/"]
 	insteadOf = gitpub:
 [url "git@git.scytale.name:"]
 	insteadOf = scy:
