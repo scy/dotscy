@@ -41,3 +41,6 @@ export LESS='--ignore-case --jump-target=1 --LONG-PROMPT --RAW-CONTROL-CHARS --t
 # Paths for programming languages/frameworks/tools
 export NODE_PATH='/usr/local/lib/node:/usr/local/lib/node_modules'
 export GOPATH="$HOME/go"
+
+# libvirt default URI: qemu
+export LIBVIRT_DEFAULT_URI='qemu:///system'
