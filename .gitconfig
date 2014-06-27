@@ -36,8 +36,8 @@
 	dc = diff --cached
 	f = fetch
 	find = !find . -not -path './.git/*'
-	fp = format-patch --stdout --thread -C origin..HEAD
-	fpp = !git fp > scy-git-patch.txt
+	fp = format-patch --stdout --thread -C origin
+	fpp = !git fp >"$HOME/tmp/$(date +%Y-%m-%d-%H%M%S-scy-git-patch.txt)"
 	k = "!gitk --all; cd \"$HOME\"; git checkout .gitk; cd - >/dev/null"
 	l = log --pretty=format:'%C(yellow bold)commit %H%Creset %C(yellow)tree %T%Creset%nAuthor: %an <%ae>%nDate: %ad%n%n%w(76,4,4)%s%n%n%-b%n'
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
