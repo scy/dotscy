@@ -1,0 +1,9 @@
+#!/bin/sh
+
+diff='diff'
+
+if which colordiff >/dev/null 2>&1; then
+	diff='colordiff'
+fi
+
+exec "$diff" "$@" | less -R
