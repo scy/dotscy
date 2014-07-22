@@ -1,0 +1,61 @@
+#!/bin/sh
+
+interactive='n'
+jpeg='n'
+notify='n'
+wait='0'
+
+while getopts ijnw: opt; do
+	case "$opt" in
+		i)
+			interactive='y'
+			;;
+		j)
+			jpeg='y'
+			;;
+		n)
+			notify='y'
+			;;
+		w)
+			# I'm aware that POSIX `sleep` only supports integers, but I'll
+			# leave it to the user to know what she's doing.
+			wait="$(printf %s "$OPTARG" | tr -cd 0-9.)"
+			;;
+	esac
+done
+
+die() {
+	printf "Could not run %s\n" "$tool" >&2
+	exit "$1"
+}
+
+fin() {
+	[ "$notify" = 'y' ] && notify-send 'Screenshot captured' "$file"
+	printf "%s\n" "$file"
+	exit 0
+}
+
+params=''
+for tool in import scrot; do
+	if which "$tool" >/dev/null 2>&1; then
+		file="$HOME/tmp/Screenshot $(date '+%Y-%m-%d %H-%M-%S %z')"
+		if [ "$jpeg" = 'y' ]; then
+			file="$file.jpg"
+		else
+			file="$file.png"
+		fi
+		if [ "$wait" != '0' ]; then
+			sleep "$wait"
+		fi
+		case "$tool" in
+			import)
+				[ "$interactive" = 'y' ] || params="$params -window root"
+				;;
+			scrot)
+				[ "$interactive" = 'y' ] && params="$params -s"
+				;;
+		esac
+		"$tool" $params "$file" && fin
+		die "$?"
+	fi
+done
