@@ -167,8 +167,6 @@ bar {
         status_command i3status
 }
 
-# Throw Skype on the com workspace.
-assign [class="Skype"] 0: com
 # Whatever I run as x-www-browser, throw on the www workspace.
 assign [class="X-www-browser"] 1: www
 
