@@ -96,6 +96,10 @@ if which git >/dev/null 2>&1; then
 	)
 fi
 
+# X11 copy and paste.
+alias xcopy='xclip -in -sel clip'
+alias xpaste='xclip -out -sel clip'
+
 # Typos.
 alias sido=sudo
 alias :q=exit
