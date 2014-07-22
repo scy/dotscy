@@ -146,21 +146,20 @@ bindsym XF86AudioPlay exec --no-startup-id dbus-send --print-reply --dest=org.mp
 bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
-# Screenshots based on the "Print" key. Requires the "scrot" tool.
+# Screenshots based on the "Print" key.
 # With $mod:  Interactively select window or rectangle.
 # With Shift: JPEG instead of PNG.
 # With Ctrl:  Sleep 5 seconds before doing the screenshot.
 # Note: i3 4.2 (read: Debian Wheezy) does not support --release, so I'm using
-# `sleep 0.2` instead. I'm aware that POSIX `sleep` only supports integers, but
-# I'm not running i3 on anything non-Debian, and GNU coreutils support floats.
-bindsym      Print               exec --no-startup-id              scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym      Shift+Print         exec --no-startup-id              scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
-bindsym $mod+Print               exec --no-startup-id sleep 0.2 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym $mod+Shift+Print         exec --no-startup-id sleep 0.2 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
-bindsym      Control+Print       exec --no-startup-id sleep   5 && scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym      Control+Shift+Print exec --no-startup-id sleep   5 && scrot    "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
-bindsym $mod+Control+Print       exec --no-startup-id sleep   5 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym $mod+Control+Shift+Print exec --no-startup-id sleep   5 && scrot -s "$HOME/tmp/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
+# a sleep of 0.2 instead.
+bindsym      Print               exec --no-startup-id scy-screenshot -n
+bindsym      Shift+Print         exec --no-startup-id scy-screenshot -n -j
+bindsym $mod+Print               exec --no-startup-id scy-screenshot -n    -i -w 0.2
+bindsym $mod+Shift+Print         exec --no-startup-id scy-screenshot -n -j -i -w 0.2
+bindsym      Control+Print       exec --no-startup-id scy-screenshot -n       -w 5
+bindsym      Control+Shift+Print exec --no-startup-id scy-screenshot -n -j    -w 5
+bindsym $mod+Control+Print       exec --no-startup-id scy-screenshot -n    -i -w 5
+bindsym $mod+Control+Shift+Print exec --no-startup-id scy-screenshot -n -j -i -w 5
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
