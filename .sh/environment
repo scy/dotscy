@@ -41,6 +41,9 @@ export LESS='--ignore-case --jump-target=1 --LONG-PROMPT --RAW-CONTROL-CHARS --t
 # Paths for programming languages/frameworks/tools
 export NODE_PATH='/usr/local/lib/node:/usr/local/lib/node_modules'
 export GOPATH="$HOME/go"
+# IntelliJ on the Mac doesn't use bash to run Go stuff, so I need to push that
+# value to launchd. Maybe writing it into ~/.profile would work as well?
+[ "$(uname 2>/dev/null)" = 'Darwin' ] && launchctl setenv GOPATH "$GOPATH"
 
 # libvirt default URI: qemu
 export LIBVIRT_DEFAULT_URI='qemu:///system'
