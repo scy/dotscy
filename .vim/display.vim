@@ -76,6 +76,10 @@ if has("gui_macvim")
 	set listchars=tab:▸⋅,trail:␣,extends:→,precedes:←,nbsp:‗
 endif
 
+if has("gui_win32")
+	set guifont=Consolas:h10:cANSI
+endif
+
 " Initialize to a decent window size.
 if !exists("s:initialized")
 	let s:initialized = "yes"
