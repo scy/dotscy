@@ -62,27 +62,22 @@ scyprompt() {
 	PS1="$PS1\\[\\e[0m\\] "
 }
 
-PSUSERCOLOR=33                           # yellow by default
-# green if it's my everyday user ("scy" or, at work, "weber")
-if [ "$HOSTNAME" = 'silberschweif' -o "$HOSTNAME" = 'nebukadnezar' ]; then
-	[ "$USER" = 'weber' ] && PSUSERCOLOR=32
-else
-	[ "$USER" = 'scy' ] && PSUSERCOLOR=32
-fi
-[ "$UID" -eq 0 ] && PSUSERCOLOR=31       # red if root
+# User and host colors. If the user@host string matches one of the definitions
+# below, the user will appear green and the host according to the color that
+# follows the definition. If no color follows the equals sign, the default
+# terminal color will be used.
+PSHOSTDEF='scy@crys=32 TWeber@FDM0TWEBER\|scy@sanity=34'
+PSUSERCOLOR=33 # yellow by default
+PSHOSTCOLOR=33 # yellow by default
 
-case "$HOSTNAME" in
-	crys)
-		PSHOSTCOLOR=32;;   # green for the default, crys.
-	nebukadnezar)
-		PSHOSTCOLOR=31;;   # red for "be careful" machines
-	silberschweif)
-		PSHOSTCOLOR='';;   # default for work machine
-	malus)
-		PSHOSTCOLOR=35;;   # magenta for malus
-	*)
-		PSHOSTCOLOR=33;;   # yellow by default
-esac
+for hostdef in $PSHOSTDEF; do
+	if printf '%s@%s' "$USER" "$HOSTNAME" | grep -q '^\('"${hostdef%%=*}"'\)$'; then
+		PSUSERCOLOR=32               # green
+		PSHOSTCOLOR="${hostdef##*=}" # the specified color
+		break
+	fi
+done
+[ "$UID" -eq 0 ] && PSUSERCOLOR=31   # red if root
 
 # Use window titles only in known X terminals.
 case "$TERM" in
