@@ -10,6 +10,7 @@
 /.config/dconf/
 /.config/enchant/*.dic
 /.config/enchant/*.exc
+/.config/git/gitk
 /.config/google-chrome/
 /.config/google-chrome-beta/
 /.config/google-googletalkplugin/
@@ -92,6 +93,7 @@
 /.toodledo/
 /.Trash/
 /.vimperatorrc.local
+/.VirtualBox
 # PhpStorm config.
 /.WebIde60/
 /.WebIde70/
