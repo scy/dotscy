@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for symlink in $(git ls-files -s | grep ^120000 | cut -f 2); do
+	git windows-symlink "$symlink"
+	git update-index --assume-unchanged "$symlink"
+done

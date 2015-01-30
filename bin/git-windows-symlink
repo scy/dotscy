@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# This script is basically taken from http://stackoverflow.com/a/16754068 and improved.
+
+msg() {
+	echo "git-windows-symlink: $link: $@"
+}
+
+link="$1"
+if ! git checkout -- "$link" 2>/dev/null; then
+	# This can happen if it's a directory. Try to remove it and checkout again.
+	# One could also check whether it's a junction with something like DIR /A:L and then look at the return code.
+	rmdir "$link"
+	git checkout -- "$link"
+fi
+doslink="${link//\//\\}"
+
+dest="$(cat "$link")"
+if [ "$dest" = '.' ]; then
+	msg 'links to ".", skipping.'
+	exit
+fi
+if [ -z "$(echo "$dest" | sed -e 's#^\.\.\(/\.\.\)*/*$##')" ]; then
+	msg 'only points upwards, skipping.'
+	exit
+fi
+if [ "$(echo "$dest" | cut -b 1)" != '/' ]; then
+	dest="$(dirname "$link")/$dest"
+fi
+dosdest="${dest//\//\\}"
+
+if [ -f "$dest" ]; then
+	rm -f "$link"
+	cmd //c mklink //h "$doslink" "$dosdest" >/dev/null
+elif [ -d "$dest" ]; then
+	rm -f "$link"
+	cmd //c mklink //j "$doslink" "$dosdest" >/dev/null
+else
+	msg "$dest is neither a file nor a directory" >&2
+	exit 1
+fi
