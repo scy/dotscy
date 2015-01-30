@@ -8,3 +8,6 @@ filetype plugin on
 
 " Incremental smart-case search with highlighting.
 set incsearch hlsearch ignorecase smartcase
+
+" Allow backspacing over _everything_.
+set backspace=eol,indent,start
