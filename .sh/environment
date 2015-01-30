@@ -12,6 +12,12 @@ else
 fi
 export HOSTNAME
 
+# If $USER is not set, set it.
+if [ -z "$USER" ]; then
+	USER="$USERNAME"
+fi
+export USER
+
 # Set favorite pager.
 export PAGER="$HOME/bin/scy-pager"
 
