@@ -6,6 +6,9 @@ set nocompatible
 filetype off
 filetype plugin on
 
+" Check for modelines.
+set modeline modelines=10
+
 " Incremental smart-case search with highlighting.
 set incsearch hlsearch ignorecase smartcase
 
