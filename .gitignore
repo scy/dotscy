@@ -17,6 +17,7 @@
 /.config/gtk-*/gtkfilechooser.ini
 # Ignore Hub's config (it contains an OAuth token).
 /.config/hub
+/.config/keybase/config.json
 /.config/menus/
 /.config/libreoffice/
 /.config/Skype/
@@ -52,12 +53,14 @@
 /.java/deployment/
 /.java/fonts/
 /.keepassx/
+/.keybase-installer/
 /.lesshst
 /.links2/
 /.local/share/applications/
 /.local/share/desktop-directories/
 /.local/share/gegl-0.?/
 /.local/share/icons/
+/.local/share/keybase/keybase.idb/
 /.local/share/mc/
 /.local/share/spotify/
 /.local/share/vlc/

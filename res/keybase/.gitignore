@@ -1,0 +1,9 @@
+# This is where I usually install the keybase.io client to.
+
+# That's the binary.
+bin/keybase
+
+# That's the node module.
+lib/node_modules/keybase/
+
+# Everything else (e.g. etc/) should be empty.
