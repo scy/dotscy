@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for f in /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac; do
+	if [ -x "$f" ]; then
+		exec "$f" "$@"
+	fi
+done
+
+echo 'scy-pinentry: no suitable pinentry found' >&2
+exit 1

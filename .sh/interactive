@@ -12,6 +12,18 @@ if [ -z "$PS1" ]; then return; fi
 s color
 s prompt
 
+# If we have it, use gpg-agent.
+if which gpg-agent >/dev/null 2>&1; then
+	# Load the variables.
+	# We don't start the agent here. On a Mac with GPGTools, it should already
+	# be running, and I noticed that the SSH socket goes away when trying to
+	# start it again. o_O
+	if [ -r "$HOME/.gpg-agent-info" ]; then
+		. "$HOME/.gpg-agent-info"
+		export GPG_AGENT_INFO SSH_AUTH_SOCK SSH_AGENT_PID
+	fi
+fi
+
 # If this is not the bash, stop at this point.
 if [ -z "$BASH" ]; then return; fi
 

@@ -43,6 +43,7 @@
 /.gitk
 /.gnome/apps/
 /.gnucash/
+/.gpg-agent-info
 /.gstreamer-*/registry.*.bin
 /.gtk-bookmarks
 /.hgignore_global
