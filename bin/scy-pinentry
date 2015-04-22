@@ -1,6 +1,9 @@
 #!/bin/sh
 
-for f in /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac; do
+for f in \
+	/usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac \
+	/usr/bin/pinentry-gtk-2 \
+	; do
 	if [ -x "$f" ]; then
 		exec "$f" "$@"
 	fi

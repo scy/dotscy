@@ -12,14 +12,24 @@ if [ -z "$PS1" ]; then return; fi
 s color
 s prompt
 
-# If we have it, use gpg-agent.
+# If we have it, use gpg-agent. The high-level algorithm is as follows:
+#   1. If there is no "gpg-agent" command, do nothing.
+#   2. If it exists, load "~/.gpg-agent-info". This file can of course be stale.
+#   3. Check whether the socket in $GPG_AGENT_INFO exists. If it doesn't, start
+#      a new gpg-agent and load "~/.gpg-agent-info" again.
+#   4. Export the variables.
+# Note that we don't start gpg-agent if it is running already. The reason for
+# that is that apparently, on a Mac with GPGTools, the SSH socket goes away when
+# trying so start gpg-agent a second time...
 if which gpg-agent >/dev/null 2>&1; then
-	# Load the variables.
-	# We don't start the agent here. On a Mac with GPGTools, it should already
-	# be running, and I noticed that the SSH socket goes away when trying to
-	# start it again. o_O
 	if [ -r "$HOME/.gpg-agent-info" ]; then
 		. "$HOME/.gpg-agent-info"
+		if ! [ -S "$(echo $GPG_AGENT_INFO | cut -d : -f 1)" ]; then
+			# Give an explicit path to scy-pinentry; I couldn't find a way to
+			# make this dynamic for any value of $HOME.
+			gpg-agent --daemon --pinentry-program "$HOME/bin/scy-pinentry" >/dev/null 2>&1
+			[ -r "$HOME/.gpg-agent-info" ] && . "$HOME/.gpg-agent-info"
+		fi
 		export GPG_AGENT_INFO SSH_AUTH_SOCK SSH_AGENT_PID
 	fi
 fi
