@@ -34,6 +34,10 @@ if which gpg-agent >/dev/null 2>&1; then
 	fi
 fi
 
+# On sanity, I'm using Xming and Neo. Set the keyboard layout here, since the
+# .xinitrc file will not be loaded.
+[ "$HOSTNAME" = 'sanity' ] && xmodmap "$HOME/res/neo_de.xmodmap"
+
 # If this is not the bash, stop at this point.
 if [ -z "$BASH" ]; then return; fi
 
