@@ -9,6 +9,9 @@
 [diff]
 	mnemonicprefix = true
 [interactive]
+	# If this does not work, install Perl’s Term::ReadKey.
+	# Debian package: libterm-readkey-perl
+	# See also https://github.com/scy/dotscy/issues/1
 	singlekey = true
 [merge]
 	tool = vimdiff
