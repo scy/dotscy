@@ -2,7 +2,11 @@
 
 # based on Debian's default .bashrc
 if ! shopt -oq posix; then
-	for loc in /usr/share/bash-completion/bash_completion /etc/bash_completion; do
+	for loc in \
+	/usr/share/bash-completion/bash_completion \
+	/etc/bash_completion \
+	"$HOME/res/password-store/src/completion/pass.bash-completion" \
+	; do
 		if [ -f "$loc" ]; then
 			. "$loc"
 		fi

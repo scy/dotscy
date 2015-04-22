@@ -37,3 +37,6 @@
 [submodule "res/solarized"]
 	path = res/solarized
 	url = https://github.com/altercation/solarized.git
+[submodule "res/password-store"]
+	path = res/password-store
+	url = http://git.zx2c4.com/password-store
