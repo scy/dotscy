@@ -1,0 +1,34 @@
+#!/bin/sh
+
+controlFile='/sys/class/backlight/nv_backlight/brightness'
+
+current() {
+	cat "$controlFile"
+}
+
+set_to() {
+	echo "$1" > "$controlFile"
+}
+
+mod_by() {
+	c="$(current)"
+	n="$(($c$1))"
+	if [ "$n" -gt 100 ]; then
+		n=100
+	elif [ "$n" -lt 0 ]; then
+		n=0
+	fi
+	set_to "$n"
+}
+
+case "$1" in
+	[0-9]|[0-9][0-9]|100)
+		set_to "$1"
+		;;
+	-*|+*)
+		mod_by "$1"
+		;;
+	'')
+		current
+		;;
+esac
