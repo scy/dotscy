@@ -21,7 +21,7 @@ xset b off
 which numlockx >/dev/null 2>&1 && numlockx on
 
 # Currently, I don't use Neo. Have totally unlearned it.
-xmodmap "$HOME/res/neo_de.xmodmap"
+# xmodmap "$HOME/res/neo_de.xmodmap"
 
 # Configure peripherals.
 "$HOME/bin/x-peripherals.sh"
