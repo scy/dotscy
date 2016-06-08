@@ -24,6 +24,9 @@ mod_by() {
 	elif [ "$new" -lt 0 ]; then
 		new=0
 	fi
+	if [ "$new" -eq 0 -a "$curr" -gt 1 -a "$1" = '-' ]; then
+		new=1
+	fi
 	set_to "$new"
 }
 
