@@ -21,7 +21,7 @@ xset b off
 which numlockx >/dev/null 2>&1 && numlockx on
 
 # Currently, I don't use Neo. Have totally unlearned it.
-# xmodmap "$HOME/res/neo_de.xmodmap"
+xmodmap "$HOME/res/neo_de.xmodmap"
 
 # Enable tapping on the trackpad (instead of clicking) and invert scroll direction.
 which synclient >/dev/null 2>&1 && synclient TapButton1=1 TapButton2=2 TapButton3=3 VertScrollDelta=-200 HorizScrollDelta=-200
