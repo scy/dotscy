@@ -2,6 +2,7 @@
 
 controlFile='/sys/class/backlight/nv_backlight/brightness'
 defaultAmount='10'
+fineBelow='10'
 
 current() {
 	cat "$controlFile"
@@ -16,16 +17,20 @@ mod_by() {
 	curr="$(current)"
 	diff="$1"
 	if [ "$diff" = '-' -o "$diff" = '+' ]; then
-		diff="$diff$defaultAmount"
+		changeBy="$defaultAmount"
+		if [ \( "$diff" = '-' -a "$curr" -le "$fineBelow" \) -o \( "$diff" = '+' -a "$curr" -lt "$fineBelow" \) ]; then
+			changeBy='1'
+		fi
+		diff="$diff$changeBy"
 	fi
 	new="$(($curr$diff))"
+	if [ "$curr" -gt "$fineBelow" -a "$new" -lt "$fineBelow" -a "$1" = '-' ]; then
+		new="$fineBelow"
+	fi
 	if [ "$new" -gt 100 ]; then
 		new=100
 	elif [ "$new" -lt 0 ]; then
 		new=0
-	fi
-	if [ "$new" -eq 0 -a "$curr" -gt 1 -a "$1" = '-' ]; then
-		new=1
 	fi
 	set_to "$new"
 }
