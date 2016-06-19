@@ -1,0 +1,14 @@
+[Unit]
+Description=allow everyone in the video group to change the backlight brightness
+RequiresMountsFor=/sys
+ConditionFileNotEmpty=|/sys/class/backlight/nv_backlight/brightness
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Environment=file=/sys/class/backlight/nv_backlight/brightness
+ExecStart=/bin/chmod g+w ${file}
+ExecStart=/bin/chown root:video ${file}
