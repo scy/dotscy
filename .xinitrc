@@ -24,7 +24,7 @@ which numlockx >/dev/null 2>&1 && numlockx on
 xmodmap "$HOME/res/neo_de.xmodmap"
 
 # Enable tapping on the trackpad (instead of clicking) and invert scroll direction.
-which synclient >/dev/null 2>&1 && synclient TapButton1=1 TapButton2=2 TapButton3=3 VertScrollDelta=-200 HorizScrollDelta=-200
+which synclient >/dev/null 2>&1 && synclient TapButton1=1 TapButton2=2 TapButton3=3 ClickFinger1=1 ClickFinger2=2 ClickFinger3=3 VertScrollDelta=-500 HorizScrollDelta=-500 VertTwoFingerScroll=1 HorizTwoFingerScroll=1
 
 # Configure peripherals.
 "$HOME/bin/x-peripherals.sh"
