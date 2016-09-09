@@ -38,9 +38,6 @@ fi
 # .xinitrc file will not be loaded.
 [ "$HOSTNAME" = 'sanity' ] && xmodmap "$HOME/res/neo_de.xmodmap"
 
-# Check whether some of my system-wide systemd units are outdated.
-"$HOME/bin/scy-install-systemd-units.sh" check
-
 # If this is not the bash, stop at this point.
 if [ -z "$BASH" ]; then return; fi
 
