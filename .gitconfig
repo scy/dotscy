@@ -79,3 +79,9 @@
 	trustExitCode = true
 [push]
 	default = matching
+
+# This can be used to replace the string “${HOME}” by the current user’s home
+# directory on checkout and to transparently replacing it back before committing.
+[filter "homedir"]
+	smudge = sed -e "s:\\\\\\${HOME}:$HOME:g"
+	clean  = sed -e "s:$HOME:\\${HOME}:g"
