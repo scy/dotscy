@@ -25,9 +25,7 @@ if which gpg-agent >/dev/null 2>&1; then
 	if [ -r "$HOME/.gpg-agent-info" ]; then
 		. "$HOME/.gpg-agent-info"
 		if ! [ -S "$(echo $GPG_AGENT_INFO | cut -d : -f 1)" ]; then
-			# Give an explicit path to scy-pinentry; I couldn't find a way to
-			# make this dynamic for any value of $HOME.
-			gpg-agent --daemon --pinentry-program "$HOME/bin/scy-pinentry" >/dev/null 2>&1
+			gpg-agent --daemon >/dev/null 2>&1
 			[ -r "$HOME/.gpg-agent-info" ] && . "$HOME/.gpg-agent-info"
 		fi
 		export GPG_AGENT_INFO SSH_AUTH_SOCK SSH_AGENT_PID
