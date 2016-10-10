@@ -100,6 +100,9 @@ fi
 alias xcopy='xclip -in -sel clip'
 alias xpaste='xclip -out -sel clip'
 
+# password-store.
+alias pass="$HOME/res/password-store/src/password-store.sh"
+
 # Typos.
 alias sido=sudo
 alias :q=exit
