@@ -53,3 +53,6 @@ export GOPATH="$HOME/go"
 
 # libvirt default URI: qemu
 export LIBVIRT_DEFAULT_URI='qemu:///system'
+
+# Make sure Homebrew builds everything from source. I don't trust bottles.
+export HOMEBREW_BUILD_FROM_SOURCE='aye'
