@@ -103,6 +103,9 @@ alias xpaste='xclip -out -sel clip'
 # password-store.
 alias pass="$HOME/res/password-store/src/password-store.sh"
 
+# I prefer GnuPG 2.
+alias gpg='gpg2'
+
 # Typos.
 alias sido=sudo
 alias :q=exit
