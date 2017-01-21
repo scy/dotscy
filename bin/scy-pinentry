@@ -2,7 +2,7 @@
 
 for f in \
 	/usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac \
-	/usr/bin/pinentry-gtk-2 \
+	/usr/bin/pinentry \
 	; do
 	if [ -x "$f" ]; then
 		exec "$f" "$@"
