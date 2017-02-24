@@ -20,6 +20,12 @@ alias E="scy-editor"
 # Getting things done.
 alias to='toodledo add'
 
+# csvkit
+for tool in csvsort csvsql in2csv; do
+	which "$tool" >/dev/null 2>&1 && alias $tool="$tool --no-inference --snifflimit 10"
+done
+which csvstat >/dev/null 2>&1 && alias csvstat='csvstat --snifflimit 10'
+
 # Changing directories.
 alias C='cd -'
 # Shortcuts for "cd ..", "cd ../.." etc.
