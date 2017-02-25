@@ -1,3 +1,14 @@
+# If you use Ubuntu or a recent-ish desktop environment, everyone and their
+# mother writes to .config. Instead of blacklisting, it's easier to whitelist
+# the stuff you really want to keep.
+/.config/*
+!/.config/dunst/
+!/.config/htop/
+!/.config/user-dirs.*
+
+# Same thing for .local.
+/.local/*
+
 /.account
 /.android/
 /.aptitude/
@@ -6,29 +17,18 @@
 /.composer/.htaccess
 /.composer/cache/
 /.CFUserTextEncoding
-/.config/autostart/
-/.config/dconf/
-/.config/enchant/*.dic
-/.config/enchant/*.exc
-/.config/git/gitk
-/.config/google-chrome/
-/.config/google-chrome-beta/
-/.config/google-googletalkplugin/
-/.config/gtk-*/gtkfilechooser.ini
-# Ignore Hub's config (it contains an OAuth token).
-/.config/hub
-/.config/keybase/config.json
-/.config/menus/
-/.config/libreoffice/
-/.config/Skype/
-/.config/spotify/
-/.config/Trolltech.conf
-/.config/vlc/
+
+# see above for /.config/
+
 /.cpan/
 /.cups/lpoptions
 /.dbshell
 /.dbus/session-bus/
 /.dmenu_cache
+
+# Maybe I will add this to version control in the future, but not now.
+/.dmrc
+
 /.dropbox/
 /.dropbox-dist/
 /.eclim/
@@ -43,11 +43,20 @@
 /.gitk
 /.gnome/apps/
 /.gnucash/
+
+# Every machine has to decide for itself whether data is migrated or not.
+/.gnupg/.gpg-v*-migrated
+
+# Don't put revocation certs into the public, you know.
+/.gnupg/openpgp-revocs.d/
+
+/.gnutls/
 /.gpg-agent-info
 /.gstreamer-*/registry.*.bin
 /.gtk-bookmarks
 /.hgignore_global
 /.hgrc
+/.ICEauthority
 /.icedove/
 # Ignore IDEA's local files, but don't ignore the config/ directory.
 /.IntelliJIdea12/system/
@@ -57,15 +66,9 @@
 /.keybase-installer/
 /.lesshst
 /.links2/
-/.local/share/applications/
-/.local/share/desktop-directories/
-/.local/share/gegl-0.?/
-/.local/share/icons/
-/.local/share/keybase/keybase.idb/
-/.local/share/mc/
-/.local/share/spotify/
-/.local/share/vlc/
-/.local/share/recently-used.xbel
+
+# see above for /.local/
+
 /.macromedia/Flash_Player/
 /.mc/
 /.mozilla/appreg
