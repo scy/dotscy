@@ -1,6 +1,0 @@
-#command
-\en	toggle-option N
-\es	toggle-option J
-
-#env
-LESS=--ignore-case --jump-target=1 --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-2

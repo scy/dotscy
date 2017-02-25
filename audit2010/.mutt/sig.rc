@@ -1,9 +1,0 @@
-# Add funky X-Headers instead of a spammy signature.
-
-# X-URL seems to be the preferred “standard“ instead of X-Website.
-my_hdr X-URL: http://scytale.name/
-
-# My X-Face. The variable at the end prevents Mutt from interpreting the final
-# (although escaped!) backslash as line continuation marker.
-# Mutt’s config parser sucks big time.
-my_hdr X-Face: 9Gdtu^ti\;5]>n|Bgc3al\"Tm.WHS^8FU>l\\\"&B\$~6XLm,r,L-38Zb@-k)/b3xfS.NV:@!(&{[Ic44EHz>O{~r*):>a?2m7z~Fe/yp,8l5rW]42Q?(cYH(fVz,a]uA|iyuI|L{\#}q|_spct\${&u(k=<cEd]B\",%\\\`nlKMXYbH^Vc<a<o}g\`(|&0pB/N5(8F{G4?C\;smIdO}|]4&GE9?1vq}@9T[uf2AlXkYFDmpT|T0,U[0d-@8*IL\\$quuuuuuuuuuuuuuuuuuuuuuuuuuuuuuux

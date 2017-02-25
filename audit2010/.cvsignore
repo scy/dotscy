@@ -1,9 +1,0 @@
-*.FileListAbsolute.txt
-*.suo
-bin
-obj
-Debug
-Release
-.*.swp
-*.dll
-Session.vim

@@ -1,9 +1,0 @@
-# Use new-style GPG code, forget those command lists.
-set crypt_use_gpgme
-
-# Automatically sign outgoing messages.
-set crypt_autopgp
-set crypt_autosign
-
-# I don’t have a S/MIME key, so don’t activate it automatically, even when replying to an S/MIME mail.
-unset crypt_autosmime

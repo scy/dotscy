@@ -1,5 +1,0 @@
-* -crlf
-.gitattributes !crlf
-
-# The following made sense somehow, for the file was re-written by Firefox or the like.
-*/install.rdf !crlf
