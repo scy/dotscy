@@ -1,0 +1,4 @@
+This is used by Ubuntu. If the file is not present, opening a terminal will tell
+you how to use sudo until you did it at least once.
+
+I know how sudo works, thankyouverymuch.
