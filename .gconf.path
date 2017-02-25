@@ -1,5 +1,0 @@
-
-######## The following lines were added by GnuCash. ########
-xml:readwrite:$(HOME)/.gconf
-xml:readonly:/Applications/Gnucash.app/Contents/Resources/etc/gconf/gconf.xml.defaults
-############## End of lines added by GnuCash. ##############

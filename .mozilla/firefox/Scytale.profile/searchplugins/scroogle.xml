@@ -1,7 +1,0 @@
-<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
-<os:ShortName>S</os:ShortName>
-<os:Description>Scroogle Web Search</os:Description>
-<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AAACZmZmZAAAAmZmZmZmZAAmZqqqqqpmQCZmQAAAAqZCZqQAAAAAKmZmgAAAAAAqZmaAACaoACpmZoACZAAAKmZmgAKkAAAqZmaAACpmaqpmZoAAAAAAKmZmqAAAAAAqZCZqgAAAJmZAJmaqqqqqZkACZmZmZmZkAAACZmZmZAADwDzgFwAPgA4ABAHyAAQAAAAAAAAAAAAAAAAAAAAAAAAAA4AMAAOADAAAAfAAAAHyAAeADgAHgA8ADAADwDwAA</os:Image>
-<os:Url type="text/html" method="GET" template="https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw={searchTerms}&amp;n=5">
-</os:Url>
-</SearchPlugin>

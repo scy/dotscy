@@ -1,8 +1,0 @@
-<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
-<os:ShortName>EN</os:ShortName>
-<os:Description>LEO en/de</os:Description>
-<os:InputEncoding>UTF-8</os:InputEncoding>
-<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAEgAAABIAAAAAAAAAAAAAACh0vp3ad+nb158HwB8IgB5HACnalJeTuBVReGpcF14GwB9IwB1FwCrcFb++/WRiOoj1f94o8I/PlZWUU86JB01EQdXNyo/NJZFOLecaFZ1GQB1FwCrcFf//viQh+5lU9gJyfY1UFXy///0///p+Pjc6uq3wsKQmZlsc3dVU1I9LCpEMCiCgX9lX6pjU82nbFgGxPEYWWiYoaHx///v///M2trj8/P6///////////0///g7u67xsaQlZVPSkdUEwAHy/EAx/YKQE7u/f2lsLArJklQRkU5OVFdYWiMk5O7xcXj8fH0///////0//9EQT8MnvMA2f8NV2nx//+IkZGCr8Tw7/9dTdVGNbmvr69+f39OTF5YV1ZbW1hhYmBfVk8HFOAAmPYLWmfw//+IkpIToMGXzPdXRdk6JdJ/ceKBc+OIfOSCduKAduN/duKGfe8CANsADt8IRGjq+/uPmZkAlbgZ0/99s/JFMdUfB8wfBswfBswfBswfBswfBswfBswCANwAANwFC2nY6Oikrq4AgqEAzv8Z0/9+svI7JtMeBcweBcweBcweBcweBcweBcwIB+IAAN0CAXTD0dHAzc0BcYMAzv8Azv8Z0/+Wz/ielOmIe+SIfeiNhfGOhvKOhvIMCs0AAOQAAH+0wcHY5uYFRGwA2/8Azv8Azv8Z0/+n4Pz////88+PVsp3ZuaTau6UHAjIAAM4AAIawvb3n+PgJDlkAmPYA2v8Azv8Azv8Z0/+Wz/v8+PStclhyEgB5HQAHAgAAADIAAH+otLTn9/cICFoADN4AlPUA2/8Azv8Azv8Z0/+W0Pv//vuweF91FgAJBgUAAAAAACaDjIy+y8sBAXMAANwADd4AmPYA2v8Azv8Azv8Z0/+Wz/v///yweWEGBQwAAAAAAAAPECIcHkoAAMsAAN0AANwADN4AlPUA2f8Azv8Azv8Z0/+U0Pr//v0PDRgKCgoJBgUGAQAHAjIHAsMJBtkFBN0FBNwJEtcHlOkHy/EHxPEHyvca0v+c0PkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</os:Image>
-<os:Url type="text/html" method="GET" template="http://dict.leo.org/?lp=ende&amp;search={searchTerms}">
-</os:Url>
-</SearchPlugin>
