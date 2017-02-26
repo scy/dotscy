@@ -40,3 +40,6 @@
 [submodule "res/password-store"]
 	path = res/password-store
 	url = http://git.zx2c4.com/password-store
+[submodule ".vim/bundle/pathogen"]
+	path = .vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
