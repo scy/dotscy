@@ -4,9 +4,9 @@ let g:vimwiki_hl_cb_checked = 1
 " Progress barish indication of sublist completion.
 let g:vimwiki_listsyms = ' ▁▂▃▄▅▆▇X'
 
-" Use folding, but expand top-level content by default.
+" Use folding, but expand top and second level content by default.
 let g:vimwiki_folding = 'expr'
-setlocal foldlevel=1
+setlocal foldlevel=2
 
 " At some point in the future, I want to be able to press <Tab> at the
 " beginning of a line and have Vim insert a tab character, but when using
