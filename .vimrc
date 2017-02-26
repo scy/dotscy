@@ -11,3 +11,4 @@ execute pathogen#infect()
 source ~/.vim/display.vim
 source ~/.vim/jk-not-esc.vim
 source ~/.vim/no-arrow-keys.vim
+source ~/.vim/vimwiki-config.vim
