@@ -18,7 +18,7 @@ alias ES='mvim -S Session.vim'
 alias E="scy-editor"
 
 # Getting things done.
-alias wl='vim "$HOME/wiki/personal/todo.md"'
+alias wl='vim "$HOME/wiki/Personal/todo.md"'
 
 # csvkit
 for tool in csvsort csvsql in2csv; do
