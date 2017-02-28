@@ -4,4 +4,4 @@ else
 	set listchars=tab:\|.,nbsp:_,trail:_
 endif
 
-set list tabstop=4 shiftwidth=0
+set list tabstop=4 shiftwidth=4
