@@ -4,6 +4,11 @@ set nocompatible
 filetype plugin on
 syntax on
 
+" Special settings for Windows.
+if has('win32') || has('win16')
+	source ~/.vim/windows.vim
+endif
+
 " Load pathogen.
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
