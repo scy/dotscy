@@ -1,4 +1,10 @@
-#!/data/data/com.termux/files/usr/bin/sh
+#!/bin/sh
+
+if [ "${HOME##/data/data/com.termux/}" = "$HOME" ]; then
+	# Not on Termux. Do nothing.
+	# At some point, I want to introduce a parameter that skips this check.
+	exec cat
+fi
 
 termuxbin='/data/data/com.termux/files/usr/bin'
 termuxbinexp="$(printf '%s' "$termuxbin" | sed -e 's/\./\\./g')"
