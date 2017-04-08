@@ -16,3 +16,16 @@ My config files (aka dotfiles). Maintained since 2007. There’s a lot of experi
     cd dotscy                                   &&
     git submodule update --init                 &&
     reg import res/windows/env.reg
+
+### Termux
+
+See the description above for general Unix instructions. Before running these, however, you should install my script for Termux-compatible shebang replacement and register its Git filter that is referenced in `.gitattributes`. The easiest way to do this is by doing this:
+
+    gh='https://raw.githubusercontent.com/scy/dotscy/master'
+    mkdir -p "$HOME/bin"                                                             &&
+    curl -sLo "$HOME/.gitconfig" "$gh/.gitconfig"                                    &&
+    curl -sL "$gh/bin/scy-termux-shebang" | \
+      sh <(curl -sL "$gh/bin/scy-termux-shebang") -t >"$HOME/bin/scy-termux-shebang" &&
+    chmod 0755 "$HOME/bin/scy-termux-shebang"
+
+I said easiest, not safest. Don’t run this if you don’t understand it.
