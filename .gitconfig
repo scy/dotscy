@@ -85,3 +85,8 @@
 [filter "homedir"]
 	smudge = sed -e "s:\\\\\\${HOME}:$HOME:g"
 	clean  = sed -e "s:$HOME:\\${HOME}:g"
+
+# Termux on Android needs fancy shebang replacements. This tool does them on the fly.
+[filter "termux-shebang"]
+	smudge = "$HOME/bin/scy-termux-shebang" -t
+	clean  = "$HOME/bin/scy-termux-shebang" -p
