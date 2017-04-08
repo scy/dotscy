@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+termuxbin='/data/data/com.termux/files/usr/bin'
+termuxbinexp="$(printf '%s' "$termuxbin" | sed -e 's/\./\\./g')"
+
+case "$1" in
+	-t)
+		sed -E -e '1 s@^#!(/(usr/(local/)?)?)bin/(.*)@#!'"$termuxbin"'/\4@'
+		;;
+	-p)
+		sed -E \
+			-e '1 s@^#!'"$termuxbinexp"'/((ba)?sh)(\s.*)?$@#!/bin/\1\2@' \
+			-e '1 s@^#!'"$termuxbinexp"'/(.*)$@#!/usr/bin/\1@'
+		;;
+	*)
+		cat >&2 <<-TAC
+			usage: scy-termux-shebang -t|-p
+
+			Convert the path in a shebang line back and forth between "normal" paths
+			and the ones required for Termux. Supply the script to convert on stdin.
+
+			  -t  convert to Termux shebang, i.e. replace shebang lines that look like
+			      they're pointing to /bin, /usr/bin or /usr/local/bin with ones that
+			      point to $termuxbin
+			  -p  convert to POSIXish shebang, i.e. replace shebang lines that start
+			      with $termuxbin with ones that
+			      start with /bin (if the basename is sh or bash) or /usr/bin
+		TAC
+		exit 1
+		;;
+esac
