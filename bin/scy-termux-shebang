@@ -15,7 +15,7 @@ case "$1" in
 		;;
 	-p)
 		sed -E \
-			-e '1 s@^#!'"$termuxbinexp"'/((ba)?sh)(\s.*)?$@#!/bin/\1\2@' \
+			-e '1 s@^#!'"$termuxbinexp"'/((ba)?sh)(\s.*)?$@#!/bin/\1\3@' \
 			-e '1 s@^#!'"$termuxbinexp"'/(.*)$@#!/usr/bin/\1@'
 		;;
 	*)
