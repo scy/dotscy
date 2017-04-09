@@ -10,4 +10,4 @@ export LESS_TERMCAP_so='[01;44;33m'
 export LESS_TERMCAP_ue='[0m'
 export LESS_TERMCAP_us='[01;36m'
 
-exec "$PAGER"
+exec "$PAGER" "$@"
