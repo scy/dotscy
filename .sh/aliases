@@ -109,6 +109,12 @@ alias xpaste='xclip -out -sel clip'
 # password-store.
 alias pass="$HOME/res/password-store/src/password-store.sh"
 
+# Taskwarrior.
+alias t='task'
+alias ta='task add'
+alias tn='task annotate'
+alias tm='task mod'
+
 # I prefer GnuPG 2.
 alias gpg='gpg2'
 

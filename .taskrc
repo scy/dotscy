@@ -1,0 +1,42 @@
+# Don't warn if TASKDATA overrides etc. are in place.
+verbose=blank,footnote,label,new-id,affected,edit,special,project,sync,filter,unwait,recur
+
+# Search case-insensitive by default.
+search.case.sensitive=no
+
+# The current recurrence implementation is strange. The negative kind. Disable it.
+recurrence=no
+
+# I'm German.
+weekstart=Monday
+
+# Log start and stop as an annotation.
+journal.time=yes
+journal.time.start.annotation=(start)
+journal.time.stop.annotation=(stop)
+
+# Place new tasks in the inbox project, if nothing else is specified.
+default.project=inbox
+
+# Set a default priority.
+uda.priority.default=M
+
+# UDA for due timezone, see due-timezone.py hook.
+uda.due_tz.type=string
+uda.due_tz.label=Due timezone
+
+# Urgency calculation. First, let blocking tasks inherit the urgency of the tasks they block.
+urgency.inherit=yes
+# Next, I don't see why being blocked should make you any less urgent.
+urgency.blocked.coefficient=0
+# I know the manual suggests this to be set to 0 when inheriting, but I'm trying to nudge
+# blocking tasks a bit ahead of the ones they're blocking with this.
+urgency.blocking.coefficient=0.1
+# The number of annotations has nothing to do with urgency in my setup.
+urgency.annotations.coefficient=0
+# Neither does the number of tags.
+urgency.tags.coefficient=0
+# But it's very important how close the due date is.
+urgency.due.coefficient=20
+# Especially if it's due today.
+urgency.user.tag.TODAY.coefficient=5
