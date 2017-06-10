@@ -25,6 +25,10 @@ uda.priority.default=M
 uda.due_tz.type=string
 uda.due_tz.label=Due timezone
 
+# UDA for custom repeat rules.
+uda.repeat.type=string
+uda.repeat.label=Repeat
+
 # Urgency calculation. First, let blocking tasks inherit the urgency of the tasks they block.
 urgency.inherit=yes
 # Next, I don't see why being blocked should make you any less urgent.
@@ -40,3 +44,7 @@ urgency.tags.coefficient=0
 urgency.due.coefficient=20
 # Especially if it's due today.
 urgency.user.tag.TODAY.coefficient=5
+# I track coupons in Taskwarrior, but most of them expire in a year or so, hence prioritize them down.
+urgency.user.tag.coupon.coefficient=-5
+# Also, I track things to read when I find the time. These are not so urgent either.
+urgency.user.tag.read.coefficient=-6
