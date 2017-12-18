@@ -101,6 +101,8 @@
 /.thumbnails/
 /.toodledo/
 /.Trash/
+# VirtualBox Guest Additions PID files
+/.vboxclient-*.pid
 /.vimperatorrc.local
 /.VirtualBox
 # PhpStorm config.
