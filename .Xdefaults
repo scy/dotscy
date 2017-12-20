@@ -83,8 +83,6 @@ URxvt*color15:    #f7f7f7
 ! Default font Inconsolata, fall back to misc-fixed.
 URxvt.font:       xft:Inconsolata-dz:size=10, \
                   -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-*
-! URxvt makes normal Inconsolata look too wide, tighten it up a bit.
-URxvt.letterSpace: -1
 ! But add a tiny bit more space between the lines.
 URxvt.lineSpace:    1
 
