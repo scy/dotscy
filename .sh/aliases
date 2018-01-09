@@ -115,6 +115,16 @@ alias ta='task add'
 alias tn='task annotate'
 alias tm='task mod'
 
+# Docker.
+alias D='docker'
+alias DC='docker-compose'
+alias DCd='DC down'
+alias DCdv='DCd -v'
+alias DCe='DC exec'
+alias DCeb='DCe bash'
+alias DCu='DC up'
+alias DCub='DCu --build'
+
 # I prefer GnuPG 2.
 alias gpg='gpg2'
 
