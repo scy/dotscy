@@ -4,17 +4,15 @@ My config files (aka dotfiles). Maintained since 2007. There’s a lot of experi
 ## How I set up a new machine to use these
 
 ### Unix
-    git clone https://github.com/scy/dotscy.git             &&
-    rsync -avb --backup-dir=.orig_home dotscy/ .            &&
-    rm -rf dotscy                                           &&
-    git submodule update --init                             &&
+    git clone --recurse-submodules https://github.com/scy/dotscy.git &&
+    rsync -avb --backup-dir=.orig_home dotscy/ .                     &&
+    rm -rf dotscy                                                    &&
     git remote set-url origin git@github.com:scy/dotscy.git
 
 ### Windows (tested in a Git Bash)
-    cd /C                                       &&
-    git clone https://github.com/scy/dotscy.git &&
-    cd dotscy                                   &&
-    git submodule update --init                 &&
+    cd /C                                                            &&
+    git clone --recurse-submodules https://github.com/scy/dotscy.git &&
+    cd dotscy                                                        &&
     reg import res/windows/env.reg
 
 ### Termux
