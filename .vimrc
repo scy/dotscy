@@ -3,7 +3,7 @@
 set nocompatible
 filetype plugin on
 syntax on
-set encoding=unicode
+set encoding=utf-8
 
 " .viminfo settings: Store marks, unlimited register contents. Also, do not
 " store .viminfo directly in $HOME. Search and command line history are
